@@ -51,7 +51,4 @@ fun main() {
                 "\nSalary per Month: " + uncleSallaryPerMonth +
                 "\nSalary per Year: " + uncleSallaryPerYear
     )
-
-
-
 }
