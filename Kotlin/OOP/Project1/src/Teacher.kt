@@ -2,15 +2,15 @@ class Teacher constructor(fullName:String , id:String , courseName:String){
 
     var teacherName:String? = null
           get() {
-              return "Teacher Name: ${field}"
+              return "\nTeacher Name: ${field}\n"
           }
     var teacherId:String? = null
           get() {
-              return "Teacher Id: ${field}"
+              return "Teacher Id: ${field}\n"
           }
     var teacherCourseName:String?
         get() {
-            return "Teacher Course Name: ${field}"
+            return "Teacher Course Name: ${field}\n"
         }
 
     init {
