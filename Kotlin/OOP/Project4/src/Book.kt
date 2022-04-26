@@ -1,4 +1,5 @@
-class Book constructor(Name:String , publisher:String , description:String , wrieter:String){
+class Book constructor(Name:String , publisher:String , description:String , wrieter:String ,
+                       subName:String , subField:String) : Subject(){
 
     var bookName:String? = null
         get() {
@@ -19,6 +20,8 @@ class Book constructor(Name:String , publisher:String , description:String , wri
 
     init {
 
+        super.subjectName = subName
+        super.subjectField = subField
         bookDescription = description
         bookName = Name
         bookPublisher = publisher
@@ -29,6 +32,11 @@ class Book constructor(Name:String , publisher:String , description:String , wri
     fun printBookDetails()
     {
         println("Book Details: "+ bookName + bookWriter + bookPublisher + bookDescription)
+    }
+
+    override fun printDetails() {
+        println("Book Details: "+ bookName + bookWriter + bookPublisher + bookDescription)
+        super.printDetails()
     }
 
 }
