@@ -36,7 +36,8 @@ class Book constructor(Name:String , publisher:String , description:String , wri
 
     override fun printDetails() {
         println("Book Details: "+ bookName + bookWriter + bookPublisher + bookDescription)
-        super.printDetails()
+        println("Subject Details:\nSubject Name:   $subjectName\n Subject Field:  $subjectField")
     }
+
 
 }
