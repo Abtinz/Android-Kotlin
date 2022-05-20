@@ -33,7 +33,10 @@ class MainActivity : AppCompatActivity() {
                     view, year, month, dayOfMonth ->
 
                    var userEnterdDate = "${dayOfMonth}--${month}--${year}"
-                   var dateFormater = SimpleDateFormat("dd--mm--yy")
+                   //date formatter and its pattern
+                   val dateFormatter = SimpleDateFormat("dd--mm--yy")
+                   var userSelectedDate = dateFormatter.parse(userEnterdDate)
+                   var minuteOfDate = userSelectedDate.time / 6000   //user selected time is ms format no minute!
             } ,
                     //initially information about current date
                     currentYear , currentMonth , currentDay)
