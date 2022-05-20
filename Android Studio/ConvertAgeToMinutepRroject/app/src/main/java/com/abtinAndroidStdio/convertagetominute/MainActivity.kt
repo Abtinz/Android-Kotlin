@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.DatePicker
+import android.widget.TextView
+import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +16,9 @@ class MainActivity : AppCompatActivity() {
 
         //calender button (handle button and Calender
         var calenderButton = findViewById<Button>(R.id.chooseDateFromCalanderButton)
+        //text views off birthDay date and Result
+        val userBirthDayDate = findViewById<TextView>(R.id.enterdBirthDayDate)
+        val ageToMinute = findViewById<TextView>(R.id.AgeToMinute)
         //in this section we are setting a listener for our button
         calenderButton.setOnClickListener {
             //calender and current time in Kt and Android Std
@@ -22,7 +27,16 @@ class MainActivity : AppCompatActivity() {
             val currentMonth = calender.get(Calendar.MONTH)
             val currentDay = calender.get(Calendar.DAY_OF_MONTH)
 
-            val datePicker = DatePickerDialog(this , DatePickerDialog.OnDateSetListener{ view, year, month, dayOfMonth -> } , currentYear , currentMonth , currentDay)
+            val datePicker = DatePickerDialog(this , DatePickerDialog.OnDateSetListener{
+
+                    //the user information
+                    view, year, month, dayOfMonth ->
+
+                   var userEnterdDate = "${dayOfMonth}--${month}--${year}"
+                   var dateFormater = SimpleDateFormat("dd--mm--yy")
+            } ,
+                    //initially information about current date
+                    currentYear , currentMonth , currentDay)
 
             datePicker.show()
         }
