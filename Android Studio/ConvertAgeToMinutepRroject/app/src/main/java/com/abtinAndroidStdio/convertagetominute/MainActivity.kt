@@ -1,8 +1,10 @@
 package com.abtinAndroidStdio.convertagetominute
 
+import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.DatePicker
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +21,10 @@ class MainActivity : AppCompatActivity() {
             val currentYear = calender.get(Calendar.YEAR)
             val currentMonth = calender.get(Calendar.MONTH)
             val currentDay = calender.get(Calendar.DAY_OF_MONTH)
+
+            val datePicker = DatePickerDialog(this , DatePickerDialog.OnDateSetListener{ view, year, month, dayOfMonth -> } , currentYear , currentMonth , currentDay)
+
+            datePicker.show()
         }
 
 
