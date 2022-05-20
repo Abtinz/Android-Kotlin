@@ -40,10 +40,14 @@ class MainActivity : AppCompatActivity() {
                    var systemMinute = System.currentTimeMillis()
                    var currentDate = dateFormatter.parse(dateFormatter.format(systemMinute))
                    var currentMinute = currentDate.time / 6000
+
+                   var timeDifference = currentMinute - minuteOfDate
+                   userBirthDayDate.setText(userEnterdDate)
+                   ageToMinute.setText(timeDifference.toString())
             } ,
                     //initially information about current date
                     currentYear , currentMonth , currentDay)
-
+            datePicker.datePicker.maxDate = Date().time
             datePicker.show()
         }
 
