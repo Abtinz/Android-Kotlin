@@ -37,6 +37,9 @@ class MainActivity : AppCompatActivity() {
                    val dateFormatter = SimpleDateFormat("dd--mm--yy")
                    var userSelectedDate = dateFormatter.parse(userEnterdDate)
                    var minuteOfDate = userSelectedDate.time / 6000   //user selected time is ms format no minute!
+                   var systemMinute = System.currentTimeMillis()
+                   var currentDate = dateFormatter.parse(dateFormatter.format(systemMinute))
+                   var currentMinute = currentDate.time / 6000
             } ,
                     //initially information about current date
                     currentYear , currentMonth , currentDay)
