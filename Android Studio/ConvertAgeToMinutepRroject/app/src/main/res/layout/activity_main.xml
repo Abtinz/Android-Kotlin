@@ -4,45 +4,157 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="249dp"
-        android:layout_height="60dp"
-        android:text="First Android Stadio Project"
-        android:textAlignment="center"
-        android:textColor="@color/teal_200"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        android:id="@+id/textView9"
+        android:layout_width="296dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="52dp"
+        android:text="راه های ارتباط با ما: "
+        android:textColor="#272626"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="303dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        android:text="با تشکر از اینکه برنامه ما را انتخاب کردید "
+        android:textColor="#272626"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="273dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="16dp"
+        android:text="GitHub: Abtinz                                              Email:Fake@Email.com"
+        android:textColor="#302626"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="322dp"
-        android:layout_height="41dp"
-        android:layout_marginEnd="160dp"
-        android:text="Hello Android!"
+        android:layout_width="314dp"
+        android:layout_height="50dp"
+        android:background="#0071CC"
+        android:text="اپلیکیشن تبدیل سن به دقیقه"
         android:textAlignment="center"
-        android:textColor="@color/teal_700"
+        android:textColor="#0C0C0C"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="272dp" />
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="275dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="648dp"
+        android:background="#72CFFA"
+        android:text="لطفا سن خود را جهت محاسبه وارد کنید"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="#009688"
-        android:text="Start Android!"
-        android:textColor="@android:color/holo_green_light"
-        android:textColorHint="@color/teal_200"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:rippleColor="@color/teal_700"
-        app:strokeColor="#009688" />
+        android:id="@+id/calculateButton"
+        android:layout_width="406dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="476dp"
+        android:text="محاسبه سن بر حسب دقیقه"
+        android:textSize="17.5sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/enterdBirthDayDate"
+        android:layout_width="272dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="336dp"
+        android:textAlignment="center"
+        android:textColor="#757575"
+        android:textIsSelectable="true"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="274dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="384dp"
+        android:text="سن ورودی شما:"
+        android:textColor="#1532D3"
+        android:textSize="20sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txt6"
+        android:layout_width="262dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="280dp"
+        android:text="سن شما بر حسب دقیقه:"
+        android:textColor="#1532D3"
+        android:textSize="20sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/AgeToMinute"
+        android:layout_width="272dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="228dp"
+        android:textAlignment="center"
+        android:textColor="#757575"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/chooseDateFromCalanderButton"
+        android:layout_width="390dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="انتخاب تاریخ تولد از تقویم"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="194dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
