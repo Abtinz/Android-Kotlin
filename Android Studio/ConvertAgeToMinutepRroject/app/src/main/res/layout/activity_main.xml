@@ -49,7 +49,7 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="314dp"
+        android:layout_width="286dp"
         android:layout_height="50dp"
         android:background="#0071CC"
         android:text="اپلیکیشن تبدیل سن به دقیقه"
@@ -150,12 +150,57 @@
         android:id="@+id/chooseDateFromCalanderButton"
         android:layout_width="390dp"
         android:layout_height="43dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="560dp"
+        android:layout_marginBottom="584dp"
         android:text="انتخاب تاریخ تولد از تقویم"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/YearNumber"
+        android:layout_width="106dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="24dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="سال"
+        android:textAlignment="center"
+        android:textColor="#7A7474"
+        app:layout_constraintBottom_toTopOf="@+id/calculateButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseDateFromCalanderButton"
+        app:layout_constraintVertical_bias="0.478" />
+
+    <EditText
+        android:id="@+id/MonthDate"
+        android:layout_width="106dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="152dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="ماه"
+        android:textAlignment="center"
+        android:textColor="#7A7474"
+        app:layout_constraintBottom_toTopOf="@+id/calculateButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseDateFromCalanderButton"
+        app:layout_constraintVertical_bias="0.478" />
+
+    <EditText
+        android:id="@+id/dayDate"
+        android:layout_width="106dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="روز"
+        android:textAlignment="center"
+        android:textColor="#7A7474"
+        app:layout_constraintBottom_toTopOf="@+id/calculateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseDateFromCalanderButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
