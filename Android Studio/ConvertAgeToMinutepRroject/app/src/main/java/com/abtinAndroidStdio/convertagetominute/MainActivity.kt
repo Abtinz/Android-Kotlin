@@ -41,10 +41,10 @@ class MainActivity : AppCompatActivity() {
                    //date formatter and its pattern
                    val dateFormatter = SimpleDateFormat("dd--mm--yy")
                    var userSelectedDate = dateFormatter.parse(userEnterdDate)
-                   var minuteOfDate = userSelectedDate.time / 6000   //user selected time is ms format no minute!
+                   var minuteOfDate = userSelectedDate.time / 60000   //user selected time is ms format no minute!
                    var systemMinute = System.currentTimeMillis()
                    var currentDate = dateFormatter.parse(dateFormatter.format(systemMinute))
-                   var currentMinute = currentDate.time / 6000
+                   var currentMinute = currentDate.time / 60000
 
                    var timeDifference = currentMinute - minuteOfDate
                    userBirthDayDate.setText(userEnterdDate)
@@ -111,6 +111,6 @@ class MainActivity : AppCompatActivity() {
 
 
         else
-               return "خردمندی و فضیلت(خردمندی و فضیلت)"
+               return "اواخر بزرگسالی(خردمندی وفضیلت)"
     }
 }
