@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         //text views off birthDay date and Result
         val userBirthDayDate = findViewById<TextView>(R.id.enterdBirthDayDate)
         val ageToMinute = findViewById<TextView>(R.id.AgeToMinute)
+        val ageTypeTextView = findViewById<TextView>(R.id.AgeType)
         //number text views
         var yearNumber = findViewById<TextView>(R.id.YearNumber)
         var monthNumber = findViewById<TextView>(R.id.MonthDate)
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity() {
                    var timeDifference = currentMinute - minuteOfDate
                    userBirthDayDate.setText(userEnterdDate)
                    ageToMinute.setText(timeDifference.toString())
+                   ageTypeTextView.setText(AgeType(timeDifference))
             } ,
                     //initially information about current date
                     currentYear , currentMonth , currentDay)
@@ -57,21 +59,22 @@ class MainActivity : AppCompatActivity() {
 
         calcualteButton.setOnClickListener {
 
-            
+
             var userEnterdDate = "${dayNumber.text}--${monthNumber.text}--${yearNumber.text}"
 
             val dateFormatter = SimpleDateFormat("dd--mm--yy")
             var userSelectedDate = dateFormatter.parse(userEnterdDate)
-            val minuteOfBirthDayDate = userSelectedDate.time / 6000
+            val minuteOfBirthDayDate = userSelectedDate.time / 60000
 
             var systemMinute = System.currentTimeMillis()
             var currentDay = dateFormatter.parse(dateFormatter.format(systemMinute))
-            var currentMinute = currentDay.time / 6000
+            var currentMinute = currentDay.time / 60000
 
             var timeDifference = currentMinute - minuteOfBirthDayDate
             userBirthDayDate.setText(userEnterdDate)
             ageToMinute.setText(timeDifference.toString())
-
+            ageToMinute.setText(timeDifference.toString())
+            ageTypeTextView.setText(AgeType(timeDifference))
 
 
         }
@@ -79,5 +82,35 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun AgeType(minutesOfAge: Long) : String{
 
+        val countOfYearsOfUserLife = minutesOfAge / 525600
+        if (countOfYearsOfUserLife in 0..3)
+                     return "(انرژی و سرزندگی)طفولیت"
+        else if (countOfYearsOfUserLife in 3..6)
+                 return "بدو کودکی( بازیگوشی)"
+
+        else if (countOfYearsOfUserLife in 6..8)
+            return "اواسط کودکی(تخیل)"
+
+        else if (countOfYearsOfUserLife in 9..12)
+            return "اواخر کودکی (ابتکار و خلاقیت)"
+
+        else if (countOfYearsOfUserLife in 12..20)
+            return "نوجوانی و بلوغ (شور و اشتیاق)"
+
+        else if (countOfYearsOfUserLife in 20..35)
+            return "بدو جوانی (همت و پشتکار)"
+
+        else if (countOfYearsOfUserLife in 35..50)
+            return "میانسالی (تعمق و ژرف اندیشی)"
+
+        else if (countOfYearsOfUserLife in 50..80)
+            return "بلوغ بزرگسالی (سخاوت و خیرخواهی)"
+
+
+
+        else
+               return "خردمندی و فضیلت(خردمندی و فضیلت)"
+    }
 }
