@@ -21,7 +21,7 @@
             android:layout_weight="20"
             android:background="#A1A1A1"
             android:text="0"
-            android:textAlignment="center"
+            android:textAlignment="gravity"
             android:textSize="16sp" />
 
         <LinearLayout
