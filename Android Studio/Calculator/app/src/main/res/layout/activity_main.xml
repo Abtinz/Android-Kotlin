@@ -71,6 +71,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="20"
                     android:backgroundTint="#000000"
+                    android:onClick="onclickOperator"
                     android:text="+"
                     android:textSize="24sp" />
 
@@ -80,6 +81,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="20"
                     android:backgroundTint="#000000"
+                    android:onClick="onclickOperator"
                     android:text="-"
                     android:textSize="24sp" />
             </LinearLayout>
@@ -126,6 +128,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="20"
                     android:backgroundTint="#000000"
+                    android:onClick="onclickOperator"
                     android:text="*"
                     android:textSize="20sp" />
 
@@ -135,6 +138,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="20"
                     android:backgroundTint="#000000"
+                    android:onClick="onclickOperator"
                     android:text="/"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -181,6 +185,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="20"
                     android:backgroundTint="#000000"
+                    android:onClick="onclickOperator"
                     android:text="√"
                     android:textSize="20sp" />
 
@@ -190,6 +195,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="20"
                     android:backgroundTint="#000000"
+                    android:onClick="onclickOperator"
                     android:text="^"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -226,6 +232,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="20"
                     android:backgroundTint="#000000"
+                    android:onClick="onclickOperator"
                     android:text="%"
                     android:textSize="20sp" />
 
