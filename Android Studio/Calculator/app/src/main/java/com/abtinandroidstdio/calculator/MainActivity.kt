@@ -103,9 +103,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /*
 
-     */
     fun calculateTheOperation(view : View){
 
         if(isOperatoinEntered && isSecondNumberEntered){
@@ -116,6 +114,8 @@ class MainActivity : AppCompatActivity() {
                 val secondNumber = addArray[1]
                 val result = firstNumber.toDouble() + secondNumber.toDouble()
                 binding.textView.text = result.toString()
+                isOperatoinEntered = false
+                isSecondNumberEntered = false
             }
 
             else if(calculetorText.contains("/")){
@@ -125,6 +125,8 @@ class MainActivity : AppCompatActivity() {
                 if(secondNumber.toDouble() != 0.0){
                     val result = firstNumber.toDouble() / secondNumber.toDouble()
                     binding.textView.text = result.toString()
+                    isOperatoinEntered = false
+                    isSecondNumberEntered = false
                 }
 
             }
@@ -135,6 +137,8 @@ class MainActivity : AppCompatActivity() {
                 val secondNumber = multipactionArray[1]
                 val result = firstNumber.toDouble() * secondNumber.toDouble()
                 binding.textView.text = result.toString()
+                isOperatoinEntered = false
+                isSecondNumberEntered = false
             }
 
             else if(calculetorText.contains("^")){
@@ -143,6 +147,8 @@ class MainActivity : AppCompatActivity() {
                 val secondNumber = powArray[1]
                 val result =  firstNumber.toDouble().pow(secondNumber.toDouble())
                 binding.textView.text = result.toString()
+                isOperatoinEntered = false
+                isSecondNumberEntered = false
             }
 
 
