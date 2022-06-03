@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import com.abtinandroidstdio.calculator.databinding.ActivityMainBinding
+import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding //because of scope var
@@ -102,6 +103,51 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /*
+
+     */
+    fun calculateTheOperation(view : View){
+
+        if(isOperatoinEntered && isSecondNumberEntered){
+            val calculetorText = binding.textView.text
+            if(calculetorText.contains("+")){
+                val addArray = calculetorText.split("+")
+                val firstNumber = addArray[0]
+                val secondNumber = addArray[1]
+                val result = firstNumber.toDouble() + secondNumber.toDouble()
+                binding.textView.text = result.toString()
+            }
+
+            else if(calculetorText.contains("/")){
+                val devideArray = calculetorText.split("/")
+                val firstNumber = devideArray[0]
+                val secondNumber = devideArray[1]
+                if(secondNumber.toDouble() != 0.0){
+                    val result = firstNumber.toDouble() / secondNumber.toDouble()
+                    binding.textView.text = result.toString()
+                }
+
+            }
+
+            else if(calculetorText.contains("*")){
+                val multipactionArray = calculetorText.split("*")
+                val firstNumber = multipactionArray[0]
+                val secondNumber = multipactionArray[1]
+                val result = firstNumber.toDouble() * secondNumber.toDouble()
+                binding.textView.text = result.toString()
+            }
+
+            else if(calculetorText.contains("^")){
+                val powArray = calculetorText.split("^")
+                val firstNumber = powArray[0]
+                val secondNumber = powArray[1]
+                val result =  firstNumber.toDouble().pow(secondNumber.toDouble())
+                binding.textView.text = result.toString()
+            }
+
+
+        }
+    }
 
 
 }
