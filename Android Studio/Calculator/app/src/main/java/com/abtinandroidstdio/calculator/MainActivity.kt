@@ -33,7 +33,14 @@ class MainActivity : AppCompatActivity() {
             binding.textView.append(clickedButton.text)
         }
         else {
-            binding.textView.text = clickedButton.text
+            if(isOperatoinEntered){
+                binding.textView.append(clickedButton.text)
+                isSecondNumberEntered = true
+            }
+            else{
+                binding.textView.text = clickedButton.text
+            }
+
             isSomeDigitEntered = true
         }
     }
@@ -73,18 +80,23 @@ class MainActivity : AppCompatActivity() {
      */
     fun onclickOperator(clickedNumber : View){
         val clickedButton = clickedNumber as Button
-        if (!isSomeDigitEntered){
+        if (!isSomeDigitEntered && !isOperatoinEntered){
             Toast.makeText(this,"You have not entered a number yet" , Toast.LENGTH_LONG).show()
         }
         else {
             if(isOperatoinEntered){
-                var textViewString = binding.textView.text
-                //how to use substring in kotlin
-                binding.textView.text = textViewString.substring(0, textViewString.length - 1) + clickedButton.text
+                if(!isSecondNumberEntered){
+                    val textViewString = binding.textView.text
+                    //how to use substring in kotlin
+                    binding.textView.text = textViewString.substring(0, textViewString.length - 1) + clickedButton.text
+                }
             }
             else{
                 binding.textView.append(clickedButton.text)
                 isOperatoinEntered = true
+                isSomeDigitEntered = false
+                isDotButtonClicked = false
+
             }
 
         }
