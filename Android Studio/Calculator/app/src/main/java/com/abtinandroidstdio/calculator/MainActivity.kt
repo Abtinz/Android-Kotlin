@@ -11,6 +11,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding //because of scope var
     var isSomeDigitEntered = false
     var isDotButtonClicked = false
+    var isSecondNumberEntered = false
+    var isOperatoinEntered = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,4 +55,26 @@ class MainActivity : AppCompatActivity() {
         isSomeDigitEntered = false
         isDotButtonClicked = false
     }
+
+    /*
+        in this function we are casting view to button and then we will append the text of button to textView
+        this is how we add the new clicked number to calculator view
+     */
+    fun onclickOperator(clickedNumber : View){
+        val clickedButton = clickedNumber as Button
+        if (!isSomeDigitEntered){
+
+        }
+        else {
+            if(isOperatoinEntered){
+                var textViewString = binding.textView.text
+                //how to use substring in kotlin
+                textViewString = textViewString.substring(0, textViewString.length - 1) + clickedButton.text
+            }
+            binding.textView.append(clickedButton.text)
+        }
+    }
+
+
+
 }
