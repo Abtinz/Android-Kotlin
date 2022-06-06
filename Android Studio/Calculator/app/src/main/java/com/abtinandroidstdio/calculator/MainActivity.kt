@@ -225,19 +225,56 @@ class MainActivity : AppCompatActivity() {
 
 
     fun clearOneDigitOrNumber(view: View){
-        
+        if (!isSomeDigitEntered && !isOperatoinEntered){
+            Toast.makeText(this,"You have not entered a number yet" , Toast.LENGTH_LONG).show()
+        }
+        if(binding.textView.text.length == 1){
+            binding.textView.text = ""
+            isSomeDigitEntered = false
+        }
+        else{
+            val textViewString = binding.textView.text.subSequence(0,binding.textView.text.length -1)
+            val lastChar = binding.textView.text.last()
+            if(isSecondNumberEntered){
+                if(lastChar == '.'){
+                    isDotButtonClicked = false
+                }
+                if(isTheLastCharOperation(textViewString.last())){
+                    isSecondNumberEntered = false
+                    isSomeDigitEntered = false
+                }
+
+                binding.textView.text = textViewString
+            }
+
+            else if(!isSomeDigitEntered && isOperatoinEntered){
+                isOperatoinEntered = false
+                if(lastChar != '√'){
+                    isSomeDigitEntered = true
+                    if(textViewString.contains(".")){
+                        isDotButtonClicked = true
+                    }
+                }
+                binding.textView.text = textViewString
+            }
+
+            else{
+                if(lastChar == '.')
+                    isDotButtonClicked = false
+                binding.textView.text = textViewString
+            }
+        }
+
+
+
     }
 
-    fun isThereAnyOperation(textViewTXT : String) : Boolean{
+    fun isTheLastCharOperation(textViewTXT : Char) : Boolean{
 
-        if (textViewTXT.contains("+") or
-            textViewTXT.contains("-") or
-            textViewTXT.contains("*") or
-            textViewTXT.contains("/") or
-            textViewTXT.contains("%") or
-            textViewTXT.contains("√") or
-            textViewTXT.contains("^"))
-                return true
+        if ((textViewTXT == '+') or  (textViewTXT == '-') or (textViewTXT  == '*' ) or
+            (textViewTXT=='/' )or (textViewTXT == '%' )or
+            (textViewTXT == '√' )or (textViewTXT == '^'))
+            return true
 
         return false
     }

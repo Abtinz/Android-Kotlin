@@ -5,6 +5,7 @@
     android:id="@+id/showResult"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="clearOneDigitOrNumber"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -260,6 +261,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:backgroundTint="#000000"
+                    android:onClick="clearOneDigitOrNumber"
                     android:text="C"
                     android:textSize="20sp" />
 
