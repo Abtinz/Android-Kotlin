@@ -219,11 +219,26 @@ class MainActivity : AppCompatActivity() {
                  }
 
             }
-            //else if(calculatorText)
-
 
         }
     }
 
 
+    fun clearOneDigitOrNumber(view: View){
+        
+    }
+
+    fun isThereAnyOperation(textViewTXT : String) : Boolean{
+
+        if (textViewTXT.contains("+") or
+            textViewTXT.contains("-") or
+            textViewTXT.contains("*") or
+            textViewTXT.contains("/") or
+            textViewTXT.contains("%") or
+            textViewTXT.contains("√") or
+            textViewTXT.contains("^"))
+                return true
+
+        return false
+    }
 }
