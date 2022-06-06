@@ -228,9 +228,12 @@ class MainActivity : AppCompatActivity() {
         if (!isSomeDigitEntered && !isOperatoinEntered){
             Toast.makeText(this,"You have not entered a number yet" , Toast.LENGTH_LONG).show()
         }
-        if(binding.textView.text.length == 1){
-            binding.textView.text = ""
+        else if(binding.textView.text.length == 1){
+            binding.textView.text = "0"
             isSomeDigitEntered = false
+            if(binding.textView.text.last() == '√'){
+                isOperatoinEntered = false
+            }
         }
         else{
             val textViewString = binding.textView.text.subSequence(0,binding.textView.text.length -1)
