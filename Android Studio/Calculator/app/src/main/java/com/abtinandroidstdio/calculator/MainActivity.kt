@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import com.abtinandroidstdio.calculator.databinding.ActivityMainBinding
-import kotlin.math.hypot
 import kotlin.math.pow
 import kotlin.math.sqrt
 
@@ -84,7 +83,15 @@ class MainActivity : AppCompatActivity() {
     fun onclickOperator(clickedNumber : View){
         val clickedButton = clickedNumber as Button
         if (!isSomeDigitEntered && !isOperatoinEntered){
-            Toast.makeText(this,"You have not entered a number yet" , Toast.LENGTH_LONG).show()
+            if(clickedNumber.text.equals("√")){
+                binding.textView.text = clickedButton.text
+                isOperatoinEntered = true
+                isSomeDigitEntered = false
+                isDotButtonClicked = false
+            }
+            else  {
+                Toast.makeText(this,"You have not entered a number yet" , Toast.LENGTH_LONG).show()
+            }
         }
         else {
             if(isOperatoinEntered){
@@ -136,6 +143,7 @@ class MainActivity : AppCompatActivity() {
                 binding.textView.text = result.toString()
                 isOperatoinEntered = false
                 isSecondNumberEntered = false
+                isDotButtonClicked = true
             }
 
             else if(calculatorText.contains("/")){
@@ -147,6 +155,7 @@ class MainActivity : AppCompatActivity() {
                     binding.textView.text = result.toString()
                     isOperatoinEntered = false
                     isSecondNumberEntered = false
+                    isDotButtonClicked = true
                 }
 
             }
@@ -159,6 +168,7 @@ class MainActivity : AppCompatActivity() {
                 binding.textView.text = result.toString()
                 isOperatoinEntered = false
                 isSecondNumberEntered = false
+                isDotButtonClicked = true
             }
 
             else if(calculatorText.contains("^")){
@@ -169,6 +179,7 @@ class MainActivity : AppCompatActivity() {
                 binding.textView.text = result.toString()
                 isOperatoinEntered = false
                 isSecondNumberEntered = false
+                isDotButtonClicked = true
             }
             else if(calculatorText.contains("%")){
                 val reminderArray = calculatorText.split("%")
@@ -178,6 +189,7 @@ class MainActivity : AppCompatActivity() {
                 binding.textView.text = result.toString()
                 isOperatoinEntered = false
                 isSecondNumberEntered = false
+                isDotButtonClicked = true
             }
 
             else if(calculatorText.contains("√")){
@@ -186,6 +198,7 @@ class MainActivity : AppCompatActivity() {
                 binding.textView.text = result.toString()
                 isOperatoinEntered = false
                 isSecondNumberEntered = false
+                isDotButtonClicked = true
             }
 
             else{
@@ -201,6 +214,7 @@ class MainActivity : AppCompatActivity() {
                          binding.textView.text = result.toString()
                          isOperatoinEntered = false
                          isSecondNumberEntered = false
+                         isDotButtonClicked = true
                      }
 
                  }
@@ -208,13 +222,14 @@ class MainActivity : AppCompatActivity() {
                  else{
                      if(calculatorText.contains("-")){
                          val minusArray = calculatorText.split("-")
-                         val firstNumber = minusArray[0].toDouble() * (-1.0)
+                         val firstNumber = minusArray[0].toDouble()
                          val secondNumber = minusArray[1].toDouble()
 
                          val result = firstNumber - secondNumber
                          binding.textView.text = result.toString()
                          isOperatoinEntered = false
                          isSecondNumberEntered = false
+                         isDotButtonClicked = true
                      }
                  }
 
