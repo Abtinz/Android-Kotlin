@@ -46,9 +46,9 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayout"
-                    style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="359dp"
-                    android:layout_height="48dp"
+                    android:layout_height="60dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="16dp"
@@ -58,7 +58,6 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/PasswordTextInput"
-                        style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox.Dense"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Password" />
@@ -103,8 +102,9 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="359dp"
-                    android:layout_height="48dp"
+                    android:layout_height="60dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
@@ -113,7 +113,6 @@
                     app:layout_constraintStart_toStartOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox.Dense"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="hint" />
