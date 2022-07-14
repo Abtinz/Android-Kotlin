@@ -45,7 +45,7 @@
                 android:layout_weight="30">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout"
+                    android:id="@+id/PasswordTextInput"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="359dp"
                     android:layout_height="60dp"
@@ -81,6 +81,8 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="20dp"
+                    android:background="#7A3BEA"
+                    android:onClick="letsPlay"
                     android:text="Lets Play"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -108,14 +110,15 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+                    app:layout_constraintBottom_toTopOf="@+id/PasswordTextInput"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/UsernameTextInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="hint" />
+                        android:hint="Username" />
                 </com.google.android.material.textfield.TextInputLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -143,6 +146,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
+                    android:background="#7A3BEA"
                     android:text="Create Account"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
