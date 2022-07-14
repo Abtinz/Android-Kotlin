@@ -45,7 +45,7 @@
                 android:layout_weight="30">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/PasswordTextInput"
+                    android:id="@+id/textInputLayout2"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="359dp"
                     android:layout_height="60dp"
@@ -109,8 +109,7 @@
                     android:layout_height="60dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    app:layout_constraintBottom_toTopOf="@+id/PasswordTextInput"
+                    app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 

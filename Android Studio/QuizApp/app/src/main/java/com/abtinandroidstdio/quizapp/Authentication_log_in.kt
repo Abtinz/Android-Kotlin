@@ -2,16 +2,16 @@ package com.abtinandroidstdio.quizapp
 
 
 class Authentication_log_in constructor(Usearname:String ,Password:String){
-    var logInUsername : String
-    var logInPassword :String
+    var isUsernameEmpty = true
+    var isPasswordEmpty = true
 
     init{
-        logInUsername = Usearname
-        logInPassword = Password
+        isUsernameEmpty = Usearname.isEmpty()
+        isPasswordEmpty = Password.isEmpty()
     }
 
     fun isEmpty():Boolean{
-        return ((logInUsername.isEmpty()) and (logInPassword.isEmpty()))
+        return ((!isUsernameEmpty) and (!isPasswordEmpty))
     }
 
     fun log_in_check():Boolean{
