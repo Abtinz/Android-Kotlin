@@ -16,11 +16,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-
     fun letsPlay(view : View){
         val authenticationLogIn = Authentication_log_in(binding.UsernameTextInput.text.toString(),binding.PasswordTextInput.text.toString() )
         if(!authenticationLogIn.isEmpty())
             Toast.makeText(this,"Please fill all the fields" , Toast.LENGTH_LONG).show()
     }
+
+
 }
