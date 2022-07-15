@@ -9,6 +9,14 @@ fun main(){
     if(isFileCreated)
         println("File is created in $url path")
 
+    //write and append
     file.writeText("Test 01\n")
     file.appendText("Test 02")
+
+    //reading from file
+    var index = 1
+    file.forEachLine {
+        println("Line$index :$it")
+        index -=-1
+    }
 }
