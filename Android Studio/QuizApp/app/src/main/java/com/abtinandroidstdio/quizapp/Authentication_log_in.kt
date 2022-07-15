@@ -1,5 +1,8 @@
 package com.abtinandroidstdio.quizapp
 
+import java.io.File
+import java.util.ArrayList
+
 
 class Authentication_log_in constructor(Usearname:String ,Password:String){
     var isUsernameEmpty = true
@@ -18,7 +21,11 @@ class Authentication_log_in constructor(Usearname:String ,Password:String){
         return ((!isUsernameEmpty) and (!isPasswordEmpty))
     }
 
-    fun log_in_check():Boolean{
+    fun Password_check():Boolean{
+        val url = logUsearname + ".txt"
+        val userFile = File(url)
+        val userDetails = userFile.readText()
         return isEmpty()
     }
+
 }
