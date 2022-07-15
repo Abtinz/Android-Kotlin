@@ -19,4 +19,9 @@ fun main(){
         println("Line$index :$it")
         index -=-1
     }
+
+    //read all text
+    val data = file.readText()
+    println(data)
+    
 }
