@@ -1,5 +1,6 @@
 package com.abtinandroidstdio.quizapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,6 +24,8 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"Please fill Username field" , Toast.LENGTH_LONG).show()
         else{
             binding.UserNameTextView.text = username
+            val intent = Intent(this , QuestionActivity::class.java)
+            startActivity(intent)
         }
     }
 
