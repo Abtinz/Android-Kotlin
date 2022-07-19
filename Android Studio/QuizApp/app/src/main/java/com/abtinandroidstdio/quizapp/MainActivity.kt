@@ -17,16 +17,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun letsPlay(view : View){
-        val authenticationLogIn = Authentication_log_in(binding.UsernameTextInput.text.toString(),binding.PasswordTextInput.text.toString() )
-        if(!authenticationLogIn.isEmpty())
-            Toast.makeText(this,"Please fill all the fields" , Toast.LENGTH_LONG).show()
+
+        val username = binding.UsernameTextInput.text.toString()
+        if(username.isEmpty())
+            Toast.makeText(this,"Please fill Username field" , Toast.LENGTH_LONG).show()
         else{
-            if(!authenticationLogIn.username_check())
-                Toast.makeText(this,"Invalid Username" , Toast.LENGTH_LONG).show()
-            else{
-                if(!authenticationLogIn.Password_check())
-                    Toast.makeText(this,"Invalid Password" , Toast.LENGTH_LONG).show()
-            }
+            binding.UserNameTextView.text = username
         }
     }
 
