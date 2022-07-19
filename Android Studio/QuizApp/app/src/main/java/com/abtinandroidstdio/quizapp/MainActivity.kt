@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         if(username.isEmpty())
             Toast.makeText(this,"Please fill Username field" , Toast.LENGTH_LONG).show()
         else{
-            binding.UserNameTextView.text = username
             val intent = Intent(this , QuestionActivity::class.java)
             startActivity(intent)
         }

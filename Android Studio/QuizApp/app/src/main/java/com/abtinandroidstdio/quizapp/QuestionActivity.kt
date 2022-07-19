@@ -12,7 +12,6 @@ class QuestionActivity : AppCompatActivity() {
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         questionBinding = ActivityQuestionBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        questionBinding.UsernameText.text = "UserName: " + mainBinding.UserNameTextView.text
 
         setContentView(questionBinding.root)
 
