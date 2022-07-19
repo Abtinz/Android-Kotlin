@@ -20,6 +20,14 @@ class MainActivity : AppCompatActivity() {
         val authenticationLogIn = Authentication_log_in(binding.UsernameTextInput.text.toString(),binding.PasswordTextInput.text.toString() )
         if(!authenticationLogIn.isEmpty())
             Toast.makeText(this,"Please fill all the fields" , Toast.LENGTH_LONG).show()
+        else{
+            if(!authenticationLogIn.username_check())
+                Toast.makeText(this,"Invalid Username" , Toast.LENGTH_LONG).show()
+            else{
+                if(!authenticationLogIn.Password_check())
+                    Toast.makeText(this,"Invalid Password" , Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
 
