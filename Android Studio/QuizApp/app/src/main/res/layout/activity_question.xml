@@ -27,6 +27,8 @@
             android:id="@+id/questionText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:gravity="center"
             android:textColor="#FFFFFF"
             android:textSize="34sp"
@@ -36,6 +38,7 @@
             android:id="@+id/questionImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout
@@ -54,6 +57,8 @@
                 android:id="@+id/prograssTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1" />
 
         </LinearLayout>
