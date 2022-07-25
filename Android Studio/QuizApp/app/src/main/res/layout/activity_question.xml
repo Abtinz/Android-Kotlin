@@ -51,7 +51,7 @@
                 android:layout_weight="2.4" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/prograssTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -59,7 +59,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/Option1"
+            android:id="@+id/firstOption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -75,7 +75,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/option2"
+            android:id="@+id/secondOption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -86,7 +86,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/option3"
+            android:id="@+id/thirdOption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -97,7 +97,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/option"
+            android:id="@+id/FourthOption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -112,15 +112,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:background="@drawable/button_background"
             android:text="Button"
-            android:textSize="20sp" />
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="20sp"
+            app:cornerRadius="20dp" />
 
         <Button
-            android:id="@+id/guide"
+            android:id="@+id/guideButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:background="@drawable/button_background"
             android:text="Guide"
-            android:textSize="20sp" />
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="20sp"
+            app:cornerRadius="20dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
