@@ -51,7 +51,9 @@
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2.4" />
+                android:layout_marginLeft="5dp"
+                android:layout_weight="2.4"
+                android:max="7" />
 
             <TextView
                 android:id="@+id/prograssTextView"
@@ -59,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_weight="1" />
+                android:layout_weight="1.2" />
 
         </LinearLayout>
 
@@ -102,7 +104,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/FourthOption"
+            android:id="@+id/fourthOption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

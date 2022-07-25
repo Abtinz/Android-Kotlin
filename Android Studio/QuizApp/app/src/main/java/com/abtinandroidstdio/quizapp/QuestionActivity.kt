@@ -12,6 +12,18 @@ class QuestionActivity : AppCompatActivity() {
 
         setContentView(questionBinding.root)
 
+        val questionsList = Constants.getQuestions()
+
+        val currentQuestionId = 0
+        val currentQuestion = questionsList[currentQuestionId]
+        questionBinding.questionText.text = currentQuestion.questionText
+        questionBinding.firstOption.text = currentQuestion.firstOptionText
+        questionBinding.secondOption.text = currentQuestion.secondOptionText
+        questionBinding.thirdOption.text = currentQuestion.thirdOptionText
+        questionBinding.fourthOption.text = currentQuestion.fourthOptionText
+        questionBinding.prograssTextView.text = "[$currentQuestionId / ${questionBinding.progressBar.max}]"
+
+
     }
 
 
