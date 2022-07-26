@@ -8,7 +8,8 @@ data class Question(
     val secondOptionText : String,
     val thirdOptionText : String,
     val fourthOptionText : String,
-    val correctAnswerId : Int
+    val correctAnswerId : Int ,
+    val questionHintText : String
 
 )
 

@@ -84,6 +84,7 @@
             android:background="@drawable/option_background"
             android:gravity="center"
             android:onClick="oneOptionClicked"
+            android:tag="firstOption"
             android:text="TextView"
             android:textColor="#6D35CF"
             android:textSize="24sp" />
@@ -96,6 +97,7 @@
             android:background="@drawable/option_background"
             android:gravity="center"
             android:onClick="oneOptionClicked"
+            android:tag="secondOption"
             android:text="TextView"
             android:textColor="#6D35CF"
             android:textSize="24sp" />
@@ -108,6 +110,7 @@
             android:background="@drawable/option_background"
             android:gravity="center"
             android:onClick="oneOptionClicked"
+            android:tag="thirdOption"
             android:text="TextView"
             android:textColor="#6D35CF"
             android:textSize="24sp" />
@@ -120,6 +123,7 @@
             android:background="@drawable/option_background"
             android:gravity="center"
             android:onClick="oneOptionClicked"
+            android:tag="fourthOption"
             android:text="TextView"
             android:textColor="#6D35CF"
             android:textSize="24sp" />

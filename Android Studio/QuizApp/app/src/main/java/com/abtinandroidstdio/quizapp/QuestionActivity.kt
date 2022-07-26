@@ -3,7 +3,6 @@ package com.abtinandroidstdio.quizapp
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.TextureView
 import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -12,6 +11,7 @@ import com.abtinandroidstdio.quizapp.databinding.ActivityQuestionBinding
 class QuestionActivity : AppCompatActivity() {
     lateinit var questionBinding : ActivityQuestionBinding
     lateinit var questionsList : ArrayList<Question>
+    var selectedOption = 0
     var currentQuestionId = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         questionBinding = ActivityQuestionBinding.inflate(layoutInflater)
@@ -36,11 +36,37 @@ class QuestionActivity : AppCompatActivity() {
 
     fun oneOptionClicked(view : View){
         val selectedTextView = view as TextView
+        selectedOptionTag(selectedTextView)
+
+        //changing section
         resetOptions()
         //this is how we make text view text bold
         selectedTextView.typeface = Typeface.DEFAULT_BOLD
         selectedTextView.background = ContextCompat.getDrawable(this , R.drawable.selected_option_background)
     }
+
+    fun selectedOptionTag(selectedTextView:TextView){
+        when(selectedTextView.tag.toString()){
+            "firstOption" -> {
+                selectedOption = 1
+            }
+
+            "secondOption" -> {
+                selectedOption = 2
+            }
+
+            "thirdOption" -> {
+                selectedOption = 3
+            }
+
+            "fourthOption" -> {
+                selectedOption = 4
+            }
+        }
+
+    }
+
+
 
     fun resetOptions(){
 
