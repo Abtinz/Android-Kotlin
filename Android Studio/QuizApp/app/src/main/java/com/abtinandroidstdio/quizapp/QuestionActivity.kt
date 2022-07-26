@@ -26,6 +26,7 @@ class QuestionActivity : AppCompatActivity() {
         questionBinding.thirdOption.text = currentQuestion.thirdOptionText
         questionBinding.fourthOption.text = currentQuestion.fourthOptionText
         questionBinding.questionImage.setImageResource(currentQuestion.Image)
+        questionBinding.progressBar.progress = currentQuestionId + 1
         questionBinding.prograssTextView.text = "[$currentQuestionId / ${questionBinding.progressBar.max}]"
     }
 
