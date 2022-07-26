@@ -99,13 +99,16 @@ class QuestionActivity : AppCompatActivity() {
     fun onsubmitAnswearClick(view: View){
 
         if(selectedOption == 0){
-            if(currentQuestionId < questionBinding.progressBar.max - 1){
+            val maxIndex = questionBinding.progressBar.max - 1
+            if(currentQuestionId < maxIndex){
                 currentQuestionId -=-1
                 questionCreator()
+                if(currentQuestionId == maxIndex){
+                    questionBinding.questionButton.text = "SHOW RESULTS"
+                }
             }
             else{
-                questionBinding.questionButton.text = "SHOW RESULTS"
-                questionCreator()
+
             }
 
         }
