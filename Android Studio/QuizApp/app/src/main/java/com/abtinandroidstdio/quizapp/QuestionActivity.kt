@@ -26,12 +26,14 @@ class QuestionActivity : AppCompatActivity() {
         questionBinding.thirdOption.text = currentQuestion.thirdOptionText
         questionBinding.fourthOption.text = currentQuestion.fourthOptionText
         questionBinding.questionImage.setImageResource(currentQuestion.Image)
-        questionBinding.progressBar.progress = currentQuestionId + 1
-        questionBinding.prograssTextView.text = "[$currentQuestionId / ${questionBinding.progressBar.max}]"
+        val realCurrentQuestionId   = currentQuestionId + 1
+        questionBinding.progressBar.progress = realCurrentQuestionId
+        questionBinding.prograssTextView.text = "[$realCurrentQuestionId  / ${questionBinding.progressBar.max}]"
     }
 
     fun oneOptionClicked(view : View){
-        view as TextureView
+        val selectedTextView = view as TextureView
+        
     }
 
     fun resetOptions(){
