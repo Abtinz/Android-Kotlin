@@ -4,6 +4,7 @@ import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -93,6 +94,21 @@ class QuestionActivity : AppCompatActivity() {
     fun onClearChoiceButtonClick(view: View){
         resetOptions()
         selectedOption = 0
+    }
+
+    fun onsubmitAnswearClick(view: View){
+
+        if(selectedOption == 0){
+            if(currentQuestionId < questionBinding.progressBar.max - 1){
+                currentQuestionId -=-1
+                questionCreator()
+            }
+            else{
+                questionBinding.questionButton.text = "SHOW RESULTS"
+                questionCreator()
+            }
+
+        }
     }
 
 
