@@ -1,9 +1,11 @@
 package com.abtinandroidstdio.quizapp
 
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.TextureView
 import android.view.View
+import android.widget.TextView
 import com.abtinandroidstdio.quizapp.databinding.ActivityQuestionBinding
 
 class QuestionActivity : AppCompatActivity() {
@@ -32,13 +34,17 @@ class QuestionActivity : AppCompatActivity() {
     }
 
     fun oneOptionClicked(view : View){
-        val selectedTextView = view as TextureView
-        
+        val selectedTextView = view as TextView
+        selectedTextView.typeface = Typeface.DEFAULT_BOLD
     }
 
     fun resetOptions(){
 
+        var otionsTextViewArray = ArrayList<TextView>()
+
     }
+
+
 
 
 
