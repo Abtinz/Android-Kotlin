@@ -149,6 +149,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/button_background"
+            android:onClick="onGuidClick"
             android:text="Guide"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"

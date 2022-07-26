@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.abtinandroidstdio.quizapp.databinding.ActivityQuestionBinding
 
@@ -83,6 +84,13 @@ class QuestionActivity : AppCompatActivity() {
         }
 
     }
+
+    fun onGuidClick(view: View){
+        val currentQuestion = questionsList[currentQuestionId]
+        Toast.makeText(this , "The Capital of the country : \n${currentQuestion.questionHintText}" , Toast.LENGTH_SHORT).show()
+    }
+
+
 
 
 
