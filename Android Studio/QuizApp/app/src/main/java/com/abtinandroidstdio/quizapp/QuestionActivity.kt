@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.TextureView
 import android.view.View
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.abtinandroidstdio.quizapp.databinding.ActivityQuestionBinding
 
 class QuestionActivity : AppCompatActivity() {
@@ -38,6 +39,7 @@ class QuestionActivity : AppCompatActivity() {
         resetOptions()
         //this is how we make text view text bold
         selectedTextView.typeface = Typeface.DEFAULT_BOLD
+        selectedTextView.background = ContextCompat.getDrawable(this , R.drawable.selected_option_background)
     }
 
     fun resetOptions(){
