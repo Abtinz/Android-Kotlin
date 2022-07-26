@@ -53,6 +53,7 @@ class QuestionActivity : AppCompatActivity() {
         //this is how we make text view text default style
         for (textViewOption in optionsTextViewArray) {
             textViewOption.typeface = Typeface.DEFAULT
+            textViewOption.background = ContextCompat.getDrawable(this , R.drawable.option_background)
         }
 
     }
