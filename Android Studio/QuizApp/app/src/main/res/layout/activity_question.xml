@@ -18,6 +18,8 @@
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center"
             android:text="Quiz App"
             android:textColor="#FFFFFF"
@@ -28,7 +30,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -38,12 +42,14 @@
             android:id="@+id/questionImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:orientation="horizontal">
 
             <ProgressBar
@@ -77,6 +83,7 @@
             android:layout_marginBottom="10dp"
             android:background="@drawable/option_background"
             android:gravity="center"
+            android:onClick="oneOptionClicked"
             android:text="TextView"
             android:textColor="#6D35CF"
             android:textSize="24sp" />
@@ -88,6 +95,7 @@
             android:layout_margin="10dp"
             android:background="@drawable/option_background"
             android:gravity="center"
+            android:onClick="oneOptionClicked"
             android:text="TextView"
             android:textColor="#6D35CF"
             android:textSize="24sp" />
@@ -99,6 +107,7 @@
             android:layout_margin="10dp"
             android:background="@drawable/option_background"
             android:gravity="center"
+            android:onClick="oneOptionClicked"
             android:text="TextView"
             android:textColor="#6D35CF"
             android:textSize="24sp" />
@@ -110,6 +119,7 @@
             android:layout_margin="10dp"
             android:background="@drawable/option_background"
             android:gravity="center"
+            android:onClick="oneOptionClicked"
             android:text="TextView"
             android:textColor="#6D35CF"
             android:textSize="24sp" />
@@ -118,7 +128,10 @@
             android:id="@+id/questionButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/button_background"
             android:text="Button"
             android:textColor="#FFFFFF"
