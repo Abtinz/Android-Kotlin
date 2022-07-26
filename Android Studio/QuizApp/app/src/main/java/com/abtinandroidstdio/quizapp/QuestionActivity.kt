@@ -35,12 +35,23 @@ class QuestionActivity : AppCompatActivity() {
 
     fun oneOptionClicked(view : View){
         val selectedTextView = view as TextView
+        resetOptions()
+        //this is how we make text view text bold
         selectedTextView.typeface = Typeface.DEFAULT_BOLD
     }
 
     fun resetOptions(){
 
-        var otionsTextViewArray = ArrayList<TextView>()
+        var optionsTextViewArray = ArrayList<TextView>()
+        optionsTextViewArray.add(questionBinding.firstOption)
+        optionsTextViewArray.add(questionBinding.secondOption)
+        optionsTextViewArray.add(questionBinding.thirdOption)
+        optionsTextViewArray.add(questionBinding.fourthOption)
+
+        //this is how we make text view text default style
+        for (textViewOption in optionsTextViewArray) {
+            textViewOption.typeface = Typeface.DEFAULT
+        }
 
     }
 
