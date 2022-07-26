@@ -90,6 +90,11 @@ class QuestionActivity : AppCompatActivity() {
         Toast.makeText(this , "The Capital of the country : \n${currentQuestion.questionHintText}" , Toast.LENGTH_SHORT).show()
     }
 
+    fun onClearChoiceButtonClick(view: View){
+        resetOptions()
+        selectedOption = 0
+    }
+
 
 
 
