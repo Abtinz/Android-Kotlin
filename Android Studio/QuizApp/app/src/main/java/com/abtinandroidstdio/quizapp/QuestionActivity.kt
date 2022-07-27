@@ -4,7 +4,6 @@ import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -19,6 +18,7 @@ class QuestionActivity : AppCompatActivity() {
         questionBinding = ActivityQuestionBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(questionBinding.root)
+
         questionsList = Constants.getQuestions()
         questionCreator()
     }
@@ -33,7 +33,7 @@ class QuestionActivity : AppCompatActivity() {
         questionBinding.questionImage.setImageResource(currentQuestion.Image)
         val realCurrentQuestionId   = currentQuestionId + 1
         questionBinding.progressBar.progress = realCurrentQuestionId
-        questionBinding.prograssTextView.text = "[$realCurrentQuestionId  / ${questionBinding.progressBar.max}]"
+        questionBinding.prograssTextView.text = "[$realCurrentQuestionId / ${questionBinding.progressBar.max}]"
     }
 
     fun oneOptionClicked(view : View){
@@ -106,7 +106,7 @@ class QuestionActivity : AppCompatActivity() {
                 resetOptions()
 
             }
-            
+
             if(currentQuestionId == maxIndex){
                 questionBinding.questionButton.text = "SHOW RESULTS"
             }
