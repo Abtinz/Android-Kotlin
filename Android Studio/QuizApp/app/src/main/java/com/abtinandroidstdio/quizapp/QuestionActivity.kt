@@ -1,6 +1,7 @@
 package com.abtinandroidstdio.quizapp
 
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,6 +30,7 @@ class QuestionActivity : AppCompatActivity() {
     }
 
     fun questionCreator(){
+        usernameTextViewColorSet()
         val currentQuestion = questionsList[currentQuestionId]
         questionBinding.questionText.text = currentQuestion.questionText
         questionBinding.firstOption.text = currentQuestion.firstOptionText
@@ -104,8 +106,7 @@ class QuestionActivity : AppCompatActivity() {
     fun onsubmitAnswerClick(view: View){
 
         if(questionBinding.questionButton.text == "SHOW RESULTS"){
-            val intent = Intent(this , ResultActivity::class.java)
-            startActivity(intent)
+           intentFunc()
         }
 
         if(selectedOption == 0){
@@ -172,5 +173,23 @@ class QuestionActivity : AppCompatActivity() {
         }
 
     }
+
+    fun usernameTextViewColorSet(){
+        if(correctAnswersCount >= wrongAnswersCount){
+            questionBinding.usernameTextView.setTextColor(Color.parseColor("#60AF04"))
+        }
+        else{
+            questionBinding.usernameTextView.setTextColor(Color.parseColor("#9A0202"))
+        }
+    }
+
+    fun intentFunc(){
+        val intent = Intent(this , ResultActivity::class.java)
+        intent.putExtra("username",questionBinding.usernameTextView.text)
+        intent.putExtra("correctAnswersCount" , correctAnswersCount)
+        intent.putExtra("wrongAnswersCount" , wrongAnswersCount)
+        startActivity(intent)
+    }
+
 
 }
