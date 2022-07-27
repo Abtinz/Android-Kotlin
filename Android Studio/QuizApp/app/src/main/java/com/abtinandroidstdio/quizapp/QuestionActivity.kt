@@ -106,7 +106,9 @@ class QuestionActivity : AppCompatActivity() {
     fun onsubmitAnswerClick(view: View){
 
         if(questionBinding.questionButton.text == "SHOW RESULTS"){
-           intentFunc()
+            if(selectedOption!= 0)
+                    checkAnswers()
+            intentFunc()
         }
 
         if(selectedOption == 0){

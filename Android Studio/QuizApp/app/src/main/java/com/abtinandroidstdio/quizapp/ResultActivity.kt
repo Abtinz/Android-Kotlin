@@ -20,7 +20,7 @@ class ResultActivity : AppCompatActivity() {
     }
 
     fun showResult(username:String? , correctAnswersCount:Int , wrongAnswersCount:Int , questionNumbers : Int){
-        val result = ((((correctAnswersCount*3) - wrongAnswersCount)/(correctAnswersCount*3))*100).toDouble()
+        var result = ((correctAnswersCount * 3 - wrongAnswersCount) *100 / (questionNumbers*3)).toDouble()
         binding.username.text = username
         binding.CorrectAnswearsTextView.append(correctAnswersCount.toString())
         binding.WrongAnswearsTextView.append(wrongAnswersCount.toString())
@@ -32,7 +32,7 @@ class ResultActivity : AppCompatActivity() {
             binding.username.setTextColor(Color.parseColor("#60AF04"))
         }
 
-        binding.resultTextView.text = "  % $result.toString() "
+        binding.resultTextView.text = "  % $result "
 
         if (questionNumbers == correctAnswersCount){
             binding.imageView.setImageResource(R.drawable.ic_trophy)
