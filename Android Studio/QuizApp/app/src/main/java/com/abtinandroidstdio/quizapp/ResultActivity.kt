@@ -4,6 +4,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.abtinandroidstdio.quizapp.databinding.ActivityResultBinding
+import android.media.MediaPlayer
 class ResultActivity : AppCompatActivity() {
     lateinit var binding : ActivityResultBinding
 
@@ -35,16 +36,19 @@ class ResultActivity : AppCompatActivity() {
         binding.resultTextView.text = "  % $result "
 
         if (questionNumbers == correctAnswersCount){
+            victoryMusic()
             binding.imageView.setImageResource(R.drawable.ic_trophy)
         }
         else{
-            if(correctAnswersCount >= wrongAnswersCount){
-                binding.imageView.setImageResource(R.drawable.ic_silver)
-            }else{
-                binding.imageView.setImageResource(R.drawable.ic_broonze)
-            }
+            binding.imageView.setImageResource(R.drawable.image1)
         }
 
 
+    }
+
+    fun victoryMusic(){
+        var mediaPlayer :  MediaPlayer?=null
+        mediaPlayer = MediaPlayer.create(this,R.raw.victory)
+        mediaPlayer!!.start()
     }
 }
