@@ -15,11 +15,15 @@ class QuestionActivity : AppCompatActivity() {
     lateinit var questionsList : ArrayList<Question>
     var selectedOption = 0
     var currentQuestionId = 0
+    var correctAnswersCount = 0
+    var wrongAnswersCount = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         questionBinding = ActivityQuestionBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(questionBinding.root)
 
+        val username = intent.getStringExtra("username")
+        questionBinding.usernameTextView.text = "Player Username: $username"
         questionsList = Constants.getQuestions()
         questionCreator()
     }
@@ -43,6 +47,7 @@ class QuestionActivity : AppCompatActivity() {
 
         //changing section
         resetOptions()
+
         //this is how we make text view text bold
         selectedTextView.typeface = Typeface.DEFAULT_BOLD
         selectedTextView.background = ContextCompat.getDrawable(this , R.drawable.selected_option_background)
@@ -72,7 +77,7 @@ class QuestionActivity : AppCompatActivity() {
 
     fun resetOptions(){
 
-        var optionsTextViewArray = ArrayList<TextView>()
+        val optionsTextViewArray = ArrayList<TextView>()
         optionsTextViewArray.add(questionBinding.firstOption)
         optionsTextViewArray.add(questionBinding.secondOption)
         optionsTextViewArray.add(questionBinding.thirdOption)
@@ -127,9 +132,11 @@ class QuestionActivity : AppCompatActivity() {
 
        if(selectedOption == questionsList[currentQuestionId].correctAnswerId){
                 changeBackGround(selectedOption , R.drawable.option_background_correct_answear)
+                correctAnswersCount -=-1
             }
 
        else{
+                wrongAnswersCount -=-1
                 changeBackGround(selectedOption , R.drawable.option_background_wrong_answear)
                 changeBackGround(questionsList[currentQuestionId].correctAnswerId , R.drawable.option_background_correct_answear)
             }
@@ -137,6 +144,7 @@ class QuestionActivity : AppCompatActivity() {
             selectedOption = 0
 
     }
+
     fun changeBackGround(optionId : Int , backGroundId :Int){
 
         when(optionId){

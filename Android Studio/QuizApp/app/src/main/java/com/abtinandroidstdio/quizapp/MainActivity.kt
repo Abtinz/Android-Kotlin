@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"Please fill Username field" , Toast.LENGTH_LONG).show()
         else{
             val intent = Intent(this , QuestionActivity::class.java)
+            intent.putExtra("username" , username)
             startActivity(intent)
         }
     }
