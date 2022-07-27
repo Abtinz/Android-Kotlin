@@ -96,22 +96,37 @@ class QuestionActivity : AppCompatActivity() {
         selectedOption = 0
     }
 
-    fun onsubmitAnswearClick(view: View){
+    fun onsubmitAnswerClick(view: View){
 
         if(selectedOption == 0){
             val maxIndex = questionBinding.progressBar.max - 1
             if(currentQuestionId < maxIndex){
                 currentQuestionId -=-1
                 questionCreator()
-                if(currentQuestionId == maxIndex){
-                    questionBinding.questionButton.text = "SHOW RESULTS"
-                }
+                resetOptions()
+
+            }
+            
+            if(currentQuestionId == maxIndex){
+                questionBinding.questionButton.text = "SHOW RESULTS"
+            }
+            else{
+                questionBinding.questionButton.text = "Submit Answer"
             }
 
         }
         else{
             if(selectedOption == questionsList[currentQuestionId].correctAnswerId){
                 changeBackGround(selectedOption , R.drawable.option_background_correct_answear)
+                questionBinding.questionButton.text = "NEXT QUESTION"
+                selectedOption = 0
+            }
+
+            else{
+                changeBackGround(selectedOption , R.drawable.option_background_wrong_answear)
+                changeBackGround(questionsList[currentQuestionId].correctAnswerId , R.drawable.option_background_correct_answear)
+                questionBinding.questionButton.text = "NEXT QUESTION"
+                selectedOption = 0
             }
         }
     }
@@ -143,12 +158,5 @@ class QuestionActivity : AppCompatActivity() {
         }
 
     }
-
-
-
-
-
-
-
 
 }
