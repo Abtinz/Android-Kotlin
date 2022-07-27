@@ -117,23 +117,26 @@ class QuestionActivity : AppCompatActivity() {
                 questionBinding.questionButton.text = "SHOW RESULTS"
             }
 
+        }else{
+            checkAnswers()
         }
-        else{
-            if(selectedOption == questionsList[currentQuestionId].correctAnswerId){
-                changeBackGround(selectedOption , R.drawable.option_background_correct_answear)
-                questionBinding.questionButton.text = "NEXT QUESTION"
-                selectedOption = 0
-            }
 
-            else{
-                changeBackGround(selectedOption , R.drawable.option_background_wrong_answear)
-                changeBackGround(questionsList[currentQuestionId].correctAnswerId , R.drawable.option_background_correct_answear)
-                questionBinding.questionButton.text = "NEXT QUESTION"
-                selectedOption = 0
-            }
-        }
     }
 
+    fun checkAnswers(){
+
+       if(selectedOption == questionsList[currentQuestionId].correctAnswerId){
+                changeBackGround(selectedOption , R.drawable.option_background_correct_answear)
+            }
+
+       else{
+                changeBackGround(selectedOption , R.drawable.option_background_wrong_answear)
+                changeBackGround(questionsList[currentQuestionId].correctAnswerId , R.drawable.option_background_correct_answear)
+            }
+            questionBinding.questionButton.text = "NEXT QUESTION"
+            selectedOption = 0
+
+    }
     fun changeBackGround(optionId : Int , backGroundId :Int){
 
         when(optionId){
