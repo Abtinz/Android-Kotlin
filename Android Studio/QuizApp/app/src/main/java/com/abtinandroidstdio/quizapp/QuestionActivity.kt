@@ -1,5 +1,6 @@
 package com.abtinandroidstdio.quizapp
 
+import android.content.Intent
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -69,7 +70,6 @@ class QuestionActivity : AppCompatActivity() {
     }
 
 
-
     fun resetOptions(){
 
         var optionsTextViewArray = ArrayList<TextView>()
@@ -98,20 +98,23 @@ class QuestionActivity : AppCompatActivity() {
 
     fun onsubmitAnswerClick(view: View){
 
+        if(questionBinding.questionButton.text == "SHOW RESULTS"){
+            val intent = Intent(this , ResultActivity::class.java)
+            startActivity(intent)
+        }
+
         if(selectedOption == 0){
             val maxIndex = questionBinding.progressBar.max - 1
             if(currentQuestionId < maxIndex){
                 currentQuestionId -=-1
                 questionCreator()
                 resetOptions()
+                questionBinding.questionButton.text = "Submit Answer"
 
             }
 
             if(currentQuestionId == maxIndex){
                 questionBinding.questionButton.text = "SHOW RESULTS"
-            }
-            else{
-                questionBinding.questionButton.text = "Submit Answer"
             }
 
         }
