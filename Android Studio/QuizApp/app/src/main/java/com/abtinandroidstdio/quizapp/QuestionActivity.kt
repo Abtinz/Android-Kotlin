@@ -23,7 +23,7 @@ class QuestionActivity : AppCompatActivity() {
         setContentView(questionBinding.root)
 
         val username = intent.getStringExtra("username")
-        questionBinding.usernameTextView.text = "Player Username: $username"
+        questionBinding.usernameTextView.text = username
         questionsList = Constants.getQuestions()
         questionCreator()
     }
