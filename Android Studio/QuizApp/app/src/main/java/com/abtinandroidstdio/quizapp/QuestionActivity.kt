@@ -188,8 +188,8 @@ class QuestionActivity : AppCompatActivity() {
         intent.putExtra("username",questionBinding.usernameTextView.text)
         intent.putExtra("correctAnswersCount" , correctAnswersCount)
         intent.putExtra("wrongAnswersCount" , wrongAnswersCount)
+        intent.putExtra("questionNumbers" , questionsList.size)
         startActivity(intent)
     }
-
 
 }
