@@ -107,11 +107,41 @@ class QuestionActivity : AppCompatActivity() {
                     questionBinding.questionButton.text = "SHOW RESULTS"
                 }
             }
-            else{
-
-            }
 
         }
+        else{
+            if(selectedOption == questionsList[currentQuestionId].correctAnswerId){
+                changeBackGround(selectedOption , R.drawable.option_background_correct_answear)
+            }
+        }
+    }
+
+    fun changeBackGround(optionId : Int , backGroundId :Int){
+
+        when(optionId){
+            1 -> {
+                questionBinding.firstOption.background = ContextCompat.getDrawable(this , backGroundId)
+            }
+        }
+
+        when(optionId){
+            2 -> {
+                questionBinding.secondOption.background = ContextCompat.getDrawable(this , backGroundId)
+            }
+        }
+
+        when(optionId){
+            3 -> {
+                questionBinding.thirdOption.background = ContextCompat.getDrawable(this , backGroundId)
+            }
+        }
+
+        when(optionId){
+            4 -> {
+                questionBinding.fourthOption.background = ContextCompat.getDrawable(this , backGroundId)
+            }
+        }
+
     }
 
 
