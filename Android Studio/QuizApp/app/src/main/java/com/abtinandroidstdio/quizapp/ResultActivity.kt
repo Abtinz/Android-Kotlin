@@ -25,6 +25,7 @@ class ResultActivity : AppCompatActivity() {
         binding.username.text = username
         binding.CorrectAnswearsTextView.append(correctAnswersCount.toString())
         binding.WrongAnswearsTextView.append(wrongAnswersCount.toString())
+        binding.percentView.append(((wrongAnswersCount*100)/correctAnswersCount).toDouble().toString())
         //uername color
         if(wrongAnswersCount > correctAnswersCount){
             binding.username.setTextColor(Color.parseColor("#9A0202"))

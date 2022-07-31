@@ -76,7 +76,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="Wrong Answears Count:  "
+            android:text="Wrong Answers Count:  "
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/percentView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Wrong Answer / Correct Answer:  %"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
