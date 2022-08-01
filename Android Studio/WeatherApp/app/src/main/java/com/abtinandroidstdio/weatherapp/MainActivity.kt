@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
                 val todo = Todo(jsonObject.getInt("userId") ,jsonObject.getInt("id")
                     ,jsonObject.getString("title") ,  jsonObject.getBoolean("completed"))
 
+                Log.d("tagTodo" , "Json: ${todo.toString()}")
+
             }
 
         })
