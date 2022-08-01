@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import okhttp3.*
+import org.json.JSONObject
 import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +24,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call, response: Response) {
-                Log.d("tagJson" , "Json: ${response.body!!.string()}")
+                val rawJSONContex = response.body!!.string()
+                Log.d("tagJson" , "Json: ${rawJSONContex}")
+                val jsonObject = JSONObject(rawJSONContex)
             }
 
         })
