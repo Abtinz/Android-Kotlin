@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
                 val rawJSONContex = response.body!!.string()
                 Log.d("tagJson" , "Json: ${rawJSONContex}")
                 val jsonObject = JSONObject(rawJSONContex)
+                val userId = jsonObject.getInt("userId")
+                val Id = jsonObject.getInt("id")
+
             }
 
         })
