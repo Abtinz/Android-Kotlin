@@ -27,8 +27,9 @@ class MainActivity : AppCompatActivity() {
                 val rawJSONContex = response.body!!.string()
                 Log.d("tagJson" , "Json: ${rawJSONContex}")
                 val jsonObject = JSONObject(rawJSONContex)
-                val userId = jsonObject.getInt("userId")
-                val Id = jsonObject.getInt("id")
+
+                val todo = Todo(jsonObject.getInt("userId") ,jsonObject.getInt("id")
+                    ,jsonObject.getString("title") ,  jsonObject.getBoolean("completed"))
 
             }
 
