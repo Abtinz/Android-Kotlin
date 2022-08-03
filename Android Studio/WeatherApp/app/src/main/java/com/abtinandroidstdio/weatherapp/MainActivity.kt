@@ -27,9 +27,9 @@ class MainActivity : AppCompatActivity() {
                 val rawJSONContex = response.body!!.string()
                 Log.d("tagJson" , "Json: ${rawJSONContex}")
                 val jsonObject = JSONObject(rawJSONContex)
-                
+
                 runOnUiThread {
-                    ToatMaker(jsonObject)
+                    cityNameFunc(jsonObject)
                 }
 
             }
@@ -37,8 +37,8 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun ToatMaker(jsonObject:JSONObject){
+    fun cityNameFunc(jsonObject:JSONObject){
         val cityName = jsonObject.getString("name")
-        Toast.makeText(this,cityName,Toast.LENGTH_SHORT).show()
+        
     }
 }
