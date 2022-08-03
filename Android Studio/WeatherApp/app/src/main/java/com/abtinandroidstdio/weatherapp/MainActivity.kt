@@ -3,14 +3,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.abtinandroidstdio.weatherapp.databinding.ActivityMainBinding
 import okhttp3.*
 import org.json.JSONObject
 import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
+    lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         initialFunc()
     }
 
@@ -37,8 +40,16 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+
+
     fun cityNameFunc(jsonObject:JSONObject){
         val cityName = jsonObject.getString("name")
-        
+        binding.cityName.text = cityName
+        descriptionOfWeatherFunc(jsonObject)
+
+    }
+
+   fun descriptionOfWeatherFunc(jsonObject: JSONObject) {
+
     }
 }
