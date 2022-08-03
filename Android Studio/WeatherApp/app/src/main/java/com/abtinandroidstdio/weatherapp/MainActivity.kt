@@ -13,16 +13,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initFunction()
+    }
 
-
+    fun initFunction(){
         val apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=tehran&appid=a5ab76fae5a9227d96ff3adf0b793c8f&lang=fa"
         val jsonDownloaderObject = JsonDownloader(apiUrl)
         val jsonStr = jsonDownloaderObject.downloadFunction()
         if(jsonStr.equals("Fail")){
             Toast.makeText(this,"Weather App isn't responding please try later",Toast.LENGTH_SHORT).show()
         }else{
-            jsonObject = JSONObject()
+            jsonObject = JSONObject(jsonStr)
+            Toast.makeText(this,jsonObject.getString("name"),Toast.LENGTH_SHORT).show()
         }
-        
+
     }
 }
