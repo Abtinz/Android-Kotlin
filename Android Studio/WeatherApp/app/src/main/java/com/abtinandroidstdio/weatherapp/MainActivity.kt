@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         var client = OkHttpClient()
         var request = Request.Builder()
-            .url("https://jsonplaceholder.typicode.com/todos/1")
+            .url("https://api.openweathermap.org/data/2.5/weather?q=tehran&appid=a5ab76fae5a9227d96ff3adf0b793c8f&lang=fa")
             .build()
 
         client.newCall(request).enqueue(object : Callback {
