@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initialFunc()
     }
-
+    
     fun initialFunc(){
         val client = OkHttpClient()
         val request = Request.Builder()
@@ -27,9 +27,9 @@ class MainActivity : AppCompatActivity() {
                 TODO("Not yet implemented")
             }
             override fun onResponse(call: Call, response: Response) {
-                val rawJSONContex = response.body!!.string()
-                Log.d("tagJson" , "Json: ${rawJSONContex}")
-                val jsonObject = JSONObject(rawJSONContex)
+                val rawJSONContext = response.body!!.string()
+                Log.d("tagJson" , "Json: ${rawJSONContext}")
+                val jsonObject = JSONObject(rawJSONContext)
 
                 runOnUiThread {
                     cityNameFunc(jsonObject)
@@ -51,5 +51,8 @@ class MainActivity : AppCompatActivity() {
 
    fun descriptionOfWeatherFunc(jsonObject: JSONObject) {
 
+       val weatherArray = jsonObject.getJSONArray("weather")
+       val weatherArrayJsonObject = weatherArray.getJSONObject(0)
+       binding.weatherDescription.text = weatherArrayJsonObject.getString("description")
     }
 }
