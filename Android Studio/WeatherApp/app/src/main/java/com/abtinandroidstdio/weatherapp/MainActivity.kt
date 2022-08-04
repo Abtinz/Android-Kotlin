@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initialFunc()
     }
-    
+
     fun initialFunc(){
         val client = OkHttpClient()
         val request = Request.Builder()
@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
     fun cityNameFunc(jsonObject:JSONObject){
         val cityName = jsonObject.getString("name")
         binding.cityName.text = cityName
@@ -54,5 +53,13 @@ class MainActivity : AppCompatActivity() {
        val weatherArray = jsonObject.getJSONArray("weather")
        val weatherArrayJsonObject = weatherArray.getJSONObject(0)
        binding.weatherDescription.text = weatherArrayJsonObject.getString("description")
+       weatherIconDownloader(weatherArrayJsonObject )
     }
+
+
+   fun weatherIconDownloader(weatherArrayJsonObject :JSONObject) {
+
+       val iconId = weatherArrayJsonObject.getString("icon")
+       val iconUrl = "https://openweathermap.org/img/wn/$iconId@2x.png"
+   }
 }
