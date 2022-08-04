@@ -73,6 +73,8 @@ class MainActivity : AppCompatActivity() {
         val sunsetTime = jsonObject.getJSONObject("sys").getInt("sunset")
         val sunriseText = timeFormatter(sunriseTime)
         val sunsetText = timeFormatter(sunsetTime)
+        binding.sunriseTextView.append(sunriseText.toString())
+        binding.sunriseTextView.append(sunsetText.toString())
     }
 
     fun timeFormatter(time :Int):String{
