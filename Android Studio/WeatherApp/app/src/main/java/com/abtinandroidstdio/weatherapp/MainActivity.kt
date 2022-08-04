@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.abtinandroidstdio.weatherapp.databinding.ActivityMainBinding
+import com.bumptech.glide.Glide
 import okhttp3.*
 import org.json.JSONObject
 import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -54,6 +57,7 @@ class MainActivity : AppCompatActivity() {
        val weatherArrayJsonObject = weatherArray.getJSONObject(0)
        binding.weatherDescription.text = weatherArrayJsonObject.getString("description")
        weatherIconDownloader(weatherArrayJsonObject )
+       sunRiseAndSunSetView(jsonObject)
     }
 
 
@@ -61,5 +65,20 @@ class MainActivity : AppCompatActivity() {
 
        val iconId = weatherArrayJsonObject.getString("icon")
        val iconUrl = "https://openweathermap.org/img/wn/$iconId@2x.png"
+       Glide.with(this@MainActivity).load(iconUrl).into(binding.iconImage)
    }
+
+    fun sunRiseAndSunSetView(jsonObject :JSONObject){
+        val sunriseTime = jsonObject.getJSONObject("sys").getInt("sunrise")
+        val sunsetTime = jsonObject.getJSONObject("sys").getInt("sunset")
+        val sunriseText = timeFormatter(sunriseTime)
+        val sunsetText = timeFormatter(sunsetTime)
+    }
+
+    fun timeFormatter(time :Int):String{
+        val longTime = time * 1000.toLong()
+        val date = Date(longTime)
+        val dateFormatter = SimpleDateFormat("HH:mm a")
+        return dateFormatter.format(date)
+    }
 }
