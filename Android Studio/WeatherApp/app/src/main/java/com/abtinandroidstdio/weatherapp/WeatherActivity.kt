@@ -13,20 +13,23 @@ import java.util.*
 
 class WeatherActivity : AppCompatActivity() {
     lateinit var binding:ActivityWeatherBinding
+    lateinit var cityName : String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWeatherBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        cityName = intent.getStringExtra("cityName").toString()
         initialFunc()
     }
     fun initialFunc(){
         val client = OkHttpClient()
+        val url = "https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=a5ab76fae5a9227d96ff3adf0b793c8f&lang=fa"
         val request = Request.Builder()
-            .url("https://api.openweathermap.org/data/2.5/weather?q=tehran&appid=a5ab76fae5a9227d96ff3adf0b793c8f&lang=fa")
+            .url(url)
             .build()
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-                TODO("Not yet implemented")
+
             }
             override fun onResponse(call: Call, response: Response) {
                 val rawJSONContext = response.body!!.string()

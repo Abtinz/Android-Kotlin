@@ -53,7 +53,8 @@
                 android:textColor="#5972FB"
                 android:textSize="20sp"
                 tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="192dp" />
+                tools:layout_editor_absoluteY="192dp"
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/sunriseTextView"
@@ -63,7 +64,8 @@
                 android:textColor="#5972FB"
                 android:textSize="20sp"
                 tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="111dp" />
+                tools:layout_editor_absoluteY="111dp"
+                tools:ignore="MissingConstraints" />
 
             <ImageView
                 android:id="@+id/iconImage"
@@ -71,7 +73,8 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_launcher_foreground"
                 tools:layout_editor_absoluteX="226dp"
-                tools:layout_editor_absoluteY="111dp" />
+                tools:layout_editor_absoluteY="111dp"
+                tools:ignore="MissingConstraints" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
