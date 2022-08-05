@@ -91,13 +91,23 @@
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="10dp"
                 app:layout_constraintBottom_toBottomOf="@+id/sunriseTextView"
                 app:layout_constraintStart_toEndOf="@+id/sunriseTextView"
                 app:layout_constraintTop_toTopOf="@+id/sunriseTextView"
                 app:srcCompat="@drawable/ic_sunrise2" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/sunsetTextView"
+                app:layout_constraintStart_toEndOf="@+id/sunsetTextView"
+                app:layout_constraintTop_toTopOf="@+id/sunsetTextView"
+                app:srcCompat="@drawable/ic_sunset2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -160,6 +170,13 @@
                     android:layout_weight="0.85"
                     android:textColor="#5972FB"
                     android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    app:srcCompat="@drawable/ic_temperature_down" />
             </LinearLayout>
 
             <LinearLayout
@@ -176,6 +193,13 @@
                     android:layout_weight="0.85"
                     android:textColor="#5972FB"
                     android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    app:srcCompat="@drawable/ic_temperature_up" />
             </LinearLayout>
 
             <LinearLayout
