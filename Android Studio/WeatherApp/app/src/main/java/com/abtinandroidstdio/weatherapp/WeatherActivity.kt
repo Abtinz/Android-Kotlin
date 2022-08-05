@@ -85,6 +85,7 @@ class WeatherActivity : AppCompatActivity() {
             binding.sunriseTextView.text = sunriseText.toString().plus(binding.sunriseTextView.text)
             binding.sunsetTextView.text = sunsetText.toString().plus(binding.sunsetTextView.text)
         }
+        weatherDetails(jsonObject)
 
     }
 
@@ -112,5 +113,14 @@ class WeatherActivity : AppCompatActivity() {
             binding.temperatureView.text = "Air Temperature:  "
 
         }
+    }
+
+    fun weatherDetails(jsonObject : JSONObject){
+       val mainJSONObject = jsonObject.getJSONObject("main")
+       val temperature = mainJSONObject.getDouble("temp")
+       val minTemperature = mainJSONObject.getDouble("temp_min")
+        val maxTemperature = mainJSONObject.getDouble("temp_max")
+        val  humidity = mainJSONObject.getDouble("humidity")
+
     }
 }
