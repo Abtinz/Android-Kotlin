@@ -78,13 +78,8 @@ class WeatherActivity : AppCompatActivity() {
         val sunsetTime = jsonObject.getJSONObject("sys").getInt("sunset")
         val sunriseText = timeFormatter(sunriseTime)
         val sunsetText = timeFormatter(sunsetTime)
-        if(appLanguage.equals("en")){
-            binding.sunriseTextView.append(sunriseText.toString())
-            binding.sunsetTextView.append(sunsetText.toString())
-        }else{
-            binding.sunriseTextView.text = sunriseText.toString().plus(binding.sunriseTextView.text)
-            binding.sunsetTextView.text = sunsetText.toString().plus(binding.sunsetTextView.text)
-        }
+        binding.sunriseTextView.append(sunriseText.toString())
+        binding.sunsetTextView.append(sunsetText.toString())
         weatherDetails(jsonObject)
 
     }
@@ -119,20 +114,13 @@ class WeatherActivity : AppCompatActivity() {
        val mainJSONObject = jsonObject.getJSONObject("main")
        val temperature = mainJSONObject.getDouble("temp")
        val minTemperature = mainJSONObject.getDouble("temp_min")
-        val maxTemperature = mainJSONObject.getDouble("temp_max")
-        val  humidity = mainJSONObject.getDouble("humidity")
+       val maxTemperature = mainJSONObject.getDouble("temp_max")
+       val  humidity = mainJSONObject.getDouble("humidity")
 
-        if(appLanguage.equals("en")){
-            binding.maxTemperatureView.append(maxTemperature.toString())
-            binding.minTemperatureView.append(minTemperature.toString())
-            binding.humidityView.append(humidity.toString())
-            binding.temperatureView.append(temperature.toString())
-        }else{
-            binding.maxTemperatureView.text = maxTemperature.toString().plus(binding.maxTemperatureView.text)
-            binding.minTemperatureView.text = minTemperature.toString().plus(binding.minTemperatureView.text)
-            binding.humidityView.text = humidity.toString().plus(binding.humidityView.text)
-            binding.temperatureView.text = temperature.toString().plus(binding.temperatureView.text)
-        }
+        binding.maxTemperatureView.append(maxTemperature.toString())
+        binding.minTemperatureView.append(minTemperature.toString())
+        binding.humidityView.append(humidity.toString())
+        binding.temperatureView.append(temperature.toString())
 
     }
 }
