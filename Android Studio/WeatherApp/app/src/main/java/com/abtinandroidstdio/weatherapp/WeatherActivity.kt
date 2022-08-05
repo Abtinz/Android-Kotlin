@@ -122,5 +122,17 @@ class WeatherActivity : AppCompatActivity() {
         val maxTemperature = mainJSONObject.getDouble("temp_max")
         val  humidity = mainJSONObject.getDouble("humidity")
 
+        if(appLanguage.equals("en")){
+            binding.maxTemperatureView.append(maxTemperature.toString())
+            binding.minTemperatureView.append(minTemperature.toString())
+            binding.humidityView.append(humidity.toString())
+            binding.temperatureView.append(temperature.toString())
+        }else{
+            binding.maxTemperatureView.text = maxTemperature.toString().plus(binding.maxTemperatureView.text)
+            binding.minTemperatureView.text = minTemperature.toString().plus(binding.minTemperatureView.text)
+            binding.humidityView.text = humidity.toString().plus(binding.humidityView.text)
+            binding.temperatureView.text = temperature.toString().plus(binding.temperatureView.text)
+        }
+
     }
 }
