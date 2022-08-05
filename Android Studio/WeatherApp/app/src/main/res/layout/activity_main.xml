@@ -31,7 +31,7 @@
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/CityNameInputView"
+        android:id="@+id/InputView"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,6 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/CityNameInputView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="City Name" />
@@ -60,7 +61,7 @@
         android:text="Search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CityNameInputView" />
+        app:layout_constraintTop_toBottomOf="@+id/InputView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

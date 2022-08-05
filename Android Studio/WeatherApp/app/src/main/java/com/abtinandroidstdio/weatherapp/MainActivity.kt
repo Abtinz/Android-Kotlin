@@ -1,6 +1,9 @@
 package com.abtinandroidstdio.weatherapp
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import com.abtinandroidstdio.weatherapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -10,6 +13,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+    }
+
+    fun onSearchClick(view : View){
+
+        val cityName = binding.CityNameInputView.text.toString()
+        if(cityName.isEmpty()){
+            Toast.makeText(this,"Please fill \"City Name\" field" , Toast.LENGTH_LONG).show()
+        }else{
+            val intent = Intent(this , WeatherActivity::class.java)
+            intent.putExtra("cityName" , cityName)
+            startActivity(intent)
+        }
     }
 
 
