@@ -25,7 +25,7 @@ class WeatherActivity : AppCompatActivity() {
     }
     fun initialFunc(){
         val client = OkHttpClient()
-        val url = "https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=a5ab76fae5a9227d96ff3adf0b793c8f&lang=$appLanguage"
+        val url = "https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=a5ab76fae5a9227d96ff3adf0b793c8f&lang=$appLanguage&units=metric"
         val request = Request.Builder()
             .url(url)
             .build()
@@ -73,12 +73,14 @@ class WeatherActivity : AppCompatActivity() {
     }
 
     fun sunRiseAndSunSetView(jsonObject : JSONObject){
+        languageSelection()
         val sunriseTime = jsonObject.getJSONObject("sys").getInt("sunrise")
         val sunsetTime = jsonObject.getJSONObject("sys").getInt("sunset")
         val sunriseText = timeFormatter(sunriseTime)
         val sunsetText = timeFormatter(sunsetTime)
         binding.sunriseTextView.append(sunriseText.toString())
         binding.sunsetTextView.append(sunsetText.toString())
+
     }
 
     fun timeFormatter(time :Int):String{
@@ -86,5 +88,24 @@ class WeatherActivity : AppCompatActivity() {
         val date = Date(longTime)
         val dateFormatter = SimpleDateFormat("HH:mm a")
         return dateFormatter.format(date)
+    }
+
+    fun languageSelection(){
+        if(appLanguage.equals("fa")){
+            binding.sunriseTextView.text = "ساعت طلوع آفتاب :"
+            binding.sunsetTextView.text = "ساعت غروب آفتاب :"
+            binding.maxTemperatureView.text = "بیشینه دمای هوا : "
+            binding.minTemperatureView.text = "کمینه دمای هوا : "
+            binding.humidityView.text = "رطوبت هوا : "
+            binding.temperatureView.text = "دمای هوا : "
+        }else{
+            binding.sunriseTextView.text = "sunrise Time:"
+            binding.sunsetTextView.text = "sunset Time:  "
+            binding.maxTemperatureView.text = "max Temperature:  "
+            binding.minTemperatureView.text = "min Temperature:  "
+            binding.humidityView.text = "Humidity Of Air: "
+            binding.temperatureView.text = "Air Temperature:  "
+
+        }
     }
 }
