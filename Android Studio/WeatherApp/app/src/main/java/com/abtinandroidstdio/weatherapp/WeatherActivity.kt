@@ -31,7 +31,7 @@ class WeatherActivity : AppCompatActivity() {
             .build()
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-
+                TODO()
             }
             override fun onResponse(call: Call, response: Response) {
                 val rawJSONContext = response.body!!.string()
