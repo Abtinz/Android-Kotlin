@@ -78,8 +78,13 @@ class WeatherActivity : AppCompatActivity() {
         val sunsetTime = jsonObject.getJSONObject("sys").getInt("sunset")
         val sunriseText = timeFormatter(sunriseTime)
         val sunsetText = timeFormatter(sunsetTime)
-        binding.sunriseTextView.append(sunriseText.toString())
-        binding.sunsetTextView.append(sunsetText.toString())
+        if(appLanguage.equals("en")){
+            binding.sunriseTextView.append(sunriseText.toString())
+            binding.sunsetTextView.append(sunsetText.toString())
+        }else{
+            binding.sunriseTextView.text = sunriseText.toString().plus(binding.sunriseTextView.text)
+            binding.sunsetTextView.text = sunsetText.toString().plus(binding.sunsetTextView.text)
+        }
 
     }
 
