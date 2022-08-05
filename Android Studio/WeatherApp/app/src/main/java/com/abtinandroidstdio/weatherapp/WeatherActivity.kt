@@ -14,16 +14,18 @@ import java.util.*
 class WeatherActivity : AppCompatActivity() {
     lateinit var binding:ActivityWeatherBinding
     lateinit var cityName : String
+    lateinit var appLanguage : String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWeatherBinding.inflate(layoutInflater)
         setContentView(binding.root)
         cityName = intent.getStringExtra("cityName").toString()
+        appLanguage = intent.getStringExtra("appLanguage").toString()
         initialFunc()
     }
     fun initialFunc(){
         val client = OkHttpClient()
-        val url = "https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=a5ab76fae5a9227d96ff3adf0b793c8f&lang=fa"
+        val url = "https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=a5ab76fae5a9227d96ff3adf0b793c8f&lang=$appLanguage"
         val request = Request.Builder()
             .url(url)
             .build()
