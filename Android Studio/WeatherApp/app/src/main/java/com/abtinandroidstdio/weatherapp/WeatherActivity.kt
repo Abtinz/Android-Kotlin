@@ -64,7 +64,7 @@ class WeatherActivity : AppCompatActivity() {
 
         val iconId = weatherArrayJsonObject.getString("icon")
         val iconUrl = "https://openweathermap.org/img/wn/$iconId@2x.png"
-        Glide.with(this@MainActivity).load(iconUrl).into(binding.iconImage)
+        Glide.with(this@WeatherActivity).load(iconUrl).into(binding.iconImage)
     }
 
     fun sunRiseAndSunSetView(jsonObject : JSONObject){
