@@ -64,7 +64,7 @@ class WeatherActivity : AppCompatActivity() {
 
     }
 
-    fun descriptionOfWeatherFunc(jsonObject: JSONObject) {
+    private fun descriptionOfWeatherFunc(jsonObject: JSONObject) {
 
         val weatherArray = jsonObject.getJSONArray("weather")
         val weatherArrayJsonObject = weatherArray.getJSONObject(0)
@@ -74,14 +74,14 @@ class WeatherActivity : AppCompatActivity() {
     }
 
 
-    fun weatherIconDownloader(weatherArrayJsonObject : JSONObject) {
+    private fun weatherIconDownloader(weatherArrayJsonObject : JSONObject) {
 
         val iconId = weatherArrayJsonObject.getString("icon")
         val iconUrl = "https://openweathermap.org/img/wn/$iconId@2x.png"
         Glide.with(this@WeatherActivity).load(iconUrl).into(binding.iconImage)
     }
 
-    fun sunRiseAndSunSetView(jsonObject : JSONObject){
+    private fun sunRiseAndSunSetView(jsonObject : JSONObject){
         languageSelection()
         val sunriseTime = jsonObject.getJSONObject("sys").getInt("sunrise")
         val sunsetTime = jsonObject.getJSONObject("sys").getInt("sunset")
@@ -93,14 +93,14 @@ class WeatherActivity : AppCompatActivity() {
 
     }
 
-    fun timeFormatter(time :Int):String{
+    private fun timeFormatter(time :Int):String{
         val longTime = time * 1000.toLong()
         val date = Date(longTime)
         val dateFormatter = SimpleDateFormat("HH:mm a")
         return dateFormatter.format(date)
     }
 
-    fun languageSelection(){
+    private fun languageSelection(){
         if(appLanguage.equals("fa")){
             binding.sunriseTextView.text = "ساعت طلوع آفتاب :"
             binding.sunsetTextView.text = "ساعت غروب آفتاب :"
@@ -128,7 +128,7 @@ class WeatherActivity : AppCompatActivity() {
         }
     }
 
-    fun weatherDetails(jsonObject : JSONObject){
+    private fun weatherDetails(jsonObject : JSONObject){
        val mainJSONObject = jsonObject.getJSONObject("main")
        val temperature = mainJSONObject.getDouble("temp")
        val minTemperature = mainJSONObject.getDouble("temp_min")
@@ -139,8 +139,16 @@ class WeatherActivity : AppCompatActivity() {
         binding.minTemperatureView.append(minTemperature.toString())
         binding.humidityView.append(humidity.toString())
         binding.temperatureView.append(temperature.toString())
-
+        windSetter(jsonObject)
     }
 
-    
+    private fun windSetter(jsonObject : JSONObject){
+        val windJSONObject = jsonObject.getJSONObject("wind")
+        val windSpeed = windJSONObject.getDouble("speed")
+        val windDeg = windJSONObject.getDouble("deg")
+        binding.minTemperatureView.append(windSpeed.toString().plus(" Km/h"))
+        binding.temperatureView.append(windDeg.toString())
+    }
+
+
 }
