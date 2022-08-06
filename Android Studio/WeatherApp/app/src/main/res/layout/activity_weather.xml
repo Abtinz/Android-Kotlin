@@ -317,7 +317,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0.2"
-                            app:srcCompat="@drawable/ic_celcius" />
+                            app:srcCompat="@drawable/ic_wind_2" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -342,7 +342,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0.2"
-                            app:srcCompat="@drawable/ic_temperature_down" />
+                            app:srcCompat="@drawable/ic_wave" />
                     </LinearLayout>
 
                 </LinearLayout>
