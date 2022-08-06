@@ -58,7 +58,7 @@
                 android:padding="4dp"
                 android:text="sunrise :    "
                 android:textColor="#5972FB"
-                android:textSize="20sp"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -74,7 +74,7 @@
                 android:padding="4dp"
                 android:text="sunset:    "
                 android:textColor="#5972FB"
-                android:textSize="20sp"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sunriseTextView"
@@ -152,7 +152,7 @@
                     android:background="@drawable/textviewbackground"
                     android:padding="3dp"
                     android:textColor="#5972FB"
-                    android:textSize="20sp" />
+                    android:textSize="18dp" />
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -177,7 +177,7 @@
                     android:background="@drawable/textviewbackground"
                     android:padding="3dp"
                     android:textColor="#5972FB"
-                    android:textSize="20sp" />
+                    android:textSize="18dp" />
 
                 <ImageView
                     android:id="@+id/imageView7"
@@ -202,7 +202,7 @@
                     android:background="@drawable/textviewbackground"
                     android:padding="3dp"
                     android:textColor="#5972FB"
-                    android:textSize="20sp" />
+                    android:textSize="18dp" />
 
                 <ImageView
                     android:id="@+id/imageView6"
@@ -227,7 +227,7 @@
                     android:background="@drawable/textviewbackground"
                     android:padding="3dp"
                     android:textColor="#5972FB"
-                    android:textSize="20sp" />
+                    android:textSize="18dp" />
 
                 <ImageView
                     android:id="@+id/imageView3"
