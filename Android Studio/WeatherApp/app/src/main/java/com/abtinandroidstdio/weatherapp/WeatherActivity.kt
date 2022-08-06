@@ -108,6 +108,10 @@ class WeatherActivity : AppCompatActivity() {
             binding.minTemperatureView.text = "کمینه دمای هوا : "
             binding.humidityView.text = "رطوبت هوا : "
             binding.temperatureView.text = "دمای هوا : "
+            binding.weatherDescription.text = "وضعیت دما و هوا:"
+            binding.windDetailsView.text = "وضعیت وزش باد:"
+            binding.windSpeedView.text = "سرعت باد :  "
+            binding.windDegTextView.text = "جهت وزش باد:  "
         }else{
             binding.sunriseTextView.text = "sunrise Time:"
             binding.sunsetTextView.text = "sunset Time:  "
@@ -115,6 +119,11 @@ class WeatherActivity : AppCompatActivity() {
             binding.minTemperatureView.text = "min Temperature:  "
             binding.humidityView.text = "Humidity Of Air: "
             binding.temperatureView.text = "Air Temperature:  "
+            binding.weatherDescription.text = "Air & Temperature:"
+            binding.windDetailsView.text = "Wind:"
+            binding.windSpeedView.text = "wind speed:  "
+            binding.windDegTextView.text = "wind degrees:  "
+
 
         }
     }
@@ -132,4 +141,6 @@ class WeatherActivity : AppCompatActivity() {
         binding.temperatureView.append(temperature.toString())
 
     }
+
+    
 }
