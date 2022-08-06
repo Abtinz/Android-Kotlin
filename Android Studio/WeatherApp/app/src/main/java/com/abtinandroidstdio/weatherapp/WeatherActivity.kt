@@ -112,6 +112,9 @@ class WeatherActivity : AppCompatActivity() {
             binding.windDetailsView.text = "وضعیت وزش باد:"
             binding.windSpeedView.text = "سرعت باد :  "
             binding.windDegTextView.text = "جهت وزش باد:  "
+            binding.otherDetails.text  = "وضعیت جوی: "
+            binding.visibilityView.text = "شعاع دید(کیلومتر):  "
+            binding.pressureView.text = "فشار هوا:  "
         }else{
             binding.sunriseTextView.text = "sunrise Time:"
             binding.sunsetTextView.text = "sunset Time:  "
@@ -123,6 +126,9 @@ class WeatherActivity : AppCompatActivity() {
             binding.windDetailsView.text = "Wind:"
             binding.windSpeedView.text = "wind speed:  "
             binding.windDegTextView.text = "wind degrees:  "
+            binding.otherDetails.text  = "Other Details:"
+            binding.visibilityView.text = "visibility(Km):  "
+            binding.pressureView.text = "pressure: "
 
 
         }
@@ -132,13 +138,17 @@ class WeatherActivity : AppCompatActivity() {
        val mainJSONObject = jsonObject.getJSONObject("main")
        val temperature = mainJSONObject.getDouble("temp")
        val minTemperature = mainJSONObject.getDouble("temp_min")
-       val maxTemperature = mainJSONObject.getDouble("temp_max")
+       val  maxTemperature = mainJSONObject.getDouble("temp_max")
        val  humidity = mainJSONObject.getDouble("humidity")
+       val  pressure =  mainJSONObject.getDouble("pressure")
+       val  visibility = jsonObject.getDouble("visibility")
 
         binding.maxTemperatureView.append(maxTemperature.toString())
         binding.minTemperatureView.append(minTemperature.toString())
         binding.humidityView.append(humidity.toString())
         binding.temperatureView.append(temperature.toString())
+        binding.pressureView.append(pressure.toString())
+        binding.visibilityView.append(visibility.toString())
         windSetter(jsonObject)
     }
 
