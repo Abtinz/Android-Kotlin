@@ -1,20 +1,29 @@
 package com.abtinandroidstdio.weatherapp
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.abtinandroidstdio.weatherapp.databinding.ActivityWeatherBinding
 import com.bumptech.glide.Glide
+import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import okhttp3.*
 import org.json.JSONObject
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
+
 class WeatherActivity : AppCompatActivity() {
+
+
     lateinit var binding:ActivityWeatherBinding
     lateinit var cityName : String
     lateinit var appLanguage : String
+
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase!!))
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWeatherBinding.inflate(layoutInflater)
