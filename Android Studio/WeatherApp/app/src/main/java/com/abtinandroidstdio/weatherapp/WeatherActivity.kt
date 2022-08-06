@@ -108,7 +108,7 @@ class WeatherActivity : AppCompatActivity() {
             binding.minTemperatureView.text = "کمینه دمای هوا : "
             binding.humidityView.text = "رطوبت هوا : "
             binding.temperatureView.text = "دمای هوا : "
-            binding.weatherDescription.text = "وضعیت دما و هوا:"
+            binding.weatherDescripton.text = "وضعیت دما و هوا:"
             binding.windDetailsView.text = "وضعیت وزش باد:"
             binding.windSpeedView.text = "سرعت باد :  "
             binding.windDegTextView.text = "جهت وزش باد:  "
@@ -146,8 +146,8 @@ class WeatherActivity : AppCompatActivity() {
         val windJSONObject = jsonObject.getJSONObject("wind")
         val windSpeed = windJSONObject.getDouble("speed")
         val windDeg = windJSONObject.getDouble("deg")
-        binding.minTemperatureView.append(windSpeed.toString().plus(" Km/h"))
-        binding.temperatureView.append(windDeg.toString())
+        binding.windSpeedView.append(windSpeed.toString().plus(" Km/h"))
+        binding.windDegTextView.append(windDeg.toString())
     }
 
 
