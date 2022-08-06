@@ -119,7 +119,7 @@ class WeatherActivity : AppCompatActivity() {
             binding.minTemperatureView.text = "min Temperature:  "
             binding.humidityView.text = "Humidity Of Air: "
             binding.temperatureView.text = "Air Temperature:  "
-            binding.weatherDescription.text = "Air & Temperature:"
+            binding.weatherDescripton.text = "Air & Temperature:"
             binding.windDetailsView.text = "Wind:"
             binding.windSpeedView.text = "wind speed:  "
             binding.windDegTextView.text = "wind degrees:  "
