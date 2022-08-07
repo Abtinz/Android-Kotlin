@@ -3,6 +3,7 @@ package com.abtinandroidstdio.weatherapp
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.abtinandroidstdio.weatherapp.databinding.ActivityWeatherBinding
 import com.bumptech.glide.Glide
@@ -158,6 +159,30 @@ class WeatherActivity : AppCompatActivity() {
         val windDeg = windJSONObject.getDouble("deg")
         binding.windSpeedView.append(windSpeed.toString().plus(" Km/h"))
         binding.windDegTextView.append(windDeg.toString())
+    }
+
+
+    private fun refreshClick(view: View){
+        binding.progressBar.visibility = View.VISIBLE
+
+        binding.cityName.text = "---"
+        binding.weatherDescription.text = "---"
+        binding.sunriseTextView.text = "---"
+        binding.sunsetTextView.text = "---"
+        binding.maxTemperatureView.text = "---"
+        binding.minTemperatureView.text = "---"
+        binding.humidityView.text = "---"
+        binding.temperatureView.text = "---"
+        binding.weatherDescripton.text = "---"
+        binding.windDetailsView.text = "---"
+        binding.windSpeedView.text = "---"
+        binding.windDegTextView.text = "---"
+        binding.otherDetails.text  ="---"
+        binding.visibilityView.text = "---"
+        binding.pressureView.text = "---"
+
+        
+
     }
 
 
