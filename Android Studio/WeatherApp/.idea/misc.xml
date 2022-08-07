@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/coding/android/Android Studio/WeatherApp/app/src/main/res/drawable/button_background.xml" value="0.229" />
+        <entry key="..\:/coding/android/Android Studio/WeatherApp/app/src/main/res/drawable/ic_refresh.xml" value="0.2035" />
         <entry key="..\:/coding/android/Android Studio/WeatherApp/app/src/main/res/drawable/textviewbackground.xml" value="0.2195" />
         <entry key="..\:/coding/android/Android Studio/WeatherApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/coding/android/Android Studio/WeatherApp/app/src/main/res/layout/activity_weather.xml" value="0.264" />

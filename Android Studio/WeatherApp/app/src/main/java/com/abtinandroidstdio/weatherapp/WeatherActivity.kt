@@ -49,6 +49,7 @@ class WeatherActivity : AppCompatActivity() {
                 val jsonObject = JSONObject(rawJSONContext)
 
                 runOnUiThread {
+                    binding.progressBar.visibility = View.INVISIBLE
                     cityNameFunc(jsonObject)
                 }
 
@@ -162,7 +163,7 @@ class WeatherActivity : AppCompatActivity() {
     }
 
 
-    private fun refreshClick(view: View){
+     fun refreshClick(view: View){
         binding.progressBar.visibility = View.VISIBLE
 
         binding.cityName.text = "---"
@@ -181,7 +182,10 @@ class WeatherActivity : AppCompatActivity() {
         binding.visibilityView.text = "---"
         binding.pressureView.text = "---"
 
-        
+        Glide.with(this@WeatherActivity).load(R.drawable.ic_refresh).into(binding.iconImage)
+
+        initialFunc()
+
 
     }
 
