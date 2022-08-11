@@ -49,6 +49,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="7"
+                    android:textColor="#FFFFFF"
                     android:textSize="24sp"
                     app:cornerRadius="5dp" />
 
@@ -64,6 +65,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="8"
+                    android:textColor="#FFFFFF"
                     android:textSize="24sp"
                     app:cornerRadius="5dp" />
 
@@ -79,6 +81,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="9"
+                    android:textColor="#FFFFFF"
                     android:textSize="24sp"
                     app:cornerRadius="5dp" />
 
@@ -94,6 +97,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickOperator"
                     android:text="+"
+                    android:textColor="#FFFFFF"
                     android:textSize="24sp"
                     app:cornerRadius="5dp" />
 
@@ -109,6 +113,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickOperator"
                     android:text="-"
+                    android:textColor="#FFFFFF"
                     android:textSize="24sp"
                     app:cornerRadius="5dp" />
             </LinearLayout>
@@ -131,6 +136,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="4"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
 
@@ -146,6 +152,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="5"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
 
@@ -161,6 +168,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="6"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
 
@@ -176,6 +184,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickOperator"
                     android:text="*"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
 
@@ -191,6 +200,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickOperator"
                     android:text="/"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
             </LinearLayout>
@@ -213,6 +223,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="1"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
 
@@ -228,6 +239,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="2"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
 
@@ -243,6 +255,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="3"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
 
@@ -258,6 +271,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickOperator"
                     android:text="√"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
 
@@ -273,6 +287,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickOperator"
                     android:text="^"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
             </LinearLayout>
@@ -295,6 +310,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="0"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
 
@@ -310,6 +326,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onDotClicked"
                     android:text="."
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
 
@@ -325,6 +342,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickOperator"
                     android:text="%"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
 
@@ -348,6 +366,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="clearAllNumbers"
                     android:text="Clear All"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
 
@@ -363,6 +382,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="clearOneDigitOrNumber"
                     android:text="Clear Back"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
 
@@ -378,6 +398,7 @@
                     android:backgroundTint="#000000"
                     android:onClick="calculateTheOperation"
                     android:text="="
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:cornerRadius="5dp" />
             </LinearLayout>
