@@ -49,7 +49,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="7"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/eightNumber"
@@ -63,7 +64,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="8"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/nineNumber"
@@ -77,7 +79,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="9"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/addButton"
@@ -91,7 +94,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickOperator"
                     android:text="+"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/minusButton"
@@ -105,7 +109,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickOperator"
                     android:text="-"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    app:cornerRadius="5dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -126,7 +131,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="4"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/fiveNumber"
@@ -140,7 +146,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="5"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/sixNumber"
@@ -154,7 +161,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="6"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/multipactionButton"
@@ -168,7 +176,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickOperator"
                     android:text="*"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/divideButton"
@@ -182,7 +191,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickOperator"
                     android:text="/"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -203,7 +213,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="1"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/twoNumber"
@@ -217,7 +228,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="2"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/threeNumber"
@@ -231,7 +243,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="3"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/sqrtButton"
@@ -245,7 +258,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickOperator"
                     android:text="√"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/powerButton"
@@ -259,7 +273,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickOperator"
                     android:text="^"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -280,7 +295,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickDigit"
                     android:text="0"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/floatSymbol"
@@ -294,7 +310,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onDotClicked"
                     android:text="."
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/remindButton"
@@ -308,7 +325,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="onclickOperator"
                     android:text="%"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
 
             </LinearLayout>
 
@@ -330,7 +348,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="clearAllNumbers"
                     android:text="Clear All"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/clearOneNumber"
@@ -344,7 +363,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="clearOneDigitOrNumber"
                     android:text="Clear Back"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
 
                 <Button
                     android:id="@+id/calculateButton"
@@ -358,7 +378,8 @@
                     android:backgroundTint="#000000"
                     android:onClick="calculateTheOperation"
                     android:text="="
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:cornerRadius="5dp" />
             </LinearLayout>
         </LinearLayout>
 
