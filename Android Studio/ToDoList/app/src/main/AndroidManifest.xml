@@ -16,6 +16,9 @@
         android:theme="@style/Theme.ToDoList"
         tools:targetApi="31">
         <activity
+            android:name=".ToDoListActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -27,6 +30,3 @@
     </application>
 
 </manifest>
-
-
-<!-- Double Tick icon by Icons8 -->
