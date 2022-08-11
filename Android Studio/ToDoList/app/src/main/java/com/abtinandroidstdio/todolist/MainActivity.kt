@@ -52,29 +52,27 @@ class MainActivity : AppCompatActivity() {
         var taskTextList = ArrayList<String>()
         var taskStateList = ArrayList<Boolean>()
 
-
-       try {
-
-           var index = 0
-           while(1==1){
+          var index = 0
+          while(index<=jsonArray.length()){
                val tempJSONObject = jsonArray.getJSONObject(index)
+
                userIdList.add(tempJSONObject.getInt("userId"))
                taskIdList.add(tempJSONObject.getInt("id"))
                taskTextList.add(tempJSONObject.getString("title"))
                taskStateList.add(tempJSONObject.getBoolean("completed"))
                index -=-1
            }
-       }catch (ee : Exception ){
+           intentFunc(userIdList,taskIdList,taskTextList,taskStateList)
 
-       }
 
     }
-    fun intentFunc(jsonObject:JSONObject){
+    fun intentFunc(userIdList:ArrayList<Int>,taskIdList:ArrayList<Int>,taskTextList:ArrayList<String>,taskStateList:ArrayList<Boolean>)
+    {
         val intent = Intent(this , ToDoListActivity::class.java)
-        //intent.putExtra()
-        //intent.putExtra()
-        //intent.putExtra()
-        //intent.putExtra()
+        intent.putExtra("userIdList",userIdList)
+        intent.putExtra("taskIdList",taskIdList)
+        intent.putExtra("taskTextList",taskTextList)
+        intent.putExtra("taskStateList",taskStateList)
         startActivity(intent)
     }
 
