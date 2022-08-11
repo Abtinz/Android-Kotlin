@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     var isSomeDigitEntered = false
     var isDotButtonClicked = false
     var isSecondNumberEntered = false
-    var isOperatoinEntered = false
+    var isOperationEntered = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             binding.textView.append(clickedButton.text)
         }
         else {
-            if(isOperatoinEntered){
+            if(isOperationEntered){
                 binding.textView.append(clickedButton.text)
                 isSecondNumberEntered = true
             }
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         binding.textView.text = ""
         isSomeDigitEntered = false
         isDotButtonClicked = false
-        isOperatoinEntered = false
+        isOperationEntered = false
         isSecondNumberEntered = false
     }
 
@@ -82,10 +82,10 @@ class MainActivity : AppCompatActivity() {
      */
     fun onclickOperator(clickedNumber : View){
         val clickedButton = clickedNumber as Button
-        if (!isSomeDigitEntered && !isOperatoinEntered){
+        if (!isSomeDigitEntered && !isOperationEntered){
             if(clickedNumber.text.equals("√")){
                 binding.textView.text = clickedButton.text
-                isOperatoinEntered = true
+                isOperationEntered = true
                 isSomeDigitEntered = false
                 isDotButtonClicked = false
             }
@@ -94,10 +94,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
         else {
-            if(isOperatoinEntered){
+            if(isOperationEntered){
                 if(clickedNumber.text.equals("√")){
                     binding.textView.text = clickedButton.text
-                    isOperatoinEntered = true
+                    isOperationEntered = true
                     isSomeDigitEntered = false
                     isDotButtonClicked = false
                 }
@@ -113,13 +113,13 @@ class MainActivity : AppCompatActivity() {
             else{
                 if(clickedNumber.text.equals("√")){
                     binding.textView.text = clickedButton.text
-                    isOperatoinEntered = true
+                    isOperationEntered = true
                     isSomeDigitEntered = false
                     isDotButtonClicked = false
                 }
                 else{
                     binding.textView.append(clickedButton.text)
-                    isOperatoinEntered = true
+                    isOperationEntered = true
                     isSomeDigitEntered = false
                     isDotButtonClicked = false
                 }
@@ -133,7 +133,7 @@ class MainActivity : AppCompatActivity() {
 
     fun calculateTheOperation(view : View){
 
-        if(isOperatoinEntered && isSecondNumberEntered){
+        if(isOperationEntered && isSecondNumberEntered){
             val calculatorText = binding.textView.text
             if(calculatorText.contains("+")){
                 val addArray = calculatorText.split("+")
@@ -141,32 +141,34 @@ class MainActivity : AppCompatActivity() {
                 val secondNumber = addArray[1]
                 val result = firstNumber.toDouble() + secondNumber.toDouble()
                 binding.textView.text = result.toString()
-                isOperatoinEntered = false
+                isOperationEntered = false
                 isSecondNumberEntered = false
                 isDotButtonClicked = true
             }
 
             else if(calculatorText.contains("/")){
-                val devideArray = calculatorText.split("/")
-                val firstNumber = devideArray[0]
-                val secondNumber = devideArray[1]
+                val divideArray = calculatorText.split("/")
+                val firstNumber = divideArray[0]
+                val secondNumber = divideArray[1]
                 if(secondNumber.toDouble() != 0.0){
                     val result = firstNumber.toDouble() / secondNumber.toDouble()
                     binding.textView.text = result.toString()
-                    isOperatoinEntered = false
+                    isOperationEntered = false
                     isSecondNumberEntered = false
                     isDotButtonClicked = true
+                }else{
+                    Toast.makeText(this,"Cant Divide to zero!",Toast.LENGTH_SHORT).show()
                 }
 
             }
 
             else if(calculatorText.contains("*")){
-                val multipactionArray = calculatorText.split("*")
-                val firstNumber = multipactionArray[0]
-                val secondNumber = multipactionArray[1]
+                val multiplicationArray = calculatorText.split("*")
+                val firstNumber = multiplicationArray[0]
+                val secondNumber = multiplicationArray[1]
                 val result = firstNumber.toDouble() * secondNumber.toDouble()
                 binding.textView.text = result.toString()
-                isOperatoinEntered = false
+                isOperationEntered = false
                 isSecondNumberEntered = false
                 isDotButtonClicked = true
             }
@@ -177,7 +179,7 @@ class MainActivity : AppCompatActivity() {
                 val secondNumber = powArray[1]
                 val result =  firstNumber.toDouble().pow(secondNumber.toDouble())
                 binding.textView.text = result.toString()
-                isOperatoinEntered = false
+                isOperationEntered = false
                 isSecondNumberEntered = false
                 isDotButtonClicked = true
             }
@@ -187,7 +189,7 @@ class MainActivity : AppCompatActivity() {
                 val secondNumber = reminderArray[1].toDouble()
                 val result =  firstNumber % secondNumber
                 binding.textView.text = result.toString()
-                isOperatoinEntered = false
+                isOperationEntered = false
                 isSecondNumberEntered = false
                 isDotButtonClicked = true
             }
@@ -196,7 +198,7 @@ class MainActivity : AppCompatActivity() {
                 val rootArray = calculatorText.substring(1,calculatorText.length).toDouble()
                 val result = sqrt(rootArray)
                 binding.textView.text = result.toString()
-                isOperatoinEntered = false
+                isOperationEntered = false
                 isSecondNumberEntered = false
                 isDotButtonClicked = true
             }
@@ -212,7 +214,7 @@ class MainActivity : AppCompatActivity() {
 
                          val result = firstNumber - secondNumber
                          binding.textView.text = result.toString()
-                         isOperatoinEntered = false
+                         isOperationEntered = false
                          isSecondNumberEntered = false
                          isDotButtonClicked = true
                      }
@@ -227,7 +229,7 @@ class MainActivity : AppCompatActivity() {
 
                          val result = firstNumber - secondNumber
                          binding.textView.text = result.toString()
-                         isOperatoinEntered = false
+                         isOperationEntered = false
                          isSecondNumberEntered = false
                          isDotButtonClicked = true
                      }
@@ -240,14 +242,14 @@ class MainActivity : AppCompatActivity() {
 
 
     fun clearOneDigitOrNumber(view: View){
-        if (!isSomeDigitEntered && !isOperatoinEntered){
+        if (!isSomeDigitEntered && !isOperationEntered){
             Toast.makeText(this,"You have not entered a number yet" , Toast.LENGTH_LONG).show()
         }
         else if(binding.textView.text.length == 1){
             binding.textView.text = "0"
             isSomeDigitEntered = false
             if(binding.textView.text.last() == '√'){
-                isOperatoinEntered = false
+                isOperationEntered = false
             }
         }
         else{
@@ -265,8 +267,8 @@ class MainActivity : AppCompatActivity() {
                 binding.textView.text = textViewString
             }
 
-            else if(!isSomeDigitEntered && isOperatoinEntered){
-                isOperatoinEntered = false
+            else if(!isSomeDigitEntered && isOperationEntered){
+                isOperationEntered = false
                 if(lastChar != '√'){
                     isSomeDigitEntered = true
                     if(textViewString.contains(".")){
@@ -287,7 +289,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun isTheLastCharOperation(textViewTXT : Char) : Boolean{
+    private fun isTheLastCharOperation(textViewTXT : Char) : Boolean{
 
         if ((textViewTXT == '+') or  (textViewTXT == '-') or (textViewTXT  == '*' ) or
             (textViewTXT=='/' )or (textViewTXT == '%' )or
