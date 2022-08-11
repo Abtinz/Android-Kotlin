@@ -26,6 +26,7 @@
                 style="?android:attr/progressBarStyle"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:indeterminateTint="#000000"
                 android:progressBackgroundTint="#DA5F5F"
                 android:progressTint="#000000"
                 app:layout_constraintBottom_toBottomOf="parent"
