@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import com.abtinandroidstdio.todolist.databinding.ActivityMainBinding
 import okhttp3.*
+import org.json.JSONArray
 import org.json.JSONObject
 import java.io.IOException
 
@@ -31,11 +32,11 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call, response: Response) {
                 val rawJSONContext = response.body!!.string()
                 Log.d("tagJson" , "Json: ${rawJSONContext}")
-                val jsonObject = JSONObject(rawJSONContext)
+                val jsonArray = JSONArray(rawJSONContext)
 
                 runOnUiThread {
 
-                    intentFunc(jsonObject)
+                    JsonToDoList(jsonArray)
 
                 }
 
@@ -44,13 +45,36 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun JsonToDoList(jsonObject:JSONObject){
+    fun JsonToDoList(jsonArray:JSONArray){
+
+        var userIdList = ArrayList<Int>()
+        var taskIdList = ArrayList<Int>()
+        var taskTextList = ArrayList<String>()
+        var taskStateList = ArrayList<Boolean>()
+
+
+       try {
+
+           var index = 0
+           while(1==1){
+               val tempJSONObject = jsonArray.getJSONObject(index)
+               userIdList.add(tempJSONObject.getInt("userId"))
+               taskIdList.add(tempJSONObject.getInt("id"))
+               taskTextList.add(tempJSONObject.getString("title"))
+               taskStateList.add(tempJSONObject.getBoolean("completed"))
+               index -=-1
+           }
+       }catch (ee : Exception ){
+
+       }
 
     }
     fun intentFunc(jsonObject:JSONObject){
         val intent = Intent(this , ToDoListActivity::class.java)
-        //intent.putExtra("jsonObject" , jsonObject)
-
+        //intent.putExtra()
+        //intent.putExtra()
+        //intent.putExtra()
+        //intent.putExtra()
         startActivity(intent)
     }
 
