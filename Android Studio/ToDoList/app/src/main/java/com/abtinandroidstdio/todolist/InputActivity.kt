@@ -10,7 +10,6 @@ class InputActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityInputBinding.inflate(layoutInflater)
         inputType = intent.getStringExtra("inputType").toString()
-        binding.SearchTextInput.hint = inputType
         binding.searchTtleTextView.append(inputType)
         setContentView(binding.root)
 

@@ -107,7 +107,7 @@
                     android:id="@+id/SearchTextInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="&quot;&quot;" />
+                    android:hint="Search Field" />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
