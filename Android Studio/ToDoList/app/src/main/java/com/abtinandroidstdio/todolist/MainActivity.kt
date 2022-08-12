@@ -4,11 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import com.abtinandroidstdio.todolist.databinding.ActivityMainBinding
 import okhttp3.*
 import org.json.JSONArray
-import org.json.JSONObject
 import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
