@@ -55,7 +55,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/buttonUserId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -63,10 +63,11 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/button_background"
-                android:text="Button" />
+                android:text="Task By UserId"
+                android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/ButtonId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -74,10 +75,11 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/button_background"
-                android:text="Button" />
+                android:text="Task By TaskId"
+                android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/buttonTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -85,10 +87,11 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/button_background"
-                android:text="Button" />
+                android:text="Task By Title"
+                android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/topTaskbutton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -96,10 +99,11 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/button_background"
-                android:text="Button" />
+                android:text="Top 50 Task"
+                android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/button10"
+                android:id="@+id/buttonAboutApp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -107,7 +111,8 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/button_background"
-                android:text="Button" />
+                android:text="About App"
+                android:textAllCaps="false" />
 
             <!-- This attribute was changed -->
             android:style="@style/ButtonStlye123"
