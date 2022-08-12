@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun JsonToDoList(jsonArray:JSONArray){
+    private fun JsonToDoList(jsonArray:JSONArray){
 
 
 
@@ -72,9 +72,10 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-    fun intentFunc(userIdList:ArrayList<Int>,taskIdList:ArrayList<Int>,taskTextList:ArrayList<String>,taskStateList:ArrayList<Boolean>)
+     private fun intentFunc(userIdList:ArrayList<Int>,taskIdList:ArrayList<Int>,taskTextList:ArrayList<String>,taskStateList:ArrayList<Boolean>)
     {
-        val intent = Intent(this , ToDoListActivity::class.java)
+        val intent = Intent(this , MenuActivity::class.java)
+
         intent.putExtra("userIdList",userIdList)
         intent.putExtra("taskIdList",taskIdList)
         intent.putExtra("taskTextList",taskTextList)
