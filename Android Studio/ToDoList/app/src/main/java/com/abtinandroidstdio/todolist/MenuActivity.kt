@@ -32,9 +32,10 @@ class MenuActivity : AppCompatActivity() {
             "About App" ->  TODO()
         }
 
+
     }
 
-    fun InputActivityIntent(Intentext :String){
+    fun InputActivityIntent(IntentText :String){
 
         val userIdList = intent.getIntArrayExtra("userIdList")
         val taskIdList = intent.getIntArrayExtra("taskIdList")
@@ -42,7 +43,7 @@ class MenuActivity : AppCompatActivity() {
         val taskStateList = intent.getBooleanArrayExtra("taskStateList")
         val intentOfInputActivity = Intent(this , InputActivity::class.java)
 
-        intentOfInputActivity.putExtra("inputType",Intentext)
+        intentOfInputActivity.putExtra("inputType",IntentText)
         intentOfInputActivity.putExtra("userIdList",userIdList)
         intentOfInputActivity.putExtra("taskIdList",taskIdList)
         intentOfInputActivity.putExtra("taskTextList",taskTextList)
