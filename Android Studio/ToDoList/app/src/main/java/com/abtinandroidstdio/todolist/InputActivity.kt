@@ -52,20 +52,45 @@ class InputActivity : AppCompatActivity() {
         }
     }
 
-    fun searchId(userIdList:ArrayList<Int>,taskIdList:ArrayList<Int>,taskTextList:ArrayList<String>,taskStateList:ArrayList<Boolean>){
+    fun searchId(userIdList:ArrayList<Int>,taskIdList:ArrayList<Int>,taskTextList:ArrayList<String>,taskStateList:ArrayList<Boolean>,id:Int){
 
-        var isCorrect = false
+        val index = id-1
+        val isCorrect = (index) <taskIdList.size
         if(isCorrect){
 
+            val intentOfInputActivity = Intent(this , ToDoListActivity::class.java)
+
+            intentOfInputActivity.putExtra("inputType","searchId")
+            intentOfInputActivity.putExtra("userId",userIdList[index])
+            intentOfInputActivity.putExtra("taskId",id)
+            intentOfInputActivity.putExtra("taskText",taskTextList)
+            intentOfInputActivity.putExtra("taskState",taskStateList)
+
         }else{
-            Toast.makeText(this,"Is Invalid",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Task ID Is Invalid",Toast.LENGTH_SHORT).show()
         }
     }
 
-    fun searchTaskTitle(userIdList:ArrayList<Int>,taskIdList:ArrayList<Int>,taskTextList:ArrayList<String>,taskStateList:ArrayList<Boolean>){
+    fun searchTaskTitle(userIdList:ArrayList<Int>,taskIdList:ArrayList<Int>,taskTextList:ArrayList<String>,taskStateList:ArrayList<Boolean>,title:String){
 
-        var isCorrect = false
+        val isCorrect = taskTextList.contains(title)
+        var index = 0
+        val
+
         if(isCorrect){
+            val intentOfInputActivity = Intent(this , ToDoListActivity::class.java)
+
+            intentOfInputActivity.putExtra("inputType","userId")
+            intentOfInputActivity.putExtra("userId",userId)
+            intentOfInputActivity.putExtra("taskIdList",userTaskIdList)
+            intentOfInputActivity.putExtra("taskTextList",userTaskTextList)
+            intentOfInputActivity.putExtra("taskStateList",userTaskStateList)
+            startActivity(intentOfInputActivity)
+        }else{
+            Toast.makeText(this,"User Id Is Invalid!",Toast.LENGTH_SHORT).show()
+        }
+        if(isCorrect){
+
 
         }else{
             Toast.makeText(this,"Is Invalid",Toast.LENGTH_SHORT).show()
