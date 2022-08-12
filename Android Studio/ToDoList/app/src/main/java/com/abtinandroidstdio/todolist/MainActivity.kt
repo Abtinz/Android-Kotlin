@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.abtinandroidstdio.todolist.databinding.ActivityMainBinding
 import okhttp3.*
 import org.json.JSONArray
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             .build()
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-                jsonDownloader()
+
             }
             override fun onResponse(call: Call, response: Response) {
                 val rawJSONContext = response.body!!.string()
@@ -47,13 +48,16 @@ class MainActivity : AppCompatActivity() {
 
     fun JsonToDoList(jsonArray:JSONArray){
 
+
+
         var userIdList = ArrayList<Int>()
         var taskIdList = ArrayList<Int>()
         var taskTextList = ArrayList<String>()
         var taskStateList = ArrayList<Boolean>()
 
           var index = 0
-          while(index<=jsonArray.length()){
+          while(index<jsonArray.length()){
+
                val tempJSONObject = jsonArray.getJSONObject(index)
 
                userIdList.add(tempJSONObject.getInt("userId"))
@@ -62,7 +66,9 @@ class MainActivity : AppCompatActivity() {
                taskStateList.add(tempJSONObject.getBoolean("completed"))
                index -=-1
            }
-           intentFunc(userIdList,taskIdList,taskTextList,taskStateList)
+
+
+            intentFunc(userIdList,taskIdList,taskTextList,taskStateList)
 
 
     }
