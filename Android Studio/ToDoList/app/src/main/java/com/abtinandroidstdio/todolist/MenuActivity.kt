@@ -23,7 +23,7 @@ class MenuActivity : AppCompatActivity() {
     }
 
     fun  buttonStringDetector(buttonText :String){
-        lateinit var nextActivity:String
+
         when(buttonText){
             "Task By UserId" ->  InputActivityIntent("UserId")
             "Task By TaskId" ->  InputActivityIntent("TaskId")
