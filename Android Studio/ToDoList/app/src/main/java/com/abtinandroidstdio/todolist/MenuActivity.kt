@@ -29,10 +29,16 @@ class MenuActivity : AppCompatActivity() {
             "Task By TaskId" ->  InputActivityIntent("TaskId")
             "Task By Title" ->  InputActivityIntent("Title")
             "Top 50 Task" ->  TODO()
-            "About App" ->  TODO()
+            "About App" ->  aboutApp()
         }
 
 
+    }
+
+    fun aboutApp(){
+        val intentOfInputActivity = Intent(this , AboutActivity::class.java)
+
+        startActivity(intentOfInputActivity)
     }
 
     fun InputActivityIntent(IntentText :String){
