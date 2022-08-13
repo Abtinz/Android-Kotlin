@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         var userIdList = ArrayList<Int>()
         var taskIdList = ArrayList<Int>()
         var taskTextList = ArrayList<String>()
-        var taskStateList = ArrayList<Boolean>()
+        var taskStateList = ArrayList<String>()
 
           var index = 0
           while(index<jsonArray.length()){
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                userIdList.add(tempJSONObject.getInt("userId"))
                taskIdList.add(tempJSONObject.getInt("id"))
                taskTextList.add(tempJSONObject.getString("title"))
-               taskStateList.add(tempJSONObject.getBoolean("completed"))
+               taskStateList.add(tempJSONObject.getBoolean("completed").toString())
                index -=-1
            }
 
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-     private fun intentFunc(userIdList:ArrayList<Int>,taskIdList:ArrayList<Int>,taskTextList:ArrayList<String>,taskStateList:ArrayList<Boolean>)
+     private fun intentFunc(userIdList:ArrayList<Int>,taskIdList:ArrayList<Int>,taskTextList:ArrayList<String>,taskStateList:ArrayList<String>)
     {
         val intent = Intent(this , MenuActivity::class.java)
 

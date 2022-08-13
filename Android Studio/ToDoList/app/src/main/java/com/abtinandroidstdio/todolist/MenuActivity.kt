@@ -37,8 +37,8 @@ class MenuActivity : AppCompatActivity() {
 
     fun InputActivityIntent(IntentText :String){
 
-        val userIdList = intent.getIntArrayExtra("userIdList")
-        val taskIdList = intent.getIntArrayExtra("taskIdList")
+        val userIdList = intent.getIntegerArrayListExtra("userIdList")
+        val taskIdList = intent.getIntegerArrayListExtra("taskIdList")
         val taskTextList = intent.getStringArrayListExtra("taskTextList")
         val taskStateList = intent.getBooleanArrayExtra("taskStateList")
         val intentOfInputActivity = Intent(this , InputActivity::class.java)

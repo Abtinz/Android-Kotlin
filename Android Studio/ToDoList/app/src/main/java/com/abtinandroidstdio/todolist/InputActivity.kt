@@ -15,16 +15,20 @@ class InputActivity : AppCompatActivity() {
         binding = ActivityInputBinding.inflate(layoutInflater)
         inputType = intent.getStringExtra("inputType").toString()
         binding.searchTtleTextView.append(inputType)
+        if(inputType == "Title"){
+            binding.textInputLayout.visibility = View.VISIBLE
+
+        }else{
+            binding.editTextNumber.visibility = View.VISIBLE
+        }
         setContentView(binding.root)
+
 
     }
 
     fun searchClick(view : View){
 
-        val searchedText = binding.SearchTextInput.text.toString()
-        if(searchedText.isEmpty()){
-            Toast.makeText(this,"Please fill the search blank",Toast.LENGTH_SHORT).show()
-        }else{
+
             val userIdList = intent.getIntArrayExtra("userIdList")
             val taskIdList = intent.getIntArrayExtra("taskIdList")
             val taskTextList = intent.getStringArrayListExtra("taskTextList")
@@ -33,12 +37,19 @@ class InputActivity : AppCompatActivity() {
 
 
             if(inputType == "Title"){
+                val searchedText = binding.SearchTextInput.text.toString()
+                if(searchedText.isEmpty()){
+                    Toast.makeText(this,"Please fill the search blank",Toast.LENGTH_SHORT).show()
+                }else{
                 searchTaskTitle(userIdList,taskIdList,taskTextList,taskStateList,searchedText)
+                }
+
             }else{
                 try{
-                    val inputId =  Integer.parseInt(searchedText)
-                    Toast.makeText(this,searchedText,Toast.LENGTH_SHORT).show()
+                    val inputId =  Integer.parseInt(binding.editTextNumber.text.toString())
+
                     if(inputType == "UserId"){
+
                         searchUserId(userIdList,taskIdList,taskTextList,taskStateList,inputId)
                     }else{
                         if (taskTextList != null) {
@@ -50,7 +61,7 @@ class InputActivity : AppCompatActivity() {
                     Toast.makeText(this,"Please fill the search blank with only number for $inputType",Toast.LENGTH_SHORT).show()
                 }
             }
-        }
+
     }
 
     private fun searchUserId(userIdList: IntArray?, taskIdList: IntArray?, taskTextList:ArrayList<String>?, taskStateList: BooleanArray?, userId:Int){
@@ -59,11 +70,13 @@ class InputActivity : AppCompatActivity() {
         var userTaskIdList = ArrayList<Int>()
         var userTaskTextList = ArrayList<String>()
         var userTaskStateList = ArrayList<Boolean>()
-
+        Toast.makeText(this,taskIdList!!.size.toString(),Toast.LENGTH_SHORT).show()
         var index = 0
         while(index<userIdList!!.size){
+
             if(userIdList[index] == userId){
                 isCorrect = true
+                Toast.makeText(this,"3",Toast.LENGTH_SHORT).show()
                 taskIdList?.get(index)?.let { userTaskIdList.add(it) }
                 taskTextList?.get(index)?.let { userTaskTextList.add(it) }
                 taskStateList?.get(index)?.let { userTaskStateList.add(it) }
@@ -71,7 +84,9 @@ class InputActivity : AppCompatActivity() {
             index -=-1
         }
 
+
         if(isCorrect){
+
             val intentOfInputActivity = Intent(this , ToDoListActivity::class.java)
             intentOfInputActivity.putExtra("inputType","userId")
             intentOfInputActivity.putExtra("userId",userId)
@@ -115,6 +130,7 @@ class InputActivity : AppCompatActivity() {
             intentOfInputActivity.putExtra("taskId", taskIdList?.get(index))
             intentOfInputActivity.putExtra("taskText",title)
             intentOfInputActivity.putExtra("taskState", taskStateList?.get(index))
+
             startActivity(intentOfInputActivity)
         }else{
             Toast.makeText(this,"Task Title Is Invalid!",Toast.LENGTH_SHORT).show()
