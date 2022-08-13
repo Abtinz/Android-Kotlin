@@ -29,10 +29,10 @@ class InputActivity : AppCompatActivity() {
     fun searchClick(view : View){
 
 
-            val userIdList = intent.getIntArrayExtra("userIdList")
-            val taskIdList = intent.getIntArrayExtra("taskIdList")
-            val taskTextList = intent.getStringArrayListExtra("taskTextList")
-            val taskStateList = intent.getBooleanArrayExtra("taskStateList")
+        val userIdList = intent.getIntegerArrayListExtra("userIdList")
+        val taskIdList = intent.getIntegerArrayListExtra("taskIdList")
+        val taskTextList = intent.getStringArrayListExtra("taskTextList")
+        val taskStateList = intent.getStringArrayListExtra("taskStateList")
 
 
 
@@ -64,19 +64,18 @@ class InputActivity : AppCompatActivity() {
 
     }
 
-    private fun searchUserId(userIdList: IntArray?, taskIdList: IntArray?, taskTextList:ArrayList<String>?, taskStateList: BooleanArray?, userId:Int){
+    private fun searchUserId(userIdList: java.util.ArrayList<Int>?, taskIdList: java.util.ArrayList<Int>?, taskTextList:ArrayList<String>?, taskStateList: java.util.ArrayList<String>?, userId:Int){
         var isCorrect = false
 
         var userTaskIdList = ArrayList<Int>()
         var userTaskTextList = ArrayList<String>()
-        var userTaskStateList = ArrayList<Boolean>()
+        var userTaskStateList = ArrayList<String>()
         Toast.makeText(this,taskIdList!!.size.toString(),Toast.LENGTH_SHORT).show()
         var index = 0
         while(index<userIdList!!.size){
 
             if(userIdList[index] == userId){
                 isCorrect = true
-                Toast.makeText(this,"3",Toast.LENGTH_SHORT).show()
                 taskIdList?.get(index)?.let { userTaskIdList.add(it) }
                 taskTextList?.get(index)?.let { userTaskTextList.add(it) }
                 taskStateList?.get(index)?.let { userTaskStateList.add(it) }
@@ -99,7 +98,9 @@ class InputActivity : AppCompatActivity() {
         }
     }
 
-    private fun searchId(userIdList: IntArray?, taskIdList: IntArray?, taskTextList:ArrayList<String>, taskStateList: BooleanArray?,id:Int){
+    private fun searchId(
+        userIdList: java.util.ArrayList<Int>?, taskIdList: java.util.ArrayList<Int>?, taskTextList:ArrayList<String>, taskStateList: java.util.ArrayList<String>?,
+        id:Int){
         val index = id-1
         val isCorrect = (index) < taskIdList!!.size
         if(isCorrect){
@@ -119,7 +120,7 @@ class InputActivity : AppCompatActivity() {
         }
     }
 
-    private fun searchTaskTitle(userIdList: IntArray?, taskIdList: IntArray?, taskTextList:ArrayList<String>?, taskStateList: BooleanArray?, title:String){
+    private fun searchTaskTitle(userIdList: java.util.ArrayList<Int>?, taskIdList: java.util.ArrayList<Int>?, taskTextList:ArrayList<String>?, taskStateList: java.util.ArrayList<String>?, title:String){
 
         val isCorrect = taskTextList?.contains(title)
         if(isCorrect!!){
