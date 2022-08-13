@@ -82,6 +82,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="72dp"
                 android:background="@drawable/button_background"
+                android:onClick="searchClick"
                 android:text="Search"
                 android:textColor="#FFFFFF"
                 android:textColorHint="#FFFFFF"

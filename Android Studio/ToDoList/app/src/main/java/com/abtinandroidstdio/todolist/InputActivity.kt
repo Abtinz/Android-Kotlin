@@ -58,7 +58,7 @@ class InputActivity : AppCompatActivity() {
 
 
 
-    fun searchUserId(
+    private fun searchUserId(
         userIdList: IntArray?, taskIdList: IntArray?,
         taskTextList:ArrayList<String>?, taskStateList: BooleanArray?,
         userId:Int){
@@ -95,7 +95,7 @@ class InputActivity : AppCompatActivity() {
         }
     }
 
-    fun searchId(
+    private fun searchId(
         userIdList: IntArray?, taskIdList: IntArray?,
         taskTextList:ArrayList<String>, taskStateList: BooleanArray?,
         id:Int){
@@ -111,6 +111,7 @@ class InputActivity : AppCompatActivity() {
             intentOfInputActivity.putExtra("taskId",id)
             intentOfInputActivity.putExtra("taskText",taskTextList[index])
             intentOfInputActivity.putExtra("taskState", taskStateList?.get(index))
+            startActivity(intentOfInputActivity)
 
 
         }else{
@@ -118,7 +119,7 @@ class InputActivity : AppCompatActivity() {
         }
     }
 
-    fun searchTaskTitle(
+    private fun searchTaskTitle(
         userIdList: IntArray?, taskIdList: IntArray?,
         taskTextList:ArrayList<String>?, taskStateList: BooleanArray?, title:String){
 
