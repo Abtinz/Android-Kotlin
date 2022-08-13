@@ -32,11 +32,14 @@ class InputActivity : AppCompatActivity() {
 
 
             if(inputType == "Title"){
-                searchTaskTitle(userIdList,taskIdList,taskTextList,taskStateList,)
+                searchTaskTitle(userIdList,taskIdList,taskTextList,taskStateList,searchedText)
             }else{
                 try{
                     val inputId = searchedText.toInt()
 
+                    if(inputType == "UserId"){
+                        searchUserId(userIdList,taskIdList,taskTextList,taskStateList,searchedText)
+                    }
 
                 }catch(exception :Exception){
 
@@ -51,7 +54,10 @@ class InputActivity : AppCompatActivity() {
 
 
 
-    fun searchUserId(userIdList:ArrayList<Int>,taskIdList:ArrayList<Int>,taskTextList:ArrayList<String>,taskStateList:ArrayList<Boolean>,userId:Int){
+    fun searchUserId(
+        userIdList: IntArray?, taskIdList: IntArray?,
+        taskTextList:ArrayList<String>?, taskStateList: BooleanArray?,
+        userId:Int){
         var isCorrect = false
 
         var userTaskIdList = ArrayList<Int>()
@@ -59,13 +65,13 @@ class InputActivity : AppCompatActivity() {
         var userTaskStateList = ArrayList<Boolean>()
 
         var index = 0
-        while(index<userIdList.size){
+        while(index<userIdList!!.size){
 
             if(userIdList[index] == userId){
                 isCorrect = true
-                userTaskIdList.add(taskIdList[index])
-                userTaskTextList.add(taskTextList[index])
-                userTaskStateList.add(taskStateList[index])
+                taskIdList?.get(index)?.let { userTaskIdList.add(it) }
+                taskTextList?.get(index)?.let { userTaskTextList.add(it) }
+                taskStateList?.get(index)?.let { userTaskStateList.add(it) }
             }
 
 
