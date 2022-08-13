@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.abtinandroidstdio.todolist.databinding.ActivityInputBinding
+
 class InputActivity : AppCompatActivity() {
     lateinit var binding : ActivityInputBinding
     var inputType = "UserId"
@@ -22,7 +23,6 @@ class InputActivity : AppCompatActivity() {
 
         val searchedText = binding.SearchTextInput.text.toString()
         if(searchedText.isEmpty()){
-
             Toast.makeText(this,"Please fill the search blank",Toast.LENGTH_SHORT).show()
         }else{
             val userIdList = intent.getIntArrayExtra("userIdList")
@@ -31,12 +31,13 @@ class InputActivity : AppCompatActivity() {
             val taskStateList = intent.getBooleanArrayExtra("taskStateList")
 
 
+
             if(inputType == "Title"){
                 searchTaskTitle(userIdList,taskIdList,taskTextList,taskStateList,searchedText)
             }else{
                 try{
-                    val inputId = searchedText.toInt()
-
+                    val inputId =  Integer.parseInt(searchedText)
+                    Toast.makeText(this,searchedText,Toast.LENGTH_SHORT).show()
                     if(inputType == "UserId"){
                         searchUserId(userIdList,taskIdList,taskTextList,taskStateList,inputId)
                     }else{
@@ -49,19 +50,10 @@ class InputActivity : AppCompatActivity() {
                     Toast.makeText(this,"Please fill the search blank with only number for $inputType",Toast.LENGTH_SHORT).show()
                 }
             }
-
-
         }
-
-
     }
 
-
-
-    private fun searchUserId(
-        userIdList: IntArray?, taskIdList: IntArray?,
-        taskTextList:ArrayList<String>?, taskStateList: BooleanArray?,
-        userId:Int){
+    private fun searchUserId(userIdList: IntArray?, taskIdList: IntArray?, taskTextList:ArrayList<String>?, taskStateList: BooleanArray?, userId:Int){
         var isCorrect = false
 
         var userTaskIdList = ArrayList<Int>()
@@ -70,20 +62,17 @@ class InputActivity : AppCompatActivity() {
 
         var index = 0
         while(index<userIdList!!.size){
-
             if(userIdList[index] == userId){
                 isCorrect = true
                 taskIdList?.get(index)?.let { userTaskIdList.add(it) }
                 taskTextList?.get(index)?.let { userTaskTextList.add(it) }
                 taskStateList?.get(index)?.let { userTaskStateList.add(it) }
             }
-
-
             index -=-1
         }
+
         if(isCorrect){
             val intentOfInputActivity = Intent(this , ToDoListActivity::class.java)
-
             intentOfInputActivity.putExtra("inputType","userId")
             intentOfInputActivity.putExtra("userId",userId)
             intentOfInputActivity.putExtra("taskIdList",userTaskIdList)
@@ -95,11 +84,7 @@ class InputActivity : AppCompatActivity() {
         }
     }
 
-    private fun searchId(
-        userIdList: IntArray?, taskIdList: IntArray?,
-        taskTextList:ArrayList<String>, taskStateList: BooleanArray?,
-        id:Int){
-
+    private fun searchId(userIdList: IntArray?, taskIdList: IntArray?, taskTextList:ArrayList<String>, taskStateList: BooleanArray?,id:Int){
         val index = id-1
         val isCorrect = (index) < taskIdList!!.size
         if(isCorrect){
@@ -119,17 +104,12 @@ class InputActivity : AppCompatActivity() {
         }
     }
 
-    private fun searchTaskTitle(
-        userIdList: IntArray?, taskIdList: IntArray?,
-        taskTextList:ArrayList<String>?, taskStateList: BooleanArray?, title:String){
-
+    private fun searchTaskTitle(userIdList: IntArray?, taskIdList: IntArray?, taskTextList:ArrayList<String>?, taskStateList: BooleanArray?, title:String){
 
         val isCorrect = taskTextList?.contains(title)
-
         if(isCorrect!!){
             val index = taskTextList.indexOf(title)
             val intentOfInputActivity = Intent(this , ToDoListActivity::class.java)
-
             intentOfInputActivity.putExtra("inputType","Title")
             intentOfInputActivity.putExtra("userId", userIdList?.get(index))
             intentOfInputActivity.putExtra("taskId", taskIdList?.get(index))
@@ -141,4 +121,5 @@ class InputActivity : AppCompatActivity() {
         }
 
     }
+
 }
