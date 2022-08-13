@@ -38,11 +38,11 @@ class InputActivity : AppCompatActivity() {
                     val inputId = searchedText.toInt()
 
                     if(inputType == "UserId"){
-                        searchUserId(userIdList,taskIdList,taskTextList,taskStateList,searchedText)
+                        searchUserId(userIdList,taskIdList,taskTextList,taskStateList,inputId)
                     }
 
                 }catch(exception :Exception){
-
+                    Toast.makeText(this,"Please fill the search blank with only number for $inputType",Toast.LENGTH_SHORT).show()
                 }
             }
 
