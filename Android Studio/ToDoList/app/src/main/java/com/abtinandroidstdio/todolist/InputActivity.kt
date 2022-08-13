@@ -39,6 +39,10 @@ class InputActivity : AppCompatActivity() {
 
                     if(inputType == "UserId"){
                         searchUserId(userIdList,taskIdList,taskTextList,taskStateList,inputId)
+                    }else{
+                        if (taskTextList != null) {
+                            searchId(userIdList,taskIdList,taskTextList,taskStateList,inputId)
+                        }
                     }
 
                 }catch(exception :Exception){
@@ -91,19 +95,23 @@ class InputActivity : AppCompatActivity() {
         }
     }
 
-    fun searchId(userIdList:ArrayList<Int>,taskIdList:ArrayList<Int>,taskTextList:ArrayList<String>,taskStateList:ArrayList<Boolean>,id:Int){
+    fun searchId(
+        userIdList: IntArray?, taskIdList: IntArray?,
+        taskTextList:ArrayList<String>, taskStateList: BooleanArray?,
+        id:Int){
 
         val index = id-1
-        val isCorrect = (index) <taskIdList.size
+        val isCorrect = (index) < taskIdList!!.size
         if(isCorrect){
 
             val intentOfInputActivity = Intent(this , ToDoListActivity::class.java)
 
             intentOfInputActivity.putExtra("inputType","TaskId")
-            intentOfInputActivity.putExtra("userId",userIdList[index])
+            intentOfInputActivity.putExtra("userId", userIdList?.get(index) )
             intentOfInputActivity.putExtra("taskId",id)
             intentOfInputActivity.putExtra("taskText",taskTextList[index])
-            intentOfInputActivity.putExtra("taskState",taskStateList[index])
+            intentOfInputActivity.putExtra("taskState", taskStateList?.get(index))
+
 
         }else{
             Toast.makeText(this,"Task ID Is Invalid",Toast.LENGTH_SHORT).show()
