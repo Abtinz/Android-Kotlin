@@ -20,7 +20,36 @@ class InputActivity : AppCompatActivity() {
 
     fun searchClick(view : View){
 
+        val searchedText = binding.SearchTextInput.text.toString()
+        if(searchedText.isEmpty()){
+
+            Toast.makeText(this,"Please fill the search blank",Toast.LENGTH_SHORT).show()
+        }else{
+            val userIdList = intent.getIntArrayExtra("userIdList")
+            val taskIdList = intent.getIntArrayExtra("taskIdList")
+            val taskTextList = intent.getStringArrayListExtra("taskTextList")
+            val taskStateList = intent.getBooleanArrayExtra("taskStateList")
+
+
+            if(inputType == "Title"){
+                searchTaskTitle(userIdList,taskIdList,taskTextList,taskStateList,)
+            }else{
+                try{
+                    val inputId = searchedText.toInt()
+
+
+                }catch(exception :Exception){
+
+                }
+            }
+
+
+        }
+
+
     }
+
+
 
     fun searchUserId(userIdList:ArrayList<Int>,taskIdList:ArrayList<Int>,taskTextList:ArrayList<String>,taskStateList:ArrayList<Boolean>,userId:Int){
         var isCorrect = false
@@ -75,19 +104,22 @@ class InputActivity : AppCompatActivity() {
         }
     }
 
-    fun searchTaskTitle(userIdList:ArrayList<Int>,taskIdList:ArrayList<Int>,taskTextList:ArrayList<String>,taskStateList:ArrayList<Boolean>,title:String){
+    fun searchTaskTitle(
+        userIdList: IntArray?, taskIdList: IntArray?,
+        taskTextList:ArrayList<String>?, taskStateList: BooleanArray?, title:String){
 
-        val isCorrect = taskTextList.contains(title)
 
-        if(isCorrect){
+        val isCorrect = taskTextList?.contains(title)
+
+        if(isCorrect!!){
             val index = taskTextList.indexOf(title)
             val intentOfInputActivity = Intent(this , ToDoListActivity::class.java)
 
             intentOfInputActivity.putExtra("inputType","Title")
-            intentOfInputActivity.putExtra("userId",userIdList[index])
-            intentOfInputActivity.putExtra("taskId",taskIdList[index])
+            intentOfInputActivity.putExtra("userId", userIdList?.get(index))
+            intentOfInputActivity.putExtra("taskId", taskIdList?.get(index))
             intentOfInputActivity.putExtra("taskText",title)
-            intentOfInputActivity.putExtra("taskState",taskStateList[index])
+            intentOfInputActivity.putExtra("taskState", taskStateList?.get(index))
             startActivity(intentOfInputActivity)
         }else{
             Toast.makeText(this,"Task Title Is Invalid!",Toast.LENGTH_SHORT).show()
