@@ -4,11 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/coding/android/Android Studio/ToDoList/app/src/main/res/drawable/button_background.xml" value="0.1955" />
+        <entry key="..\:/coding/android/Android Studio/ToDoList/app/src/main/res/drawable/grid_items_view.xml" value="0.235" />
         <entry key="..\:/coding/android/Android Studio/ToDoList/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1955" />
+        <entry key="..\:/coding/android/Android Studio/ToDoList/app/src/main/res/layout/activity_about.xml" value="0.264" />
         <entry key="..\:/coding/android/Android Studio/ToDoList/app/src/main/res/layout/activity_input.xml" value="0.264" />
         <entry key="..\:/coding/android/Android Studio/ToDoList/app/src/main/res/layout/activity_main.xml" value="0.24635416666666668" />
         <entry key="..\:/coding/android/Android Studio/ToDoList/app/src/main/res/layout/activity_menu.xml" value="0.264" />
         <entry key="..\:/coding/android/Android Studio/ToDoList/app/src/main/res/layout/activity_to_do_list.xml" value="0.2296875" />
+        <entry key="..\:/coding/android/Android Studio/ToDoList/app/src/main/res/layout/grid_items_view.xml" value="0.23072916666666668" />
       </map>
     </option>
   </component>
