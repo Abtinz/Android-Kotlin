@@ -3,6 +3,7 @@ package com.abtinandroidstdio.todolist
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
@@ -42,21 +43,25 @@ class ToDoListActivity : AppCompatActivity() {
     }
 
     class CustomAdapter( var context: Context,
-                         var itemModel:ArrayList<Todo>):BaseAdapter(){
+                         var todoList:ArrayList<Todo>):BaseAdapter(){
+
+         var layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+
           override fun getCount(): Int {
-            TODO("Not yet implemented")
+
+             return todoList.size
         }
 
           override fun getItem(p0: Int): Any {
-            TODO("Not yet implemented")
+            return  todoList[p0]
         }
 
         override fun getItemId(p0: Int): Long {
-            TODO("Not yet implemented")
+            return p0.toLong()
         }
 
         override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-            TODO("Not yet implemented")
+
         }
 
     }
