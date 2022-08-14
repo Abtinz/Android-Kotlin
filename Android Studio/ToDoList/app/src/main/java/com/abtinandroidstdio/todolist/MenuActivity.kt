@@ -35,7 +35,7 @@ class MenuActivity : AppCompatActivity() {
         val taskIdList = intent.getIntegerArrayListExtra("taskIdList")
         val taskTextList = intent.getStringArrayListExtra("taskTextList")
         val taskStateList = intent.getStringArrayListExtra("taskStateList")
-        val toDoListIntent = Intent(this , InputActivity::class.java)
+        val toDoListIntent = Intent(this , ToDoListActivity::class.java)
 
         toDoListIntent.putExtra("inputType","Top50")
         toDoListIntent.putExtra("userIdList",userIdList)
