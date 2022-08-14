@@ -33,6 +33,11 @@ class ToDoListActivity : AppCompatActivity() {
     }
 
     fun loadTaskByTitle(){
+        lateinit var todoList :ArrayList<Todo>
+        val userId = intent.getIntExtra("userId",1)
+        val taskId = intent.getIntExtra("taskId",1)
+        val taskText = intent.getStringExtra("taskText").toString()
+        val taskState =  intent.getStringExtra("taskState").toString()
 
     }
     fun loadTaskByTaskId(){
