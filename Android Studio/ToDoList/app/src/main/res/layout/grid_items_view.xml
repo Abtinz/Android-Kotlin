@@ -4,7 +4,6 @@
     android:id="@+id/cardView"
     android:layout_width="370dp"
     android:layout_height="250dp"
-    android:layout_margin="20dp"
     app:cardCornerRadius="20dp"
     app:cardElevation="20dp">
 

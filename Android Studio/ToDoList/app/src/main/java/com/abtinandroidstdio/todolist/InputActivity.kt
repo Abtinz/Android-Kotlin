@@ -70,7 +70,6 @@ class InputActivity : AppCompatActivity() {
         var userTaskIdList = ArrayList<Int>()
         var userTaskTextList = ArrayList<String>()
         var userTaskStateList = ArrayList<String>()
-        Toast.makeText(this,taskIdList!!.size.toString(),Toast.LENGTH_SHORT).show()
         var index = 0
         while(index<userIdList!!.size){
 

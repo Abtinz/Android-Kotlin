@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.CheckBox
 import android.widget.TextView
+import android.widget.Toast
 import com.abtinandroidstdio.todolist.databinding.ActivityToDoListBinding
 class ToDoListActivity : AppCompatActivity() {
     lateinit var binding :ActivityToDoListBinding
@@ -30,7 +31,7 @@ class ToDoListActivity : AppCompatActivity() {
 
     fun loadTaskByUserId(){
 
-        lateinit var todoList :ArrayList<Todo>
+        var todoList =ArrayList<Todo>()
         val userId = intent.getIntExtra("userId",1)
         val userTaskIdList = intent.getIntegerArrayListExtra("taskIdList")
         val userTaskTextList = intent.getStringArrayListExtra("taskTextList")
@@ -41,11 +42,11 @@ class ToDoListActivity : AppCompatActivity() {
             todoList.add(todo)
         }
 
-
+        val customAdapter = CustomAdapter(this,todoList)
+        binding.gridView.adapter = customAdapter
     }
 
-    class CustomAdapter( var context: Context,
-                         var todoList:ArrayList<Todo>):BaseAdapter(){
+    class CustomAdapter( var context: Context, var todoList:ArrayList<Todo>):BaseAdapter(){
 
          var layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
@@ -86,36 +87,48 @@ class ToDoListActivity : AppCompatActivity() {
     }
 
     fun loadTaskByTitle(){
+        var todoList =ArrayList<Todo>()
 
         val userId = intent.getIntExtra("userId",1)
         val taskId = intent.getIntExtra("taskId",1)
         val taskText = intent.getStringExtra("taskText").toString()
         val taskState =  intent.getStringExtra("taskState").toString()
 
-        val todoList = Todo(userId,taskId,taskText,taskState.toBoolean())
+        todoList.add(Todo(userId,taskId,taskText,taskState.toBoolean()))
 
-
+        val customAdapter = CustomAdapter(this,todoList)
+        binding.gridView.adapter = customAdapter
     }
     fun loadTaskByTaskId(){
-
+        var todoList =ArrayList<Todo>()
         val userId = intent.getIntExtra("userId",1)
         val taskId = intent.getIntExtra("taskId",1)
         val taskText = intent.getStringExtra("taskText").toString()
         val taskState =  intent.getStringExtra("taskState").toString()
-        val todoList = Todo(userId,taskId,taskText,taskState.toBoolean())
+        todoList.add(Todo(userId,taskId,taskText,taskState.toBoolean()))
+        val customAdapter = CustomAdapter(this,todoList)
+        binding.gridView.adapter = customAdapter
+
     }
 
     fun loadTaskByTop50(){
 
-        lateinit var todoList :ArrayList<Todo>
+        var todoList =ArrayList<Todo>()
         val userIdList = intent.getIntegerArrayListExtra("userIdList")
         val userTaskIdList = intent.getIntegerArrayListExtra("taskIdList")
         val userTaskTextList = intent.getStringArrayListExtra("taskTextList")
         val userTaskStateList = intent.getStringArrayListExtra("taskStateList")
         for (index in 0 until 50){
-            val todo = Todo(userIdList!![index],userTaskIdList!![index], userTaskTextList!![index],userTaskStateList!![index].toBoolean())
+
+            val todo = Todo(userIdList!![index],userTaskIdList!![index], userTaskTextList!![index],true)
+
             todoList.add(todo)
         }
+
+
+        val customAdapter = CustomAdapter(this,todoList)
+        binding.gridView.adapter = customAdapter
+
     }
 
 
