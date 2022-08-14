@@ -22,7 +22,7 @@ class ToDoListActivity : AppCompatActivity() {
 
     private fun loadTask(){
         when(intent.getStringExtra("inputType").toString()){
-            "UserId" ->  loadTaskByUserId()
+            "userId" ->  loadTaskByUserId()
             "TaskId" ->  loadTaskByTaskId()
             "Title" ->  loadTaskByTitle()
             "Top50" ->  loadTaskByTop50()
@@ -30,7 +30,6 @@ class ToDoListActivity : AppCompatActivity() {
     }
 
     fun loadTaskByUserId(){
-
         var todoList =ArrayList<Todo>()
         val userId = intent.getIntExtra("userId",1)
         val userTaskIdList = intent.getIntegerArrayListExtra("taskIdList")
@@ -41,6 +40,7 @@ class ToDoListActivity : AppCompatActivity() {
             val todo = Todo(userId, userTaskIdList[index], userTaskTextList!![index],userTaskStateList!![index].toBoolean())
             todoList.add(todo)
         }
+
 
         val customAdapter = CustomAdapter(this,todoList)
         binding.gridView.adapter = customAdapter
@@ -55,12 +55,12 @@ class ToDoListActivity : AppCompatActivity() {
              return todoList.size
         }
 
-          override fun getItem(position: Int): Any {
-            return  todoList[position]
+          override fun getItem(position: Int): Any? {
+            return  null
         }
 
         override fun getItemId(position: Int): Long {
-            return position.toLong()
+            return 0
         }
 
         override fun getView(position: Int, view: View?, viewGroup: ViewGroup?): View {
@@ -68,21 +68,24 @@ class ToDoListActivity : AppCompatActivity() {
             var view = view
             if(view == null){
                 view = layoutInflater.inflate(R.layout.grid_items_view,viewGroup,false)
-
-                var idTextView = view?.findViewById<TextView>(R.id.TaskIdTextView)
-                var userIdTextView = view?.findViewById<TextView>(R.id.userIdTextView)
-                var taskTextView = view?.findViewById<TextView>(R.id.taskTitleView)
-                var checkBoxForTaskSituation = view?.findViewById<CheckBox>(R.id.taskCheckBox)
-
-                idTextView!!.append(todoList[position].id.toString())
-                userIdTextView!!.append(todoList[position].userId.toString())
-                taskTextView!!.append(todoList[position].title)
-                checkBoxForTaskSituation!!.isChecked = todoList[position].completed
-
             }
+
+            var idTextView = view?.findViewById<TextView>(R.id.TaskIdTextView)
+            var userIdTextView = view?.findViewById<TextView>(R.id.userIdTextView)
+            var taskTextView = view?.findViewById<TextView>(R.id.taskTitleView)
+            var checkBoxForTaskSituation = view?.findViewById<CheckBox>(R.id.taskCheckBox)
+
+
+            idTextView!!.text = "Task Id :     ${todoList[position].id}"
+            userIdTextView!!.text = "User Id :     ${todoList[position].userId}"
+            taskTextView!!.text = todoList[position].title
+            checkBoxForTaskSituation!!.isChecked = todoList[position].completed
+
 
 
             return view!!
+
+
         }
 
     }
