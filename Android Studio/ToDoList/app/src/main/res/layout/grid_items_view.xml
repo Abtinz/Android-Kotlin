@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cardView"
-    android:layout_width="370dp"
-    android:layout_height="250dp"
-    app:cardCornerRadius="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    app:cardCornerRadius="30dp"
     app:cardElevation="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,7 +51,6 @@
             android:layout_marginStart="10dp"
             android:textColor="#020202"
             android:textSize="28sp"
-            app:layout_constraintBottom_toBottomOf="@+id/taskCheckBox"
             app:layout_constraintStart_toEndOf="@+id/taskCheckBox"
             app:layout_constraintTop_toTopOf="@+id/taskCheckBox" />
     </androidx.constraintlayout.widget.ConstraintLayout>

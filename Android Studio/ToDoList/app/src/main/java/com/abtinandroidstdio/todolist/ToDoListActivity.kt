@@ -69,17 +69,18 @@ class ToDoListActivity : AppCompatActivity() {
             if(view == null){
                 view = layoutInflater.inflate(R.layout.grid_items_view,viewGroup,false)
 
+                var idTextView = view?.findViewById<TextView>(R.id.TaskIdTextView)
+                var userIdTextView = view?.findViewById<TextView>(R.id.userIdTextView)
+                var taskTextView = view?.findViewById<TextView>(R.id.taskTitleView)
+                var checkBoxForTaskSituation = view?.findViewById<CheckBox>(R.id.taskCheckBox)
+
+                idTextView!!.append(todoList[position].id.toString())
+                userIdTextView!!.append(todoList[position].userId.toString())
+                taskTextView!!.append(todoList[position].title)
+                checkBoxForTaskSituation!!.isChecked = todoList[position].completed
+
             }
 
-            var idTextView = view?.findViewById<TextView>(R.id.TaskIdTextView)
-            var userIdTextView = view?.findViewById<TextView>(R.id.userIdTextView)
-            var taskTextView = view?.findViewById<TextView>(R.id.taskTitleView)
-            var checkBoxForTaskSituation = view?.findViewById<CheckBox>(R.id.taskCheckBox)
-
-            idTextView!!.append(todoList[position].id.toString())
-            userIdTextView!!.append(todoList[position].userId.toString())
-            taskTextView!!.append(todoList[position].title)
-            checkBoxForTaskSituation!!.isChecked = todoList[position].completed
 
             return view!!
         }
@@ -120,7 +121,9 @@ class ToDoListActivity : AppCompatActivity() {
         val userTaskStateList = intent.getStringArrayListExtra("taskStateList")
         for (index in 0 until 50){
 
-            val todo = Todo(userIdList!![index],userTaskIdList!![index], userTaskTextList!![index],true)
+            println(index)
+            println(userIdList!![index])
+            val todo = Todo(userIdList!![index],userTaskIdList!![index], userTaskTextList!![index],userTaskStateList!![index].toBoolean())
 
             todoList.add(todo)
         }
