@@ -50,5 +50,10 @@ class ToDoListActivity : AppCompatActivity() {
     }
     fun loadTaskByTop50(){
 
+        lateinit var todoList :ArrayList<Todo>
+        val userIdList = intent.getIntegerArrayListExtra("userIdList")
+        val userTaskIdList = intent.getIntegerArrayListExtra("taskIdList")
+        val userTaskTextList = intent.getStringArrayListExtra("taskTextList")
+        val userTaskStateList = intent.getStringArrayListExtra("taskStateList")
     }
 }
