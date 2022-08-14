@@ -33,7 +33,7 @@ class ToDoListActivity : AppCompatActivity() {
     }
 
     fun loadTaskByTitle(){
-        lateinit var todoList :ArrayList<Todo>
+        lateinit var todoList :Todo
         val userId = intent.getIntExtra("userId",1)
         val taskId = intent.getIntExtra("taskId",1)
         val taskText = intent.getStringExtra("taskText").toString()
@@ -42,6 +42,11 @@ class ToDoListActivity : AppCompatActivity() {
     }
     fun loadTaskByTaskId(){
 
+        lateinit var todoList :Todo
+        val userId = intent.getIntExtra("userId",1)
+        val taskId = intent.getIntExtra("taskId",1)
+        val taskText = intent.getStringExtra("taskText").toString()
+        val taskState =  intent.getStringExtra("taskState").toString()
     }
     fun loadTaskByTop50(){
 
