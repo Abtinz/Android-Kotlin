@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.CheckBox
+import android.widget.TextView
 import com.abtinandroidstdio.todolist.databinding.ActivityToDoListBinding
 class ToDoListActivity : AppCompatActivity() {
     lateinit var binding :ActivityToDoListBinding
@@ -52,16 +54,33 @@ class ToDoListActivity : AppCompatActivity() {
              return todoList.size
         }
 
-          override fun getItem(p0: Int): Any {
-            return  todoList[p0]
+          override fun getItem(position: Int): Any {
+            return  todoList[position]
         }
 
-        override fun getItemId(p0: Int): Long {
-            return p0.toLong()
+        override fun getItemId(position: Int): Long {
+            return position.toLong()
         }
 
-        override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
+        override fun getView(position: Int, view: View?, viewGroup: ViewGroup?): View {
 
+            var view = view
+            if(view == null){
+                view = layoutInflater.inflate(R.layout.grid_items_view,viewGroup,false)
+
+            }
+
+            var idTextView = view?.findViewById<TextView>(R.id.TaskIdTextView)
+            var userIdTextView = view?.findViewById<TextView>(R.id.userIdTextView)
+            var taskTextView = view?.findViewById<TextView>(R.id.taskTitleView)
+            var checkBoxForTaskSituation = view?.findViewById<CheckBox>(R.id.taskCheckBox)
+
+            idTextView!!.append(todoList[position].id.toString())
+            userIdTextView!!.append(todoList[position].userId.toString())
+            taskTextView!!.append(todoList[position].title)
+            checkBoxForTaskSituation!!.isChecked = todoList[position].completed
+
+            return view!!
         }
 
     }
