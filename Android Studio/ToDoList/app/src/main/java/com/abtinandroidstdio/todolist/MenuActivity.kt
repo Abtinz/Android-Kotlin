@@ -13,29 +13,24 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
     }
 
     fun buttonClick(view : View){
         val button = view as Button
-
          buttonStringDetector(button.text.toString())
     }
 
-    fun  buttonStringDetector(buttonText :String){
-
+    private fun  buttonStringDetector(buttonText :String){
         when(buttonText){
-            "Task By UserId" ->  InputActivityIntent("UserId")
-            "Task By TaskId" ->  InputActivityIntent("TaskId")
-            "Task By Title" ->  InputActivityIntent("Title")
-            "Top 50 Task" ->  TODO()
+            "Task By UserId" ->  inputActivityIntent("UserId")
+            "Task By TaskId" ->  inputActivityIntent("TaskId")
+            "Task By Title" ->  inputActivityIntent("Title")
+            "Top 50 Task" ->  toDoListIntent()
             "About App" ->  aboutApp()
         }
-
-
     }
 
-    private fun ToDoListIntent(){
+    private fun toDoListIntent(){
         val userIdList = intent.getIntegerArrayListExtra("userIdList")
         val taskIdList = intent.getIntegerArrayListExtra("taskIdList")
         val taskTextList = intent.getStringArrayListExtra("taskTextList")
@@ -50,13 +45,13 @@ class MenuActivity : AppCompatActivity() {
         startActivity(toDoListIntent)
     }
 
-    fun aboutApp(){
+    private fun aboutApp(){
         val intentOfInputActivity = Intent(this , AboutActivity::class.java)
 
         startActivity(intentOfInputActivity)
     }
 
-    fun InputActivityIntent(IntentText :String){
+    private fun inputActivityIntent(IntentText :String){
 
         val userIdList = intent.getIntegerArrayListExtra("userIdList")
         val taskIdList = intent.getIntegerArrayListExtra("taskIdList")
