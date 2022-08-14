@@ -35,6 +35,21 @@ class MenuActivity : AppCompatActivity() {
 
     }
 
+    private fun ToDoListIntent(){
+        val userIdList = intent.getIntegerArrayListExtra("userIdList")
+        val taskIdList = intent.getIntegerArrayListExtra("taskIdList")
+        val taskTextList = intent.getStringArrayListExtra("taskTextList")
+        val taskStateList = intent.getStringArrayListExtra("taskStateList")
+        val toDoListIntent = Intent(this , InputActivity::class.java)
+
+        toDoListIntent.putExtra("inputType","Top50")
+        toDoListIntent.putExtra("userIdList",userIdList)
+        toDoListIntent.putExtra("taskIdList",taskIdList)
+        toDoListIntent.putExtra("taskTextList",taskTextList)
+        toDoListIntent.putExtra("taskStateList",taskStateList)
+        startActivity(toDoListIntent)
+    }
+
     fun aboutApp(){
         val intentOfInputActivity = Intent(this , AboutActivity::class.java)
 
