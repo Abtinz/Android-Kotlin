@@ -5,9 +5,16 @@ fun main() {
     "Amir AHmad Adibie","99@%339","MaktabKhoneh","MaktabKhoneh.org Web School")
   course.printDetails("Teacher")
 
-  val catedCourse = course as Teacher
+  //cast course to the teacher
+  val castedCourse = course as Teacher
   println("Casted Teacher:")
-  catedCourse.printTeacherDetails()
+  castedCourse.printTeacherDetails()
+
+  //cast teacher to course
+  val castedTeacher = teacher as Course
+  castedTeacher.CourseAttendersCount = 20000
+  castedTeacher.CourseStatus = "Ongoing"
+  castedCourse.printDetails("Teacher")
 
   var student = Student("Arash Moradi" , "200#489" , "19.5" ,
                         "202.B","MaktabKhoneh","MaktabKhoneh.org Web School")
