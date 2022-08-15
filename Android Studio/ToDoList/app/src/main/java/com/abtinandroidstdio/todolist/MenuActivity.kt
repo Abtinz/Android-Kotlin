@@ -47,7 +47,6 @@ class MenuActivity : AppCompatActivity() {
 
     private fun aboutApp(){
         val intentOfInputActivity = Intent(this , AboutActivity::class.java)
-
         startActivity(intentOfInputActivity)
     }
 
