@@ -7,13 +7,20 @@
     tools:context=".ui.HomeFragment">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:id="@+id/newTaskButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="70dp">
 
         <ImageView
-            android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:src="@tools:sample/avatars" />
+            android:elevation="10dp"
+            tools:src="@drawable/ic_baseline_add_24" />
     </androidx.cardview.widget.CardView>
+
 </RelativeLayout>
