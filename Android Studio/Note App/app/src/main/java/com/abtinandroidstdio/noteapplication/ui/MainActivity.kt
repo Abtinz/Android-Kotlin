@@ -1,7 +1,8 @@
-package com.abtinandroidstdio.noteapplication
+package com.abtinandroidstdio.noteapplication.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.abtinandroidstdio.noteapplication.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
