@@ -11,8 +11,11 @@ interface NoteDB {
     @Insert
     fun addNote(note: Note)//add new note
 
+    @Insert
+    fun addMultipleNotes(vararg note: Note)
+
     @Query("SELECT * FROM note")
     fun getAllNotes():List<Note>
 
-    
+
 }
