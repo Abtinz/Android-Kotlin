@@ -7,4 +7,10 @@ import androidx.room.Database
     version = 1
 )
 abstract class NoteDataBase {
+    abstract fun getNoteDB():NoteDB
+
+    companion object{
+        @Volatile private var instance : NoteDataBase? = null
+
+    }
 }
