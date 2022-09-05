@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.abtinandroidstdio.mynotes.R
 import com.abtinandroidstdio.mynotes.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
@@ -15,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClickNewNoteButton(view: View){
+
         startActivity(Intent(this,NewNoteActivity::class.java))
     }
 }
