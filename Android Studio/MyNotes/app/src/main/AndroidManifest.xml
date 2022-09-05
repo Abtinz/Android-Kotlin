@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.abtinandroidstdio.noteapplication" >
+    package="com.abtinandroidstdio.mynotes">
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/ic_baseline_done_24"
+        android:icon="@drawable/ic_baseline_notes_24"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_baseline_notes_24"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NoteApplication"
-        tools:targetApi="31" >
+        android:theme="@style/Theme.MyNotes"
+        tools:targetApi="31">
         <activity
-            android:name=".ui.NewNoteActivity"
+            android:name=".NewNoteActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.MainActivity"
-            android:exported="true" >
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

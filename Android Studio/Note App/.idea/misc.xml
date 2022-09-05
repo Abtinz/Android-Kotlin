@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/coding/android/Android Studio/Note App/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.208" />
         <entry key="..\:/coding/android/Android Studio/Note App/app/src/main/res/drawable/ic_baseline_done_24.xml" value="0.208" />
+        <entry key="..\:/coding/android/Android Studio/Note App/app/src/main/res/layout/activity_home.xml" value="0.23229166666666667" />
         <entry key="..\:/coding/android/Android Studio/Note App/app/src/main/res/layout/activity_main.xml" value="0.11626139817629179" />
+        <entry key="..\:/coding/android/Android Studio/Note App/app/src/main/res/layout/activity_new_note.xml" value="0.24635416666666668" />
         <entry key="..\:/coding/android/Android Studio/Note App/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/coding/android/Android Studio/Note App/app/src/main/res/layout/fragment_new_task.xml" value="0.24635416666666668" />
       </map>

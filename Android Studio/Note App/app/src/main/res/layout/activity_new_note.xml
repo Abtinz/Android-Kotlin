@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.HomeFragment">
+    tools:context=".ui.NewNoteActivity">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/newTaskButton"
+        android:id="@+id/saveNewNoteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -20,7 +20,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:elevation="10dp"
-            tools:src="@drawable/ic_baseline_add_24" />
+            tools:src="@drawable/ic_baseline_done_24" />
     </androidx.cardview.widget.CardView>
 
+    <EditText
+        android:id="@+id/title"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/title"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/noteText"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="@string/note"
+        android:inputType="textMultiLine" />
 </RelativeLayout>
