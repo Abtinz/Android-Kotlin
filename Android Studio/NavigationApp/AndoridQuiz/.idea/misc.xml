@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/coding/android/Android Studio/NavigationApp/AndoridQuiz/app/src/main/res/layout/nav_header_main.xml" value="0.18568840579710144" />
+        <entry key="..\:/coding/android/Android Studio/NavigationApp/AndoridQuiz/app/src/main/res/layout/content_main.xml" value="0.18568840579710144" />
+        <entry key="..\:/coding/android/Android Studio/NavigationApp/AndoridQuiz/app/src/main/res/layout/nav_header_main.xml" value="0.4" />
       </map>
     </option>
   </component>
