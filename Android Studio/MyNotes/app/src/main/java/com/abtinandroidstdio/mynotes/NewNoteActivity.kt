@@ -42,23 +42,5 @@ class NewNoteActivity : AppCompatActivity() {
 
     }
 
-    private fun saveNewNote(note: Note){
-        class SaveNewNote: AsyncTask<Void,Void,Void>(){
-
-            override fun doInBackground(vararg p0: Void?): Void? {
-                println(note.note)
-                return null
-            }
-
-            override fun onPostExecute(result: Void?) {
-                super.onPostExecute(result)
-                Toast.makeText(this@NewNoteActivity,"this.toString()",Toast.LENGTH_SHORT).show()
-
-            }
-
-        }
-        SaveNewNote().execute()
-    }
-
 
 }
