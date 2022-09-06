@@ -7,7 +7,6 @@ import androidx.room.Query
 @Dao
 interface NoteDB {
 
-
     @Insert
     suspend fun addNote(note: Note)//add new note
 

@@ -23,7 +23,9 @@ abstract class NoteDataBase :RoomDatabase(){
             context.applicationContext,
             NoteDataBase::class.java,
             "notesDB"
-        ).allowMainThreadQueries()
+        )
+            .allowMainThreadQueries()
+            .fallbackToDestructiveMigration()
             .build()
 
         operator fun invoke(context : Context) = instance ?: synchronized(LOCK){
