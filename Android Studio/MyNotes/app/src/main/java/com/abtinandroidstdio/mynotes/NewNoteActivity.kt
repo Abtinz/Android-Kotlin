@@ -19,30 +19,41 @@ class NewNoteActivity : AppCompatActivity() {
     }
 
     fun onSaveButtonClick(view:View){
-        val newNoteTitle = binding.title.toString().trim()
-        val newNoteText = binding.noteText.toString().trim()
+        val newNoteTitle = binding.title.text.toString().trim()
+        val newNoteText = binding.noteText.text.toString().trim()
 
         if(newNoteTitle.isEmpty()){
             Toast.makeText(this,"please write your new note title!",Toast.LENGTH_SHORT).show()
+
         }else{
+            Toast.makeText(this,newNoteTitle,Toast.LENGTH_SHORT).show()
             val newNote = Note(newNoteTitle,newNoteText)
-            NoteDataBase(this).getNoteDB().addNote(newNote)
-            val intent = Intent(this , MainActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
-            startActivity(intent)
+            try {
+
+                NoteDataBase(this@NewNoteActivity).getNoteDB().addNote(newNote)
+                val intent = Intent(this , MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+            }catch (exep : Exception){
+               exep.printStackTrace()
+            }
+
         }
 
     }
 
-    fun saveNewNote(note: Note){
+    private fun saveNewNote(note: Note){
         class SaveNewNote: AsyncTask<Void,Void,Void>(){
+
             override fun doInBackground(vararg p0: Void?): Void? {
-                NoteDataBase(this@NewNoteActivity).getNoteDB().addNote(note)
+                println(note.note)
                 return null
             }
 
             override fun onPostExecute(result: Void?) {
                 super.onPostExecute(result)
+                Toast.makeText(this@NewNoteActivity,"this.toString()",Toast.LENGTH_SHORT).show()
+
             }
 
         }

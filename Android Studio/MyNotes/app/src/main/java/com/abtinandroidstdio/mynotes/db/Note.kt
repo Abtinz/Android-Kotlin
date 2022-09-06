@@ -8,5 +8,5 @@ data class Note(
     val title:String,
     val note : String){
     @PrimaryKey(autoGenerate = true)
-    var id:Int = 1
+    var id:Int = 0
 }

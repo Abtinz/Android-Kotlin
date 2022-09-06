@@ -7,7 +7,8 @@ import androidx.room.RoomDatabase
 
 @Database(
     entities = [Note::class] ,
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class NoteDataBase :RoomDatabase(){
     abstract fun getNoteDB():NoteDB
@@ -22,7 +23,8 @@ abstract class NoteDataBase :RoomDatabase(){
             context.applicationContext,
             NoteDataBase::class.java,
             "notesDB"
-        ).build()
+        ).allowMainThreadQueries()
+            .build()
 
         operator fun invoke(context : Context) = instance ?: synchronized(LOCK){
             instance ?: dbBuilder(context).also {
