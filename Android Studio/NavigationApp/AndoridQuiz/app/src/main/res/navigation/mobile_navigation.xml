@@ -9,7 +9,14 @@
         android:id="@+id/nav_home"
         android:name="com.abtinandroidstdio.andoridquiz.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_quizQuestionsFragment"
+            app:destination="@id/quizQuestionsFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_gallery"
+            app:destination="@id/nav_gallery" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -22,4 +29,19 @@
         android:name="com.abtinandroidstdio.andoridquiz.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/quizQuestionsFragment"
+        android:name="com.abtinandroidstdio.andoridquiz.ui.Game.QuizQuestions.QuizQuestionsFragment"
+        android:label="fragment_quiz_qusetions"
+        tools:layout="@layout/fragment_quiz_qusetions" />
+    <fragment
+        android:id="@+id/gameOverFragment"
+        android:name="com.abtinandroidstdio.andoridquiz.ui.Game.GameOver.GameOverFragment"
+        android:label="fragment_game_over"
+        tools:layout="@layout/fragment_game_over" />
+    <fragment
+        android:id="@+id/winingGameFragment"
+        android:name="com.abtinandroidstdio.andoridquiz.ui.Game.WiningGame.WiningGameFragment"
+        android:label="fragment_wining_game"
+        tools:layout="@layout/fragment_wining_game" />
 </navigation>
