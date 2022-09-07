@@ -13,9 +13,6 @@
         <action
             android:id="@+id/action_nav_home_to_quizQuestionsFragment"
             app:destination="@id/quizQuestionsFragment" />
-        <action
-            android:id="@+id/action_nav_home_to_nav_gallery"
-            app:destination="@id/nav_gallery" />
     </fragment>
 
     <fragment
@@ -46,10 +43,18 @@
         android:id="@+id/gameOverFragment"
         android:name="com.abtinandroidstdio.andoridquiz.ui.Game.GameOver.GameOverFragment"
         android:label="Android Quiz App"
-        tools:layout="@layout/fragment_game_over" />
+        tools:layout="@layout/fragment_game_over" >
+        <action
+            android:id="@+id/action_gameOverFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
     <fragment
         android:id="@+id/winingGameFragment"
         android:name="com.abtinandroidstdio.andoridquiz.ui.Game.WiningGame.WiningGameFragment"
         android:label="Android Quiz App"
-        tools:layout="@layout/fragment_wining_game" />
+        tools:layout="@layout/fragment_wining_game" >
+        <action
+            android:id="@+id/action_winingGameFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 </navigation>
