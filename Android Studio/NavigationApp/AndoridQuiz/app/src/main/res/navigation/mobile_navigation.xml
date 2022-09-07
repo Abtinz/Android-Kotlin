@@ -36,7 +36,9 @@
             app:destination="@id/winingGameFragment" />
         <action
             android:id="@+id/action_quizQuestionsFragment_to_gameOverFragment2"
-            app:destination="@id/gameOverFragment" />
+            app:destination="@id/gameOverFragment"
+            app:popUpTo="@id/quizQuestionsFragment"
+            app:popUpToInclusive="true" />
 
     </fragment>
     <fragment
@@ -45,8 +47,10 @@
         android:label="Android Quiz App"
         tools:layout="@layout/fragment_game_over" >
         <action
-            android:id="@+id/action_gameOverFragment_to_nav_home"
-            app:destination="@id/nav_home" />
+            android:id="@+id/action_gameOverFragment_to_quizQuestionsFragment"
+            app:destination="@id/quizQuestionsFragment"
+            app:popUpTo="@id/gameOverFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/winingGameFragment"
@@ -54,7 +58,7 @@
         android:label="Android Quiz App"
         tools:layout="@layout/fragment_wining_game" >
         <action
-            android:id="@+id/action_winingGameFragment_to_nav_home"
-            app:destination="@id/nav_home" />
+            android:id="@+id/action_winingGameFragment_to_quizQuestionsFragment"
+            app:destination="@id/quizQuestionsFragment" />
     </fragment>
 </navigation>
