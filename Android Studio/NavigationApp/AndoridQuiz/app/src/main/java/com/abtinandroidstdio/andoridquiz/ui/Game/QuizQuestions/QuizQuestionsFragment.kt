@@ -15,10 +15,12 @@ class QuizQuestionsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentQuizQusetionsBinding.inflate(inflater)
+
         binding.submitButton.setOnClickListener{
-            
+
         }
-        return inflater.inflate(R.layout.fragment_quiz_qusetions, container, false)
+
+        return binding.root
     }
 
 

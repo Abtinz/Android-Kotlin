@@ -33,7 +33,15 @@
         android:id="@+id/quizQuestionsFragment"
         android:name="com.abtinandroidstdio.andoridquiz.ui.Game.QuizQuestions.QuizQuestionsFragment"
         android:label="Android Quiz App"
-        tools:layout="@layout/fragment_quiz_qusetions" />
+        tools:layout="@layout/fragment_quiz_qusetions" >
+        <action
+            android:id="@+id/action_quizQuestionsFragment_to_winingGameFragment"
+            app:destination="@id/winingGameFragment" />
+        <action
+            android:id="@+id/action_quizQuestionsFragment_to_gameOverFragment2"
+            app:destination="@id/gameOverFragment" />
+
+    </fragment>
     <fragment
         android:id="@+id/gameOverFragment"
         android:name="com.abtinandroidstdio.andoridquiz.ui.Game.GameOver.GameOverFragment"
