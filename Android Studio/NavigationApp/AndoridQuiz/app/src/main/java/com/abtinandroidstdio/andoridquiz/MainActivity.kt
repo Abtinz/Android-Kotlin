@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
     fun onclickStart(view:View){
         Navigation.findNavController(view).navigate(R.id.action_nav_home_to_quizQuestionsFragment)
     }
