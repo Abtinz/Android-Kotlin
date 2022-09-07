@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.abtinandroidstdio.andoridquiz.R
-
+import com.abtinandroidstdio.andoridquiz.databinding.FragmentQuizQusetionsBinding
 class QuizQuestionsFragment : Fragment() {
 
 
@@ -14,6 +14,10 @@ class QuizQuestionsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val binding = FragmentQuizQusetionsBinding.inflate(inflater)
+        binding.submitButton.setOnClickListener{
+            
+        }
         return inflater.inflate(R.layout.fragment_quiz_qusetions, container, false)
     }
 
