@@ -45,11 +45,11 @@
     <fragment
         android:id="@+id/gameOverFragment"
         android:name="com.abtinandroidstdio.andoridquiz.ui.Game.GameOver.GameOverFragment"
-        android:label="fragment_game_over"
+        android:label="Android Quiz App"
         tools:layout="@layout/fragment_game_over" />
     <fragment
         android:id="@+id/winingGameFragment"
         android:name="com.abtinandroidstdio.andoridquiz.ui.Game.WiningGame.WiningGameFragment"
-        android:label="fragment_wining_game"
+        android:label="Android Quiz App"
         tools:layout="@layout/fragment_wining_game" />
 </navigation>
