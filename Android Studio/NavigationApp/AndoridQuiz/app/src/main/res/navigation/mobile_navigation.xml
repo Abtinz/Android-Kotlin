@@ -32,7 +32,7 @@
     <fragment
         android:id="@+id/quizQuestionsFragment"
         android:name="com.abtinandroidstdio.andoridquiz.ui.Game.QuizQuestions.QuizQuestionsFragment"
-        android:label="fragment_quiz_qusetions"
+        android:label="Android Quiz App"
         tools:layout="@layout/fragment_quiz_qusetions" />
     <fragment
         android:id="@+id/gameOverFragment"
