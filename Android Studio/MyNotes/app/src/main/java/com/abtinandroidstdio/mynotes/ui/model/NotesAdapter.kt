@@ -1,23 +1,29 @@
 package com.abtinandroidstdio.mynotes.ui.model
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.abtinandroidstdio.mynotes.R
 import com.abtinandroidstdio.mynotes.db.Note
 
-class NotesAdapter(val notesList :List<Note>):RecyclerView.Adapter<NotesAdapter.ViewHolder>() {
+class NotesAdapter(private val notesList :List<Note>):RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
 
-    class ViewHolder(val view:View):RecyclerView.ViewHolder(view)
+    class NotesViewHolder(val view:View):RecyclerView.ViewHolder(view)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    /*
+    here we set our views models in our recycler views
+     */
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotesViewHolder {
+        return NotesViewHolder(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.note_view,parent,false)
+        )
+    }
+
+    override fun onBindViewHolder(holder: NotesViewHolder, position: Int) {
         TODO("Not yet implemented")
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
-    }
-
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount() = notesList.size
 }
