@@ -1,5 +1,6 @@
 package com.abtinandroidstdio.andoridquiz.ui.Game.WiningGame
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -26,9 +27,13 @@ class WiningGameFragment : Fragment() {
         inflater.inflate(R.menu.main,menu)
     }
 
-
+    private fun shareSuccess(){
+        val shareIntent = Intent(Intent.ACTION_SEND)
+    }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item,Navigation.findNavController(requireView()))
-                || super.onOptionsItemSelected(item)
+        when(item.itemId){
+            R.id.shareResult -> shareSuccess()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
