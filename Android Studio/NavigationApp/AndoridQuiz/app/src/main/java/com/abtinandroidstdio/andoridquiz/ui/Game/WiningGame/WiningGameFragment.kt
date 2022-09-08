@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.abtinandroidstdio.andoridquiz.R
+import com.abtinandroidstdio.andoridquiz.databinding.FragmentWiningGameBinding
 
 class WiningGameFragment : Fragment() {
 
@@ -14,7 +16,9 @@ class WiningGameFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_wining_game, container, false)
+        val binding = FragmentWiningGameBinding.inflate(inflater)
+        
+        return binding.root
     }
 
 }
