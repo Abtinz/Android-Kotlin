@@ -30,7 +30,8 @@ class WiningGameFragment : Fragment() {
     private fun shareSuccess(){
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.putExtra(Intent.EXTRA_TEXT , getString(R.string.shareWining))
-        
+        shareIntent.setType("text/plain")
+        startActivity(shareIntent)
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){

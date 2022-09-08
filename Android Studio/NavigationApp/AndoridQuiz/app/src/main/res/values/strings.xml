@@ -15,7 +15,8 @@
     <string name="try_again">Try Again!</string>
     <string name="you_win">You Win!</string>
     <string name="share">Share</string>
-    <string name="shareWining">I Won Room Quiz App THat show Im a leo messi in android studio</string>
+    <string name="shareWining">I Won Room Quiz App That shows Im a leo messi in android studio
+        and this text is sending by share option in my app , Hallelujah</string>
 
     <string name="slide_show">Slide Show</string>
 </resources>
