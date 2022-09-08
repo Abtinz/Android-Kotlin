@@ -12,7 +12,7 @@ import com.abtinandroidstdio.mynotes.databinding.FragmentNewNoteBinding
 import com.abtinandroidstdio.mynotes.db.Note
 import com.abtinandroidstdio.mynotes.db.NoteDataBase
 
-class NewNoteFragment : Fragment() {
+class NewNoteFragment : BaseFragmentCoroutineClass() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
