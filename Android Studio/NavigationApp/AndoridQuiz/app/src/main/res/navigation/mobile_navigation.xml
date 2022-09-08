@@ -53,6 +53,9 @@
             app:destination="@id/quizQuestionsFragment"
             app:popUpTo="@id/gameOverFragment"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="choosedOption"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/winingGameFragment"
