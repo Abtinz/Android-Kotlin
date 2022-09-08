@@ -17,7 +17,8 @@ class WiningGameFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentWiningGameBinding.inflate(inflater)
-        
+
+        //setHasOptionsMenu(true)
         return binding.root
     }
 
