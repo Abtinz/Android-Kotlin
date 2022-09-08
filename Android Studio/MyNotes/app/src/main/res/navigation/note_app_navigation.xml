@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/note_app_navigation"
+    app:startDestination="@id/myNotesFragment">
+
+    <fragment
+        android:id="@+id/myNotesFragment"
+        android:name="com.abtinandroidstdio.mynotes.ui.MyNotesFragment"
+        android:label="NoteApp"
+        tools:layout="@layout/fragment_my_notes" >
+        <action
+            android:id="@+id/action_myNotesFragment_to_newNoteFragment"
+            app:destination="@id/newNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newNoteFragment"
+        android:name="com.abtinandroidstdio.mynotes.ui.NewNoteFragment"
+        android:label="NoteApp"
+        tools:layout="@layout/fragment_new_note" >
+        <action
+            android:id="@+id/action_newNoteFragment_to_myNotesFragment"
+            app:destination="@id/myNotesFragment" />
+    </fragment>
+</navigation>
