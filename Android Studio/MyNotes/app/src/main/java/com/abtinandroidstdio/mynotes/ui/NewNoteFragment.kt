@@ -22,7 +22,7 @@ class NewNoteFragment : BaseFragmentCoroutineClass() {
 
         val binding = FragmentNewNoteBinding.inflate(inflater)
 
-        binding.saveNewNoteButton.setOnClickListener {
+        binding.saveNewNoteButton.setOnClickListener { view ->
             val newNoteTitle = binding.newNoteTitle.text.toString().trim()
             val newNoteText = binding.newNoteText.text.toString().trim()
 
@@ -31,13 +31,17 @@ class NewNoteFragment : BaseFragmentCoroutineClass() {
 
             }else{
                 Toast.makeText(context,newNoteTitle,Toast.LENGTH_SHORT).show()
-                val newNote = Note(newNoteTitle,newNoteText)
+
                 try {
                     launch {
+                        val newNote = Note(newNoteTitle,newNoteText)
+                        context?.let {
+                            NoteDataBase(it).getNoteDB().addNote(newNote)
+                        }
 
                     }
-                    //NoteDataBase(context!!).getNoteDB().addNote(newNote)
-                    Navigation.findNavController(it).navigate(R.id.action_newNoteFragment_to_myNotesFragment)
+
+                    Navigation.findNavController(view).navigate(R.id.action_newNoteFragment_to_myNotesFragment)
                 }catch (exception : Exception){
                     exception.printStackTrace()
                 }
