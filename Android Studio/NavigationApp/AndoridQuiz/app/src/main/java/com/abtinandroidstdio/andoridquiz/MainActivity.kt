@@ -47,17 +47,8 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
     }
 
-    
-
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
-
-
-    fun onclickStart(view:View){
-        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_quizQuestionsFragment)
-    }
-
 }
