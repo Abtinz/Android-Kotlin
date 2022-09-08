@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.NewNoteFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="331dp"
+        tools:layout_editor_absoluteY="651dp">
 
-</FrameLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/newNoteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="@string/title" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="100dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/newNoteText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top"
+                android:hint="@string/note"
+                android:inputType="textMultiLine" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/saveNewNoteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp"
+        app:cardCornerRadius="70dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_baseline_done_24" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
