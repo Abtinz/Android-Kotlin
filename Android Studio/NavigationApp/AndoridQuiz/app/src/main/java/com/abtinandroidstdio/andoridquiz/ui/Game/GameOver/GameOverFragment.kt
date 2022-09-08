@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.Navigation
 import com.abtinandroidstdio.andoridquiz.R
 
@@ -22,7 +23,8 @@ class GameOverFragment : Fragment() {
         binding.tryAgainButton.setOnClickListener{
             Navigation.findNavController(it).navigate(R.id.action_gameOverFragment_to_quizQuestionsFragment)
         }
-        var args = GameOverFragmentArgs
+        var args = GameOverFragmentArgs.fromBundle(requireArguments())
+        Toast.makeText(context, "Your Answer: ${args.choosedOption}",Toast.LENGTH_SHORT).show()
         return binding.root
 
     }
