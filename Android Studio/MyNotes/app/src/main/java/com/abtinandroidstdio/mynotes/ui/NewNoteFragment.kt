@@ -11,6 +11,7 @@ import com.abtinandroidstdio.mynotes.R
 import com.abtinandroidstdio.mynotes.databinding.FragmentNewNoteBinding
 import com.abtinandroidstdio.mynotes.db.Note
 import com.abtinandroidstdio.mynotes.db.NoteDataBase
+import kotlinx.coroutines.launch
 
 class NewNoteFragment : BaseFragmentCoroutineClass() {
 
@@ -32,6 +33,9 @@ class NewNoteFragment : BaseFragmentCoroutineClass() {
                 Toast.makeText(context,newNoteTitle,Toast.LENGTH_SHORT).show()
                 val newNote = Note(newNoteTitle,newNoteText)
                 try {
+                    launch {
+
+                    }
                     //NoteDataBase(context!!).getNoteDB().addNote(newNote)
                     Navigation.findNavController(it).navigate(R.id.action_newNoteFragment_to_myNotesFragment)
                 }catch (exception : Exception){
