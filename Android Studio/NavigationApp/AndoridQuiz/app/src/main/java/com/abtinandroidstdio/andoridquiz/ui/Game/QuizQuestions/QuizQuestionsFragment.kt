@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import com.abtinandroidstdio.andoridquiz.R
 import com.abtinandroidstdio.andoridquiz.databinding.FragmentQuizQusetionsBinding
-import com.abtinandroidstdio.andoridquiz.ui.Game.WiningGame.WiningGameFragmentDirections
 
 class QuizQuestionsFragment : Fragment() {
 
@@ -21,9 +19,9 @@ class QuizQuestionsFragment : Fragment() {
 
         binding.submitButton.setOnClickListener{
             if(binding.roomCheckBox.isChecked){
-                Navigation.findNavController(it).navigate(WiningGameFragmentDirections.actionWiningGameFragmentToQuizQuestionsFragment())
+                Navigation.findNavController(it).navigate(QuizQuestionsFragmentDirections.actionQuizQuestionsFragmentToWiningGameFragment())
             }else{
-                Navigation.findNavController(it).navigate(R.id.action_quizQuestionsFragment_to_gameOverFragment2)
+                Navigation.findNavController(it).navigate(QuizQuestionsFragmentDirections.actionQuizQuestionsFragmentToGameOverFragment2())
             }
         }
 
