@@ -24,4 +24,6 @@ class WiningGameFragment : Fragment() {
         inflater.inflate(R.menu.main,menu)
     }
 
+
+    
 }
