@@ -22,6 +22,7 @@ class GameOverFragment : Fragment() {
         binding.tryAgainButton.setOnClickListener{
             Navigation.findNavController(it).navigate(R.id.action_gameOverFragment_to_quizQuestionsFragment)
         }
+        var args = GameOverFragmentArgs
         return binding.root
 
     }
