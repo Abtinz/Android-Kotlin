@@ -3,6 +3,8 @@ package com.abtinandroidstdio.andoridquiz.ui.Game.WiningGame
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import com.abtinandroidstdio.andoridquiz.R
 import com.abtinandroidstdio.andoridquiz.databinding.FragmentWiningGameBinding
 
@@ -12,7 +14,7 @@ class WiningGameFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentWiningGameBinding.inflate(inflater)
 
         setHasOptionsMenu(true)
@@ -26,6 +28,7 @@ class WiningGameFragment : Fragment() {
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return super.onOptionsItemSelected(item)
+        return NavigationUI.onNavDestinationSelected(item,Navigation.findNavController(requireView()))
+                || super.onOptionsItemSelected(item)
     }
 }
