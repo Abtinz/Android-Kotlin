@@ -23,7 +23,7 @@ class GameOverFragment : Fragment() {
         binding.tryAgainButton.setOnClickListener{
             Navigation.findNavController(it).navigate(R.id.action_gameOverFragment_to_quizQuestionsFragment)
         }
-        var args = GameOverFragmentArgs.fromBundle(requireArguments())
+        val args = GameOverFragmentArgs.fromBundle(requireArguments())
         Toast.makeText(context, "Your Answer: ${args.choosedOption}",Toast.LENGTH_SHORT).show()
         return binding.root
 

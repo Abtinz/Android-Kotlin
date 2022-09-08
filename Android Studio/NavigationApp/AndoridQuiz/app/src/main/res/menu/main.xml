@@ -5,13 +5,14 @@
     <item
         android:id="@+id/nav_slideshow"
         android:orderInCategory="100"
-        android:title="Slide Show"
+        android:title="@string/slide_show"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/shareResult"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_psychology_24"
+        android:visible="true"
+        android:icon="@drawable/ic_baseline_share_24"
         android:title="@string/share"
         app:showAsAction="always" />
 
