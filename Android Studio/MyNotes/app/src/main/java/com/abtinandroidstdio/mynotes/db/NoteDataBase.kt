@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(
     entities = [Note::class] ,
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class NoteDataBase :RoomDatabase(){
@@ -22,7 +22,7 @@ abstract class NoteDataBase :RoomDatabase(){
         private fun dbBuilder(context: Context) = Room.databaseBuilder(
             context.applicationContext,
             NoteDataBase::class.java,
-            "notesDB"
+            "myNotesDB"
         )
             .allowMainThreadQueries()
             .fallbackToDestructiveMigration()

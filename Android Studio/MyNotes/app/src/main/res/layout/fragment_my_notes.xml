@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="30dp"
-        android:onClick="onClickNewNoteButton"
         app:cardCornerRadius="70dp"
         app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
