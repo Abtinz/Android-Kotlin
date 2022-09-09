@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/noteCardview"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
