@@ -5,9 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.abtinandroidstdio.mynotes.R
 import com.abtinandroidstdio.mynotes.db.Note
+import com.abtinandroidstdio.mynotes.ui.MyNotesFragmentDirections
 
 class NotesAdapter(private val notesList :List<Note>):RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
 
@@ -35,7 +37,7 @@ class NotesAdapter(private val notesList :List<Note>):RecyclerView.Adapter<Notes
             holder.titleView.text = notesList[position].title
             holder.noteView.text = notesList[position].note
              holder.noteCardView.setOnClickListener {
-                 
+                 Navigation.findNavController(it).navigate(MyNotesFragmentDirections.actionMyNotesFragmentToNewNoteFragment(notesList[position]))
              }
 
     }

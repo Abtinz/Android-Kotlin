@@ -24,7 +24,7 @@
             app:destination="@id/myNotesFragment" />
         <argument
             app:argType="com.abtinandroidstdio.mynotes.db.Note"
-            android:name="Note"
+            android:name="note"
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>

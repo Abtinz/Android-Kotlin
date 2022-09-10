@@ -23,6 +23,7 @@ class MyNotesFragment : BaseFragmentCoroutineClass() {
     ): View {
         binding = FragmentMyNotesBinding.inflate(inflater)
 
+
         binding.newTaskButton.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_myNotesFragment_to_newNoteFragment)
         }

@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 
 class NewNoteFragment : BaseFragmentCoroutineClass() {
 
+    private var note: Note? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,6 +23,11 @@ class NewNoteFragment : BaseFragmentCoroutineClass() {
 
         val binding = FragmentNewNoteBinding.inflate(inflater)
 
+
+
+        arguments?.let {
+
+        }
         binding.saveNewNoteButton.setOnClickListener { view ->
             val newNoteTitle = binding.newNoteTitle.text.toString().trim()
             val newNoteText = binding.newNoteText.text.toString().trim()
