@@ -52,8 +52,6 @@ class NewNoteFragment : BaseFragmentCoroutineClass() {
                                 }
                             }
 
-
-
                     }
 
                     Navigation.findNavController(view).navigate(NewNoteFragmentDirections.actionNewNoteFragmentToMyNotesFragment())
@@ -67,13 +65,27 @@ class NewNoteFragment : BaseFragmentCoroutineClass() {
         return binding.root
     }
 
+    /*
+    * are you sure AlertDialog
+     */
     private fun deleteNote(){
         AlertDialog.Builder(context).apply {
-            
-        }
+            setTitle("Are you sure that you need to delete ${note?.title}?")
+            setMessage("There is no way to undo this operation!")
+            setPositiveButton("Delete"){_,_ ->
+                launch {
+                    context?.let {
+                        NoteDataBase(it).getNoteDB().deleteNote(note!!)
+                        Navigation.findNavController(requireView()).navigate(NewNoteFragmentDirections.actionNewNoteFragmentToMyNotesFragment())
+                    }
+
+                    }
+            }
+            setNegativeButton("Cancel"){ _,_ ->  }
+        }.create().show()
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return super.onOptionsItemSelected(item)
+
         when(item.itemId){
             R.id.deleteNoteOption ->  {
                 if(note == null){
@@ -83,6 +95,7 @@ class NewNoteFragment : BaseFragmentCoroutineClass() {
                 }
             }
         }
+        return super.onOptionsItemSelected(item)
     }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
