@@ -28,7 +28,8 @@ class NewNoteFragment : BaseFragmentCoroutineClass() {
         //check that our arg is null or not
         arguments?.let {
             note = NewNoteFragmentArgs.fromBundle(it).note
-            
+            binding.newNoteTitle.setText(note?.title)
+            binding.newNoteText.setText( note?.note)
         }
         binding.saveNewNoteButton.setOnClickListener { view ->
             val newNoteTitle = binding.newNoteTitle.text.toString().trim()
@@ -43,13 +44,21 @@ class NewNoteFragment : BaseFragmentCoroutineClass() {
                 try {
                     launch {
                         val newNote = Note(newNoteTitle,newNoteText)
-                        context?.let {
-                            NoteDataBase(it).getNoteDB().addNote(newNote)
-                        }
+
+                            context?.let {
+                                if(note == null){
+                                    NoteDataBase(it).getNoteDB().addNote(newNote)
+                                }else{
+                                    newNote.id = note!!.id
+                                    NoteDataBase(it).getNoteDB().updateNote(newNote)
+                                }
+                            }
+
+
 
                     }
 
-                    Navigation.findNavController(view).navigate(R.id.action_newNoteFragment_to_myNotesFragment)
+                    Navigation.findNavController(view).navigate(NewNoteFragmentDirections.actionNewNoteFragmentToMyNotesFragment())
                 }catch (exception : Exception){
                     exception.printStackTrace()
                 }
