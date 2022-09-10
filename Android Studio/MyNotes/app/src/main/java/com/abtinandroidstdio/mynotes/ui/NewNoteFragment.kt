@@ -25,8 +25,10 @@ class NewNoteFragment : BaseFragmentCoroutineClass() {
 
 
 
+        //check that our arg is null or not
         arguments?.let {
-
+            note = NewNoteFragmentArgs.fromBundle(it).note
+            
         }
         binding.saveNewNoteButton.setOnClickListener { view ->
             val newNoteTitle = binding.newNoteTitle.text.toString().trim()
