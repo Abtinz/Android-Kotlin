@@ -1,10 +1,9 @@
 package com.abtinandroidstdio.mynotes.ui
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
 import com.abtinandroidstdio.mynotes.R
@@ -23,8 +22,7 @@ class NewNoteFragment : BaseFragmentCoroutineClass() {
 
         val binding = FragmentNewNoteBinding.inflate(inflater)
 
-
-
+        setHasOptionsMenu(true)
         //check that our arg is null or not
         arguments?.let {
             note = NewNoteFragmentArgs.fromBundle(it).note
@@ -67,6 +65,28 @@ class NewNoteFragment : BaseFragmentCoroutineClass() {
         }
 
         return binding.root
+    }
+
+    private fun deleteNote(){
+        AlertDialog.Builder(context).apply {
+            
+        }
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
+        when(item.itemId){
+            R.id.deleteNoteOption ->  {
+                if(note == null){
+                    Toast.makeText(context , "This Note have not added to your note list yet!",Toast.LENGTH_SHORT).show()
+                }else{
+                    deleteNote()
+                }
+            }
+        }
+    }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu,menu)
     }
 
 }
