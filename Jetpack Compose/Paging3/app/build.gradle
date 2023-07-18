@@ -10,7 +10,7 @@ plugins {
 android {
     compileSdk 34
     defaultConfig {
-        applicationId "com.abtinandroidstdio.uritect"
+        applicationId "com.example.paging"
         minSdk 21
         targetSdk 34
         versionCode 1

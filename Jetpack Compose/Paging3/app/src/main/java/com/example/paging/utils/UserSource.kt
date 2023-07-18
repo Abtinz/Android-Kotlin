@@ -19,6 +19,8 @@ class UserSource: PagingSource<Int, UsersInfo>() {
         return try{
             val nextPage = params.key ?: 1
             val users = RetrofitClientService().retrofit.create(ApiService::class.java).api(nextPage)
+            println(users.data)
+            println(nextPage)
             LoadResult.Page(
                 data = users.data,
                 prevKey = if(nextPage == 1) null else nextPage - 1,
