@@ -8,7 +8,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-class RetrofitClientService (){
+class RetrofitClientService(){
 
 
     var retrofit: Retrofit
