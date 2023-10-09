@@ -127,5 +127,6 @@ fun InformationRowView(value:String , icon:ImageVector) {
             modifier = Modifier
                 .padding(start = 5.dp, end = 5.dp)
         )
+
     }
 }
