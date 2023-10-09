@@ -8,6 +8,7 @@ espresso-core = "3.5.1"
 lifecycle-runtime-ktx = "2.6.2"
 activity-compose = "1.8.0"
 compose-bom = "2023.03.00"
+icons = "1.6.0-alpha07"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -24,6 +25,9 @@ ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 material = { group = "androidx.compose.material", name = "material" }
+
+icon = { group = "androidx.compose.material", name = "material-icons-core" ,version.ref = "icons"}
+icon-extended = { group = "androidx.compose.material", name = "material-icons-extended" ,version.ref = "icons"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
