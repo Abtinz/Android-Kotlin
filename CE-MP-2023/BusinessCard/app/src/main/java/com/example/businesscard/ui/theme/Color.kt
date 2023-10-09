@@ -2,6 +2,12 @@ package com.example.businesscard.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
+val CardsBackGround = Color(0xFFF6F1F1)
+val CardBordersColor = Color(0xFF146C94)
+val BackgroundColor = Color(0xFF19A7CE)
+val ValueColor = Color(0xFF000000)
+val titlesColor = Color(0xFF61677A)
+
 val Purple80 = Color(0xFFD0BCFF)
 val PurpleGrey80 = Color(0xFFCCC2DC)
 val Pink80 = Color(0xFFEFB8C8)
