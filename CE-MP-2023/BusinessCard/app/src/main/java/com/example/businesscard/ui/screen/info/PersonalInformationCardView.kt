@@ -1,21 +1,14 @@
 package com.example.businesscard.ui.screen.info
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
-import androidx.compose.material.ButtonColors
 import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Card
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
@@ -40,88 +33,71 @@ import com.example.businesscard.ui.theme.CardsBackGround
 import com.example.businesscard.ui.theme.titlesColor
 
 @Composable
-fun PersonalInformationCardView() {
+fun PersonalInformationCardView(rotationClick : () -> Unit) {
 
     val density = LocalDensity.current //will be used for dynamic text sizes
 
-    Card(
+    Column(
         modifier = Modifier
             .fillMaxWidth()
-            .height(500.dp)
-            .padding(start = 35.dp, end = 35.dp),
-        backgroundColor = CardsBackGround,
-        shape = RoundedCornerShape(0.dp),
-        elevation  = 10.dp
-    ) {
-        Box(
+            .padding(10.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ){
+        Image(
+            painter = painterResource(id = R.drawable.profile_image),
+            contentDescription = "abtin zandi image",
+            contentScale = ContentScale.Crop,
             modifier = Modifier
-                .fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ){
-            Column(
+                .size(150.dp)
+                .clip(CircleShape)
+        )
+
+        Text(
+            text = "Abtin Zandi",
+            color = ValueColor,
+            fontSize = with(density){24.dp.toSp()},
+            fontWeight = FontWeight.SemiBold,
+            modifier = Modifier
+                .padding(top = 5.dp, bottom = 5.dp)
+        )
+
+        InformationRowView(
+            value =  "Iran/Tehran",
+            icon = Icons.Default.LocationOn
+        )
+
+        InformationRowView(
+            value =  "Android Developer",
+            icon = Icons.Default.Work
+        )
+
+        InformationRowView(
+            value = "Uritect",
+            icon = Icons.Default.Apartment
+        )
+
+        InformationRowView(
+            value = "Amirkabir University of Technology",
+            icon = Icons.Default.School
+        )
+
+        Button(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp),
+            onClick = {
+                rotationClick()
+            },
+            colors = ButtonDefaults.buttonColors(backgroundColor = CardBordersColor, contentColor = CardsBackGround)
+        ) {
+            Text(
+                text = "Skills and Contact",
+                fontSize = with(density){18.dp.toSp()},
+                fontWeight = FontWeight.SemiBold,
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-            ){
-                Image(
-                    painter = painterResource(id = R.drawable.profile_image),
-                    contentDescription = "abtin zandi image",
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier
-                        .size(150.dp)
-                        .clip(CircleShape)
-                )
-
-                Text(
-                    text = "Abtin Zandi",
-                    color = ValueColor,
-                    fontSize = with(density){24.dp.toSp()},
-                    fontWeight = FontWeight.SemiBold,
-                    modifier = Modifier
-                        .padding(top = 5.dp, bottom = 5.dp)
-                )
-
-                InformationRowView(
-                    value =  "Iran/Tehran",
-                    icon = Icons.Default.LocationOn
-                )
-
-                InformationRowView(
-                    value =  "Android Developer",
-                    icon = Icons.Default.Work
-                )
-
-                InformationRowView(
-                    value = "Uritect",
-                    icon = Icons.Default.Apartment
-                )
-
-                InformationRowView(
-                    value = "Amirkabir University of Technology",
-                    icon = Icons.Default.School
-                )
-
-                Button(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    onClick = {
-
-                    },
-                    colors = ButtonDefaults.buttonColors(backgroundColor = CardBordersColor, contentColor = CardsBackGround)
-                ) {
-                    Text(
-                        text = "Skills and Contact",
-                        fontSize = with(density){18.dp.toSp()},
-                        fontWeight = FontWeight.SemiBold,
-                        modifier = Modifier
-                            .padding(top = 5.dp, bottom = 5.dp)
-                    )
-                }
-            }
+                    .padding(top = 5.dp, bottom = 5.dp)
+            )
         }
-
     }
 }
 
