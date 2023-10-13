@@ -31,6 +31,11 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import com.example.businesscard.ui.theme.CardBordersColor
 import com.example.businesscard.ui.theme.CardsBackGround
 import com.example.businesscard.ui.theme.titlesColor
+import com.example.businesscard.utils.InformationStrings.company
+import com.example.businesscard.utils.InformationStrings.fullname
+import com.example.businesscard.utils.InformationStrings.job
+import com.example.businesscard.utils.InformationStrings.location
+import com.example.businesscard.utils.InformationStrings.university
 
 @Composable
 fun PersonalInformationCardView(rotationClick : () -> Unit) {
@@ -53,7 +58,7 @@ fun PersonalInformationCardView(rotationClick : () -> Unit) {
         )
 
         Text(
-            text = "Abtin Zandi",
+            text = fullname,
             color = ValueColor,
             fontSize = with(density){24.dp.toSp()},
             fontWeight = FontWeight.SemiBold,
@@ -62,22 +67,22 @@ fun PersonalInformationCardView(rotationClick : () -> Unit) {
         )
 
         InformationRowView(
-            value =  "Iran/Tehran",
+            value =  location,
             icon = Icons.Default.LocationOn
         )
 
         InformationRowView(
-            value =  "Android Developer",
+            value = job ,
             icon = Icons.Default.Work
         )
 
         InformationRowView(
-            value = "Uritect",
+            value = company,
             icon = Icons.Default.Apartment
         )
 
         InformationRowView(
-            value = "Amirkabir University of Technology",
+            value = university,
             icon = Icons.Default.School
         )
 

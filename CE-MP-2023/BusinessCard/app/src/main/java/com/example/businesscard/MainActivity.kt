@@ -97,9 +97,3 @@ fun BusinessCardView() {
 
     }
 }
-
-@Preview(showBackground = true)
-@Composable
-fun Preview() {
-
-}
