@@ -7,6 +7,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -56,6 +57,13 @@ fun TextFunction() {
                 fontSize = with(density){15.dp.toSp()},
                 color = Color.Red,
                 fontFamily = FontFamily.Cursive
+            )
+
+            Text(
+                "Hi Android",
+                fontSize = with(density){15.dp.toSp()},
+                color = Color.Red,
+                fontWeight = FontWeight.SemiBold
             )
         }
     }
