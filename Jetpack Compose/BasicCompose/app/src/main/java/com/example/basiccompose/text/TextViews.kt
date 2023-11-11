@@ -27,6 +27,13 @@ fun TextFunction() {
                 "Hi Android",
                 fontSize = with(density){15.dp.toSp()}
             )
+
+            //line height size
+            Text(
+                "Hi Android",
+                fontSize = with(density){15.dp.toSp()},
+                lineHeight = 100.sp
+            )
         }
     }
 }
