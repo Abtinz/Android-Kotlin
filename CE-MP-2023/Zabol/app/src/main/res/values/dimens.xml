@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="image_paddings">10.dp</dimen>
+    <dimen name="card_paddings">5.dp</dimen>
+    <dimen name="image_height">250.dp</dimen>
+    <dimen name="text_padding">5.dp</dimen>
+
+</resources>
