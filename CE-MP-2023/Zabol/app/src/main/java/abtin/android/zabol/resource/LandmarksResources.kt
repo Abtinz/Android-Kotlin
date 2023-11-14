@@ -6,6 +6,7 @@ import abtin.android.zabol.utils.LandmarksDescription.JalalabadCitadelofZabol_De
 import abtin.android.zabol.utils.LandmarksDescription.MohammadHosseinKhanCitadel_Description
 import abtin.android.zabol.utils.LandmarksDescription.QalehChehelDokhtaran_Description
 import abtin.android.zabol.utils.LandmarksDescription.QalehMochi_Description
+import abtin.android.zabol.utils.LandmarksDescription.QalehRostam_Description
 import abtin.android.zabol.utils.LandmarksDescription.QalehSehKoohe_Description
 import abtin.android.zabol.utils.LandmarksDescription.SAHRSOOKHTEH_Description
 import abtin.android.zabol.utils.LandmarksImagesURI.GhulamanPass_IMG
@@ -33,8 +34,8 @@ import abtin.android.zabol.utils.LandmarksTitle.QalehRostam_TITLE
 import abtin.android.zabol.utils.LandmarksTitle.QalehSehKoohe_TITLE
 import abtin.android.zabol.utils.LandmarksTitle.SAHRSOOKHTEH_TITLE
 
-fun LandmarksResources():List<Landmarks>{
-    return listOf<Landmarks>(
+fun landmarksResources():List<Landmarks>{
+    return listOf(
             Landmarks(
                     image = SAHRSOOKHTEH_IMG,
                     name = SAHRSOOKHTEH_TITLE,
@@ -45,7 +46,7 @@ fun LandmarksResources():List<Landmarks>{
             Landmarks(
                     image = QalehRostam_IMG,
                     name = QalehRostam_TITLE,
-                    description = QalehSehKoohe_Description,
+                    description = QalehRostam_Description,
                     location =QalehRostam_Location
             ),
 

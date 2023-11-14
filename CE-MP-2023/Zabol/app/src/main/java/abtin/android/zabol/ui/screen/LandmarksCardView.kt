@@ -1,6 +1,5 @@
 package abtin.android.zabol.ui.screen
 
-import abtin.android.zabol.ExpandableText
 import abtin.android.zabol.model.Landmarks
 import abtin.android.zabol.ui.theme.informationText
 import abtin.android.zabol.ui.theme.primary
@@ -31,17 +30,17 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import com.example.businesscard.R
+import io.github.giangpham96.expandable_text_compose.ExpandableText
 
 @Composable
 fun LandmarksCardView(landmarkInfo:Landmarks) {
@@ -109,11 +108,13 @@ fun LandmarksCardView(landmarkInfo:Landmarks) {
 
             ExpandableText(
                 originalText = landmarkInfo.description,
+                style = TextStyle(
+                    textAlign = TextAlign.Justify
+                ),
                 expandAction = "See More",
+                expandActionColor = primary,
                 expand = expand,
-                expandActionColor = Color.DarkGray,
                 fontSize = with(density){16.dp.toSp()},
-                fontStyle = FontStyle.Normal,
                 color = informationText,
                 fontFamily = FontFamily.SansSerif,
                 limitedMaxLines = 2,
