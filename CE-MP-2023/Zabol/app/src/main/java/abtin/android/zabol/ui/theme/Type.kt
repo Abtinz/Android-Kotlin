@@ -32,8 +32,7 @@ val Typography = Typography(
     ),
 
     displaySmall = TextStyle(
-        fontFamily = thinoothinFont,
-        fontWeight = FontWeight.SemiBold
+        fontFamily = thinoobold,
     ),
 
     /* Other default text styles to override

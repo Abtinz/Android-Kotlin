@@ -1,28 +1,3 @@
 <resources>
     <string name="app_name">Zabol</string>
-
-    <string name="nuri_arg">Arg-e Mohammad Hossein Khan Narui</string>
-    <string name="Jalalabad_arg">Arg-e Jalalabad Zabol</string>
-    <string name="dehaneh_ghulaman">Dehaneh-ye Ghulaman</string>
-    <string name="qaleh_seh_koohe">Qaleh-ye Seh Koohe</string>
-    <string name="qaleh_rostam_zabol">Qaleh-ye Rostam Zabol</string>
-    <string name="qaleh_chehel_dokhtaran">Qaleh-ye Chehel Dokhtaran Zabol</string>
-    <string name="mochi">Qaleh-e Mochi</string>
-    <string name="shar_sokhteh">Shahr-e Sukhteh</string>
-
-    <string name="nuri_arg_description">The Arg (Citadel) of Mohammad Hossein Khan Narui, with a history of 160 years and covering an area of over 1,500 square meters, is constructed in two stories and is located at the entrance of Qaleh-ye Now Village. The ground floor of the structure was a local place for attending to the lord of the area, while the upper floor served as the residence for the commander and his family.</string>
-    <string name="Jalalabad_arg_description">The Arg-e Jalalabad, like other prominent structures in Sistan, was built on a natural hill to withstand moisture and seasonal flooding. It features a square-shaped plan with a central courtyard and four watchtowers positioned at the corners. This citadel is considered a masterpiece of architecture in the Sistan region,
-        showcasing elements and details of Iranian architecture through its arches, coverings, and beautiful brick and adobe decorations in the entrance. Due to its potential, it is referred to as the "Northern Sistan Architectural Museum". In the county of Hirmand, 45 ancient structures have been registered, and among the most beautiful architectural edifices in this region is the Arg-e Jalalabad. It's worth noting that after completing the restoration and excavation phases,this citadel will be repurposed into a traditional hotel.</string>
-    <string name="dehaneh_ghulaman_description">The city of Deh-e Ghulaman dates back to the era of the first Achaemenid kings, shining across the beloved lands of Sistan, Iran, and is counted among the notable sights of Zabol. This city spans approximately 100 hectares, with its central section covering 88 hectares, stretching one and a half kilometers in length and ranging from 300 to 800 meters in width. Achaemenid architects constructed this city using mud bricks and clay, much like other ancient settlements in the Sistan region. They designed it several meters above the ground level and agricultural lands surrounding it.
-        This endeavor ensured the city protection against flooding from the Hirmand River and prevented the occupation of lands suitable for agricultural activities. There have been no discoveries of daily life artifacts of the people or any cemetery within the Achaemenid city of Deh-e Ghulaman.</string>
-    <string name="qaleh_seh_koohe_description">The historical fortress of Three Mountains is considered one of the remarkable sights of Zabol and stands as the second tallest structure in the vast plains of Sistan after Khwaja Mountain. This fortress, constructed on a rectangular and elevated piece of land, covers an area of approximately 3,700 square meters and has two entry pathways from the east and west. The western entrance pathway is impassable and has undergone significant deterioration.
-        The eastern entry route is also steep and rugged.</string>
-    <string name="qaleh_rostam_zabol_description">The Rustam Fortress is counted among the notable attractions of Zabol and is associated with a vast structure dating from the Seljuk to Safavid eras. The area where the fortress stands is famously known as the Historical Hudzdar Compound. In the Hudzdar region, remnants of an ancient city with brickwork, numerous buildings, an entrance gate, a watchtower,
-        and 15 defensive towers have been identified.</string>
-    <string name="qaleh_chehel_dokhtaran_description"> The Qaleh-ye Chehel Dokhtaran Zabol of Zabol, dates back to the Sassanian period and is considered one of the attractions of Zabol. The naming of the Forty Daughters is tied to an intriguing story that has circulated for centuries. Legend has it that in the past, forty unmarried daughters lived in this location, and their laughter echoed throughout the entire compound. The structure of the fortress sits on a large stone platform where the constituent stones are interconnected by clay soil. This site was registered as one of Iran national heritage sites under number 12155 on 30 Tir 1384 (July 21, 2005).</string>
-    <string name="mochi_description">The Mochi Citadel is located approximately 60 kilometers southwest of Zabol, between the towns of Sookhteh and Tasuki, situated on the right-hand side of the Zabol to Zahedan road. This citadel served as the headquarters and palace for the Raisi family, the rulers of southern Sistan, and was constructed using materials such as mud bricks and clay. The Mochi Citadel has a plan with two iwans (open-sided halls) and a square overall shape.</string>
-    <string name="shar_sokhteh_description">The Shahr-e Sukhteh of Zabol is considered among the notable places to visit and is located in Sistan and Baluchestan Province at the easternmost tip of the country.
-        This ancient region in the past served as a thoroughfare connecting the Indian subcontinent and Central Asia with the civilizations on the periphery of the Persian Gulf. In fact, Shar-e Sookhteh encompasses a wide expanse of ancient Iranian civilization and cultural roots of the eastern Iranian plateau, constituting a center of urban settlement in ancient times.</string>
-
-
 </resources>
