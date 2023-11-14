@@ -46,7 +46,7 @@ import io.github.giangpham96.expandable_text_compose.ExpandableText
 fun LandmarksCardView(landmarkInfo:Landmarks) {
     Card(
         modifier = Modifier
-            .padding(bottom = 5.dp, top = 5.dp, end = 10.dp, start = 10.dp)
+            .padding(top = 10.dp, end = 10.dp, start = 10.dp)
             .background(color = tertiary, shape = RoundedCornerShape(8.dp))
             .animateContentSize(
                 animationSpec = tween(
