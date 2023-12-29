@@ -1,9 +1,5 @@
 package com.android.weather.ui.model.screens
 
-import com.android.weather.model.LandmarksDC
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import java.net.URLEncoder
 
 sealed class WeatherScreens(val route:String) {
 
