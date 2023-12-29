@@ -16,7 +16,9 @@ import androidx.navigation.NavController
 import com.android.weather.R
 import com.android.weather.ui.model.screens.WeatherScreens
 import com.android.weather.ui.theme.theme.mainBackGround
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
+@OptIn(ExperimentalPermissionsApi::class)
 @Composable
 fun MainMenuScreen(navController: NavController) {
 
@@ -29,6 +31,7 @@ fun MainMenuScreen(navController: NavController) {
             title = stringResource(id =  R.string.location),
             icon = Icons.Default.LocationOn,
             onClick = {
+
                 navController.navigate(WeatherScreens.Location.route)
             }
         )
