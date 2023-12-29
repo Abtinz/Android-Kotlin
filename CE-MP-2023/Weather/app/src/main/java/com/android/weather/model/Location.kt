@@ -7,6 +7,12 @@ data class Location(
 
 data class ProvincesDC(
     val name:String,
-    val cities:List<String>
+    val cities:List<City>
+)
+
+data class City(
+    val name :String,
+    val lat :Double,
+    val lon : Double
 )
 

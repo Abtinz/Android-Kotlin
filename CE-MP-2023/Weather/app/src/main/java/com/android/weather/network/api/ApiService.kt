@@ -18,7 +18,7 @@ interface ApiService {
     ): WeatherResponse
 
     @GET("air_pollution")
-    suspend fun pollutionInfo(
+    suspend fun airPollution(
         @Query("lat") latitude: Double,
         @Query("lon") longitude: Double,
         @Query("appid") apiKey: String
