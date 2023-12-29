@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.android.weather.ui.model.screens.WeatherScreens
 import com.android.weather.ui.screen.home.MainMenuScreen
+import com.android.weather.ui.screen.search.SearchScreen
 
 @ExperimentalMaterialApi
 @Composable
@@ -29,7 +30,7 @@ fun NavigationGraph (navHostController: NavHostController){
         }
 
         composable(route = WeatherScreens.Search.route) {
-            MainMenuScreen(navController = navHostController)
+            SearchScreen(navController = navHostController)
         }
 
         composable(route = WeatherScreens.CityList.route) {
