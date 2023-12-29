@@ -1,6 +1,4 @@
-package com.android.iranname.landmarks.model
-
-import com.android.weather.commonServices.model.Location
+package com.android.weather.model
 
 /** this data call will save Landmarks information
  * @param image uri of landmark image

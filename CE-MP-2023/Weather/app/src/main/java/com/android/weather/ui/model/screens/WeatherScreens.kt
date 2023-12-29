@@ -1,6 +1,6 @@
 package com.android.weather.ui.model.screens
 
-import com.android.iranname.landmarks.model.LandmarksDC
+import com.android.weather.model.LandmarksDC
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import java.net.URLEncoder

@@ -1,4 +1,4 @@
-package com.android.weather.commonServices.network.url
+package com.android.weather.network.url
 
 object BasicApiUrls {
     const val Weather_BASIC_URL = "https://api.openweathermap.org/data/2.5/forecast"

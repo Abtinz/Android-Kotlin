@@ -1,4 +1,4 @@
-package com.android.weather.commonServices.model
+package com.android.weather.model
 
 data class Location(
     val province:String,
