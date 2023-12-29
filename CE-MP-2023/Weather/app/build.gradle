@@ -90,4 +90,5 @@ dependencies {
     debugImplementation libs.ui.tooling
     debugImplementation libs.ui.test.manifest
     implementation libs.play.services.location
+    implementation libs.accompanist.permissions
 }
