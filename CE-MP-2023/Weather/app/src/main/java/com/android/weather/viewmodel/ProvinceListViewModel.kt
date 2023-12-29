@@ -6,9 +6,10 @@ import com.android.weather.model.ProvincesDC
 
 class ProvinceListViewModel():ViewModel() {
 
-
     fun provinceResources():List<ProvincesDC>{
+
         return listOf(
+
             ProvincesDC(
                 name = "تهران",
                 cities = listOf(
@@ -29,6 +30,7 @@ class ProvinceListViewModel():ViewModel() {
                     )
                 ),
             ),
+
             ProvincesDC(
                 name = "فارس",
                 cities = listOf(
@@ -49,6 +51,7 @@ class ProvinceListViewModel():ViewModel() {
                     )
                 ),
             ),
+
             ProvincesDC(
                 name = "خراسان رضوی",
                 cities = listOf(
@@ -69,6 +72,7 @@ class ProvinceListViewModel():ViewModel() {
                     )
                 ),
             ),
+
             ProvincesDC(
                 name = "اصفهان",
                 cities = listOf(
@@ -89,6 +93,7 @@ class ProvinceListViewModel():ViewModel() {
                     )
                 ),
             ),
+
             ProvincesDC(
                 name = "گیلان",
                 cities = listOf(
@@ -109,8 +114,6 @@ class ProvinceListViewModel():ViewModel() {
                     )
                 ),
             )
-
         )
-
     }
 }
