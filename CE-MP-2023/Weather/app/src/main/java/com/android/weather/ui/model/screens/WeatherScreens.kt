@@ -9,6 +9,11 @@ sealed class WeatherScreens(val route:String) {
 
     object MainMenu : WeatherScreens(route = "home")
 
+    object Location : WeatherScreens(route = "loation")
+    object Map : WeatherScreens(route = "map")
+    object CityList : WeatherScreens(route = "city_list")
+    object Search : WeatherScreens(route = "search")
+
     object WeatherScreen: WeatherScreens(route = "weather/page/{location}"){
         fun passInfo(landmarks: LandmarksDC):String{
             val moshi = Moshi.Builder()

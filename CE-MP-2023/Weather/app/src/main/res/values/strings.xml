@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Online Weather and Pollution</string>
+    <string name="location">موقعیت کنونی</string>
+    <string name="search">جستجو مکان موردنظر</string>
+    <string name="choose_your_location">لیست شهرها</string>
+    <string name="map">انتخاب از روی نقشه</string>
+</resources>
