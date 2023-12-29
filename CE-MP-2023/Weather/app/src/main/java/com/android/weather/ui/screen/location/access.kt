@@ -49,7 +49,7 @@ fun RequestPermissionView(
         permissionState = permissionState,
         deniedContent = { shouldShowRationale ->
             PermissionDeniedContent(
-                rationaleMessage = "بدون دادن اجازه دسترسی به موقعیت تلفن همراه شما قادر به نمایش اطالعات این بخش نیستیم",
+                rationaleMessage = "بدون دادن اجازه دسترسی به موقعیت تلفن همراه شما قادر به نمایش اطلاعات این بخش نیستیم",
                 shouldShowRationale = shouldShowRationale
             ) { permissionState.launchPermissionRequest() }
         },
