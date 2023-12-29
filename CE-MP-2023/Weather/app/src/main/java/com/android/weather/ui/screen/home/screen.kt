@@ -1,5 +1,6 @@
 package com.android.weather.ui.screen.home
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -14,6 +15,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.android.weather.R
 import com.android.weather.ui.model.screens.WeatherScreens
+import com.android.weather.ui.theme.theme.mainBackGround
 
 @Composable
 fun MainMenuScreen(navController: NavController) {
@@ -21,6 +23,7 @@ fun MainMenuScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .verticalScroll(rememberScrollState())
+            .background(mainBackGround)
     ) {
         HomePageCategoriesCardView(
             title = stringResource(id =  R.string.location),

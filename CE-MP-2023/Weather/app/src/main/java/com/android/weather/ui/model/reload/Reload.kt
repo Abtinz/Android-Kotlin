@@ -1,4 +1,4 @@
-package com.android.weather.commonServices.ui.compose.reload
+package com.android.weather.ui.model.reload
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column

@@ -1,4 +1,4 @@
-package com.android.weather.commonServices.ui.compose.actionbar
+package com.android.weather.ui.model.actionbar
 
 import android.content.Intent
 import androidx.compose.foundation.clickable
@@ -12,7 +12,6 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
@@ -26,8 +25,7 @@ fun AppActionBar(
 ){
     val context = LocalContext.current
     val density = LocalDensity.current
-    val configuration = LocalConfiguration.current
-    val halfWidth = configuration.screenWidthDp / 2
+
     TopAppBar(
         elevation = 1.dp,
         title = {
@@ -35,9 +33,9 @@ fun AppActionBar(
                 text = title,
                 color = secondary,
                 style = MaterialTheme.typography.titleMedium,
-                fontSize = with(density){25.dp.toSp()},
+                fontSize = with(density){18.dp.toSp()},
                 modifier = Modifier
-                    .padding(start = halfWidth.dp)
+                    .padding(start = 10.dp)
             )
         } ,
         backgroundColor =  primary,

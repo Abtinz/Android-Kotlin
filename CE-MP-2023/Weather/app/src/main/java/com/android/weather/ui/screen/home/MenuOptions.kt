@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Icon
@@ -30,12 +31,11 @@ fun HomePageCategoriesCardView(title: String, icon: ImageVector,onClick:()->Unit
     val density = LocalDensity.current
     Card(
         shape = RoundedCornerShape(10.dp),
-        elevation = 5.dp,
+        elevation = 1.dp,
         modifier = Modifier
-            .height(100.dp)
+            .height(250.dp)
             .fillMaxWidth()
             .padding(10.dp)
-            .background(color = tertiary)
             .clickable {
                 onClick()
             }
@@ -44,20 +44,29 @@ fun HomePageCategoriesCardView(title: String, icon: ImageVector,onClick:()->Unit
             contentAlignment = Alignment.Center,
             modifier = Modifier
                 .fillMaxSize()
+                .background(color = tertiary)
         ){
             Column(
                 verticalArrangement = Arrangement.Center,
                 modifier = Modifier
                     .fillMaxSize()
             ){
-                Icon(
-                    imageVector = icon,
-                    contentDescription = "" ,
-                    modifier = Modifier.
-                        padding(10.dp),
-                    tint = secondary
+                Box(
+                    modifier = Modifier
+                    .fillMaxWidth(),
+                    contentAlignment = Alignment.Center
+                ){
+                    Icon(
+                        imageVector = icon,
+                        contentDescription = "" ,
+                        modifier = Modifier
+                            .padding(10.dp)
+                            .size(150.dp),
+                        tint = secondary
 
-                )
+                    )
+                }
+
 
                 Text(
                     text = title ,
