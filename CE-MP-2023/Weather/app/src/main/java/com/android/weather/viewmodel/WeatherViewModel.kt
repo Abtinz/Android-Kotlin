@@ -26,7 +26,7 @@ class WeatherViewModel():ViewModel() {
                     latitude = lat,
                     apiKey = API_KEY,
                     units = "metric",
-                    lang = "lang"
+                    lang = "fa"
                 )
 
                 _apiStatus.value = "200"
