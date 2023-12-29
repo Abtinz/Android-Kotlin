@@ -13,6 +13,7 @@ material3 = "1.1.2"
 coil = "2.5.0"
 navigation-runtime-ktx = "2.7.4"
 navigation-compose = "2.7.4"
+play-services-location = "21.0.1"
 retrofit = "2.9.0"
 moshi = "1.15.0"
 compose-compilerv = "1.5.4"
@@ -26,6 +27,7 @@ espresso-core = { group = "androidx.test.espresso", name = "espresso-core", vers
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "play-services-location" }
 ui = { group = "androidx.compose.ui", name = "ui" }
 ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
