@@ -24,7 +24,9 @@ class WeatherViewModel():ViewModel() {
                 _weatherResponse.value = RetrofitClient.apiService.weatherApi(
                     longitude =  lon,
                     latitude = lat,
-                    apiKey = API_KEY
+                    apiKey = API_KEY,
+                    units = "metric",
+                    lang = "lang"
                 )
 
                 _apiStatus.value = "200"
