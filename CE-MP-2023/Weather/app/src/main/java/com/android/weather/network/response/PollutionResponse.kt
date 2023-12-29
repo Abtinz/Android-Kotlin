@@ -1,55 +1,27 @@
 package com.android.weather.network.response
 
-data class PollutionResponse(
-    val StateId: Int,
-    val RegionId: Int,
-    val Id: Int,
-    val StationId: Int,
-    val CO: Any?,
-    val O3_1: Any?,
-    val O3_8: Any?,
-    val O3: Any?,
-    val NO2: Int?,
-    val SO2: Int?,
-    val PM10: Int?,
-    val PM2_5: Any?,
-    val AQI: Int?,
-    val AQI11: Any?,
-    val AQI11_Last: Any?,
-    val Confirmed: Boolean,
-    val StationIsActive: Boolean,
-    val Pollutant: String?,
-    val StationName_En: String?,
-    val StationName_Fa: String?,
-    val StateName_Fa: String?,
-    val StateName_En: String?,
-    val Region_Fa: String?,
-    val Region_En: String?,
-    val Latitude: Double?,
-    val Longitude: Double?,
-    val RegionLatitude: Double?,
-    val RegionLongitude: Double?,
-    val City: String?,
-    val UserName: Any?,
-    val CreateDate: String?,
-    val ModifyDate: String?,
-    val g1: Any?,
-    val g2: Any?,
-    val g3: Any?,
-    val g4: Any?,
-    val g5: Any?,
-    val g6: Any?,
-    val DateStr: Any?,
-    val Date: String?,
-    val Date_Shamsi: String?,
-    val Interval: Int?,
-    val Year: Int?,
-    val Month: Int?,
-    val Season: Int?,
-    val DateInterval: Int?,
-    val Date_Shamsi_Special: String?,
-    val FromDateStr: Any?,
-    val TotalCount: Int?,
-    val ToDateStr: Any?,
-    val Capital: Boolean
+data class AirPollutionResponse(
+    val coord: List<Double>,
+    val list: List<PollutionItem>
+)
+
+data class PollutionItem(
+    val dt: Long,
+    val main: PollutionMain,
+    val components: PollutionComponents
+)
+
+data class PollutionMain(
+    val aqi: Int
+)
+
+data class PollutionComponents(
+    val co: Double,
+    val no: Double,
+    val no2: Double,
+    val o3: Double,
+    val so2: Double,
+    val pm2_5: Double,
+    val pm10: Double,
+    val nh3: Double
 )
