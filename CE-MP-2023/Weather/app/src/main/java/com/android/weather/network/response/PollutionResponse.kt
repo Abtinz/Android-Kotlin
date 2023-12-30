@@ -1,7 +1,6 @@
 package com.android.weather.network.response
 
 data class AirPollutionResponse(
-    val coord: List<Double>,
     val list: List<PollutionItem>
 )
 
@@ -12,7 +11,7 @@ data class PollutionItem(
 )
 
 data class PollutionMain(
-    val aqi: Int
+    var aqi: Int
 )
 
 data class PollutionComponents(

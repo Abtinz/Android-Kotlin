@@ -60,8 +60,7 @@ fun NavigationGraph (navHostController: NavHostController){
             val lon = it.arguments!!.getString("lon")!!.toDouble()
             WeatherScreen(
                 lat = lat,
-                lon = lon,
-                navController = navHostController
+                lon = lon
             )
         }
 

@@ -15,18 +15,18 @@ class ProvinceListViewModel():ViewModel() {
                 cities = listOf(
                     City(
                         name ="تهران",
-                        lat = 35.6892,
-                        lon = 51.3890,
+                        lat = 35.7219,
+                        lon = 51.3347,
                     ),
                     City(
                         name ="ورامین ",
-                        lat = 35.3254,
-                        lon = 51.6474,
+                        lat = 35.3252,
+                        lon = 51.3252,
                     ),
                     City(
                         name ="شهریار",
                         lat = 35.6544,
-                        lon = 51.0597,
+                        lon = 51.0600,
                     )
                 ),
             ),
