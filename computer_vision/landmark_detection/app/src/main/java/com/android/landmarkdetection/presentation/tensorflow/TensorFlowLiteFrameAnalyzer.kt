@@ -18,7 +18,7 @@ class TensorFlowLiteFrameAnalyzer (
             val rotationDegrees = image.imageInfo.rotationDegrees
             val bitmap = image
                 .toBitmap()
-                .centerCrop(500, 500)
+                .centerCrop(321, 321)
 
             val results = classifier.classify(bitmap, rotationDegrees)
             onResults(results)
