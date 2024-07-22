@@ -5,6 +5,8 @@ import android.graphics.Bitmap
 import android.view.Surface
 import com.android.landmarkdetection.domain.ClassificationResults
 import com.android.landmarkdetection.domain.LandmarkClassifier
+import org.tensorflow.lite.support.image.ImageProcessor
+import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.task.core.BaseOptions
 import org.tensorflow.lite.task.core.vision.ImageProcessingOptions
 import org.tensorflow.lite.task.vision.classifier.ImageClassifier
@@ -59,7 +61,25 @@ class TensorFlowLiteClassifier(
             setupClassifier()
         }
 
+        //we need to process our bitmap as TensorImage for preparation to model input
+        val imageProcessor = ImageProcessor.Builder().build()
+        val image = imageProcessor.process(TensorImage.fromBitmap(bitmap))
 
+        val imageProcessingOptions = ImageProcessingOptions.builder()
+            .setOrientation(getOrientationFromRotation(rotation))
+            .build()
+
+        val results = classifier?.classify(image, imageProcessingOptions)
+
+        //now we have to map our return type to our returned data class
+        return results?.flatMap { classifications ->
+            classifications.categories.map { category ->
+                ClassificationResults(
+                    label = category.displayName,
+                    score = category.score
+                )
+            }
+        }?.distinctBy { it.label } ?: emptyList() //no result for picture
     }
 
 

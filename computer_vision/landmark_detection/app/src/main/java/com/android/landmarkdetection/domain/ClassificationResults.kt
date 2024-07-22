@@ -8,5 +8,5 @@ package com.android.landmarkdetection.domain
  */
 data class ClassificationResults(
     val label: String,
-    val score: String
+    val score: Float
 )
