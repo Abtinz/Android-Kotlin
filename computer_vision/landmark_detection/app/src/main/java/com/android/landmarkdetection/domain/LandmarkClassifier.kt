@@ -1,6 +1,8 @@
 package com.android.landmarkdetection.domain
 
 import android.graphics.Bitmap
+import android.view.Surface
+import org.tensorflow.lite.task.core.vision.ImageProcessingOptions
 
 interface LandmarkClassifier {
 
@@ -12,4 +14,6 @@ interface LandmarkClassifier {
      * @return A list of classification results, each containing a label and a confidence score.
      */
     fun classify(bitmap: Bitmap, rotation:Int):List<ClassificationResults>
+
+    fun getOrientationFromRotation(rotation: Int): ImageProcessingOptions.Orientation
 }
